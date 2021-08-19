@@ -182,7 +182,7 @@ button {
 @media screen and (max-width: 767px) {
     .nav__menu {
         position: fixed;
-        background-color: var(--body-color);
+        background-color: var(--first-color);
         top: 0;
         right: -100%;
         width: 70%;
@@ -200,7 +200,7 @@ button {
 }
 
 .nav__link {
-    color: var(--text-color-light);
+    color: var(--white-color);
     font-weight: var(--font-semi-bold);
     text-transform: uppercase;
 }
@@ -210,7 +210,7 @@ button {
 }
 
 .cart_logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .nav__close {
@@ -249,6 +249,7 @@ button {
     height: 100vh;
     object-fit: cover;
     object-position: 83%;
+    filter: brightness(92%);
 }
 
 .home__container {
@@ -295,7 +296,7 @@ button {
 }
 
 .home__social-link {
-    font-size: 1.2rem;
+    font-size: var(--biggest-font-size);
     width: max-content;
 }
 
@@ -396,6 +397,10 @@ button {
     background-image: none;
 }
 
+.contact__data {
+    text-align: end;
+}
+
 .footer__container {
     row-gap: 5rem;
 }
@@ -403,6 +408,7 @@ button {
 .footer__content {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     row-gap: 2rem;
+    justify-items: center;
 }
 
 .footer__title,
@@ -441,8 +447,6 @@ button {
 }
 
 .footer__rights {
-    display: flex;
-    flex-direction: column;
     row-gap: 1.5rem;
     text-align: center;
 }
@@ -494,21 +498,7 @@ button {
     .nav__toggle, .nav__close {
         display: none;
     }
-    .active-link::before {
-        background-color: var(--white-color);
-    }
-    .scroll-header .nav__link {
-        color: var(--text-color);
-    }
-    .scroll-header .active-link {
-        color: var(--title-color);
-    }
-    .scroll-header .active-link::before {
-        background-color: var(--title-color);
-    }
-    .scroll-header .change-theme {
-        color: var(--text-color);
-    }
+
     .section {
         padding: 7rem 0 2rem;
     }
@@ -533,7 +523,7 @@ button {
         align-items: center;
     }
     .about__data, .about__title {
-        text-align: initial;
+        text-align: start;
     }
     .about__title {
         margin-bottom: var(--mb-1-5);
