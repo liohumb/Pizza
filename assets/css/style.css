@@ -158,6 +158,10 @@ button {
     align-items: center;
 }
 
+.nav_menu-page {
+    background-color: var(--first-color);
+}
+
 .nav__logo, .nav__toggle {
     color: var(--white-color);
 }
@@ -267,6 +271,17 @@ button {
     font-size: var(--biggest-font-size);
     font-weight: var(--font-medium);
     margin-bottom: var(--mb-2-5);
+}
+
+.menu_title {
+    color: var(--first-color);
+    text-align: center;
+}
+
+.menu_pizza,
+.menu_boisson,
+.menu_dessert {
+    margin-top: 7rem;
 }
 
 .home__social {
