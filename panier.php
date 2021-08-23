@@ -1,7 +1,5 @@
 <?php
-session_start();
-require_once("dbcontroller.php");
-$db_handle = new DBController();
+include("ajout-panier.php");
 if(!empty($_GET["action"])) {
 switch($_GET["action"]) {
 	case "retire":
