@@ -218,12 +218,32 @@ button {
     top: .75rem;
     right: 1rem;
     font-size: 1.5rem;
-    color: var(--title-color);
+    color: var(--white-color);
     cursor: pointer;
 }
 
 .show-menu {
     right: 0;
+}
+
+.connexion {
+    display: flex;
+    justify-content: center;
+    color: var(--white-color);
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+.connexion-bis {
+    display: flex;
+    justify-content: center;
+    color: var(--white-color);
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+.btn-conn {
+    color: var(--white-color);
 }
 
 .active-link {
@@ -241,15 +261,19 @@ button {
     left: 0;
 }
 
+.home {
+    margin-top: 6rem;
+}
+
 .home__img {
     position: absolute;
-    top: 0;
+    top: 100px;
     left: 0;
     width: 100%;
     height: 100vh;
     object-fit: cover;
     object-position: 83%;
-    filter: brightness(92%);
+    filter: brightness(83%);
 }
 
 .home__container {

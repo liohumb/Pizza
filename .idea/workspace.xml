@@ -2,9 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc52d482-016c-42df-8c5f-79d1f4ea2b40" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/css/connexion.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/inscription.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/connexion.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inscription.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/contact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panier.html" beforeDir="false" afterPath="$PROJECT_DIR$/panier.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/carlsberg.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/carlsberg.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/chevre.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/chevre.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/chorizzo.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/chorizzo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/coca.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/coca.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/cookie.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/cookie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/enfant.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/enfant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/glace.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/glace.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/mozza.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/mozza.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/muffins.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/muffins.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/pepperoni.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/pepperoni.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/poulette.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/poulette.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/quatre.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/quatre.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/schweppes.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/schweppes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/tiramisu.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/tiramisu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/vin.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/vin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +77,8 @@
       <updated>1629357922941</updated>
       <workItem from="1629357925558" duration="16528000" />
       <workItem from="1629380796973" duration="137000" />
-      <workItem from="1629381032921" duration="12889000" />
+      <workItem from="1629381032921" duration="18398000" />
+      <workItem from="1629620569518" duration="14171000" />
     </task>
     <servers />
   </component>

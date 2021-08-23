@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/inscription.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Pizza</title>
 </head>
@@ -54,36 +54,46 @@
 </header>
 <section class="contact section">
     <div id="container">
-        <h1>Dites nous tout !</h1>
+        <h1>Ravi de vous rencontrer !</h1>
         <form action="#" method="post" id="contact_form">
-            <div class="name">
+            <div class="nom">
                 <label for="name"></label>
                 <input type="text" placeholder="Votre nom" name="name" id="name_input" required>
+            </div>
+            <div class="prenom">
+                <label for="name"></label>
+                <input type="text" placeholder="Votre prenom" name="name" id="name_input" required>
+            </div>
+            <div class="addresse">
+                <label for="name"></label>
+                <input type="text" placeholder="Votre adresse de livraison" name="name" id="name_input" required>
+            </div>
+            <div class="cmpt-adresse">
+                <label for="name"></label>
+                <input type="text" placeholder="Complément adresse" name="name" id="name_input" required>
+            </div>
+            <div class="cp">
+                <label for="name"></label>
+                <input type="text" placeholder="Votre code postal" name="name" id="name_input" required>
+            </div>
+            <div class="ville">
+                <label for="name"></label>
+                <input type="text" placeholder="Votre ville" name="name" id="name_input" required>
             </div>
             <div class="email">
                 <label for="email"></label>
                 <input type="email" placeholder="Votre email" name="email" id="email_input" required>
             </div>
-            <div class="telephone">
+            <div class="mdp">
                 <label for="name"></label>
-                <input type="text" placeholder="Votre numéro de téléphone" name="telephone" id="telephone_input" required>
+                <input type="text" placeholder="Votre mot de passe" name="telephone" id="telephone_input" required>
             </div>
-            <div class="subject">
-                <label for="subject"></label>
-                <select placeholder="Subject line" name="subject" id="subject_input" required>
-                    <option disabled hidden selected>Selectionnez l'objet de votre message</option>
-                    <option>Je souhaite avoir des informtions sur les pizzas</option>
-                    <option>J'ai un soucis avec ma commande</option>
-                    <option>Je n'arrive pas à passer commande</option>
-                    <option>Je veux juste faire blabla :)</option>
-                </select>
-            </div>
-            <div class="message">
-                <label for="message"></label>
-                <textarea name="message" placeholder="Je suis toute ouïe" id="message_input" cols="30" rows="5" required></textarea>
+            <div class="mdp">
+                <label for="name"></label>
+                <input type="text" placeholder="Confirmez votre mot de passe" name="telephone" id="telephone_input" required>
             </div>
             <div class="submit">
-                <input type="submit" value="Envoyer" id="form_button" />
+                <input type="submit" value="S'inscrire" id="form_button" />
             </div>
         </form>
     </div>
