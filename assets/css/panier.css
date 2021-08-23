@@ -95,15 +95,10 @@
     cursor: pointer;
 }
 
-.taille {
-    width: 70px;
-    padding: 2px 0 2px 20px;
-    border-radius: 7px;
-    font-size: 1em;
-    font-weight: 700;
-    border: 2px solid var(--first-color);
-    cursor: pointer;
-    margin-right: 1rem;
+.cart-subtitle {
+    display: block;
+    font-weight: var(--font-semi-bold);
+    margin-bottom: var(--mb-0-75);
 }
 
 .btn-choix {
@@ -132,4 +127,16 @@
 
 .empty__cart {
     text-align: center;
+}
+
+.recap {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 7rem;
+}
+
+.recap__total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
