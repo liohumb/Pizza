@@ -218,7 +218,7 @@ button {
     top: .75rem;
     right: 1rem;
     font-size: 1.5rem;
-    color: var(--title-color);
+    color: var(--white-color);
     cursor: pointer;
 }
 
@@ -249,7 +249,7 @@ button {
     height: 100vh;
     object-fit: cover;
     object-position: 83%;
-    filter: brightness(92%);
+    filter: brightness(83%);
 }
 
 .home__container {
