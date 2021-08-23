@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap");
-
+/* VARIABLES CSS */
 :root {
     --header-height: 3rem;
 
@@ -9,6 +8,7 @@
     --first-color: hsl(var(--hue-color), 64%, 22%);
     --first-color-second: hsl(var(--hue-color), 64%, 22%);
     --first-color-alt: hsl(var(--hue-color), 64%, 15%);
+    --hover-red: hsl(0, 52%, 59%);
     --title-color: hsl(var(--hue-color), 64%, 18%);
     --text-color: hsl(var(--hue-color), 24%, 35%);
     --text-color-light: hsl(var(--hue-color), 8%, 60%);
@@ -51,4 +51,92 @@
     --img-transition: .3s;
     --img-hidden: hidden;
     --img-scale: scale(1.1);
+}
+
+.about__img-two {
+    max-width: 75%;
+}
+
+.contact__data {
+    margin-right: 6rem;
+}
+
+.product-name {
+    font-size: 2em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.product-price {
+    font-size: 4em;
+    font-weight: 900;
+    color: var(--first-color);
+}
+
+.product-slogan {
+    margin-top: 1rem;
+}
+
+.preferences {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: 2em;
+}
+
+.qty {
+    width: 70px;
+    padding: 2px 0 2px 20px;
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: 700;
+    border: 2px solid var(--first-color);
+    cursor: pointer;
+}
+
+.cart-subtitle {
+    display: block;
+    font-weight: var(--font-semi-bold);
+    margin-bottom: var(--mb-0-75);
+}
+
+.btn-choix {
+    display: flex;
+    justify-content: center;
+}
+.btn-ret-aj {
+    margin-top: 4rem;
+    margin-right: 1rem;
+}
+
+.button-supp {
+    display: inline-block;
+    margin-top: 4rem;
+    margin-right: 1rem;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    padding: 1rem 2rem;
+    font-weight: var(--font-semi-bold);
+    transition: .3s;
+}
+
+.button-supp:hover {
+    background-color: var(--hover-red);
+}
+
+.empty__cart {
+    text-align: center;
+}
+
+.recap {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 7rem;
+}
+
+.recap__total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
