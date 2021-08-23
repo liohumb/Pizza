@@ -1,53 +1,24 @@
 <?php
 session_start();
- require_once("dbcontroller.php");
- $db_handle= new DBcontroller();
-if(!empty($_GET["action"])){
-    switch($_GET["action"]){
-        case "ajoute":
-            if(!empty($_POST["quantity"])){
-                $produitByCode = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_GET["code"] . "'");
-                $itemArray = array($produitByCode[0]["code"]=>array('name'=>$produitByCode[0]["name"], 'code'=>$produitByCode[0]["code"], 'quantity'=>$_POST["quantity"],'price'=>$produitByCode[0]["price"], 'image'=>$produitByCode[0]["image"]));
-
-                if(!empty($_SESSION["Panier_item"])){
-                    if(in_array($produitByCode[0]["code"],array_keys($_SESSION["Panier_item"]))){
-                        foreach($_SESSION["Panier_item"]as $k => $v){
-                            if($produitByCode[0]["code"] == $k){
-                                if(empty($_SESSION["Panier_item"][$k]["quantity"])){
-                                    $_SESSION["Panier_item"][$k]["quantity"]=0;
-                                }
-                            $_SESSION["Panier_item"][$k]["quantity"] += $_POST["quantity"];
-                            }
-                        }
-
-                    }
-                    else{
-                        $_SESSION["Panier_item"] = array_merge($_SESSION["Panier_item"],$itemArray);
-                    }
-                }
-                else{
-                    $_SESSION["Panier_item"] = $itemArray;
-                }
-            }
-            break;
-        case "retire":
-            if(!empty($_SESSION["Panier_item"])){
-                foreach($_SESSION["Panier_item"] as $k =>$v){
-                    if($_GET["code"] == $k){
-                        unset($_SESSION["Panier_item"][$k]);
-                    }
-                    if(empty($_SESSION["Panier_item"])){
-                        unset($_SESSION["Panier_item"]);
-                    }
-                }
-            }
-            break;
-        case "vider":
-            unset($_SESSION["Panier_item"]);
-    }
+require_once("dbcontroller.php");
+$db_handle = new DBController();
+if(!empty($_GET["action"])) {
+switch($_GET["action"]) {
+	case "retire":
+		if(!empty($_SESSION["Panier_item"])) {
+			foreach($_SESSION["Panier_item"] as $k => $v) {
+					if($_GET["id"] == $k)
+						unset($_SESSION["Panier_item"][$k]);				
+					if(empty($_SESSION["Panier_item"]))
+						unset($_SESSION["Panier_item"]);
+			}
+		}
+	break;
+	case "vider":
+		unset($_SESSION["Panier_item"]);
+	break;	
 }
-
-
+}
 ?>
 <!doctype html>
 <html lang=fr>
@@ -118,11 +89,11 @@ if(!empty($_GET["action"])){
                         ?>
                         <tr>
                         <td><img src="<?php echo $item["image"];?>" class="panier_item_image" alt=""><?php echo $item["name"]?></td>
-                        <td><?php echo $item["code"]; ?></td>
+                        <td><?php echo $item["id"]; ?></td>
                         <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
                         <td  style="text-align:right;"><?php echo "$ ".$item["price"]; ?></td>
                         <td  style="text-align:right;"><?php echo "$ ". number_format($item_prix,2); ?></td>
-                        <td style="text-align:center;"><a href="panier.php?action=retire&code=<?php echo $item["code"]; ?>" class="btnRetireAction"><img src="icon-delete.png" alt="retire Item" /></a></td>
+                        <td style="text-align:center;"><a href="panier.php?action=retire&id=<?php echo $item["id"]; ?>" class="btnRetireAction"><img src="icon-delete.png" alt="retire Item" /></a></td>
 				        </tr>
                     <?php
                     $quantityTotal += $item["quantity"];
@@ -147,28 +118,8 @@ if(!empty($_GET["action"])){
                 ?>
         </div>
     </div>
-    <div id="produit_grid">
-        <h3 class="panier__title">Produits</h3>
-        <?php
-            $produit_array =$db_handle->runQuery("SELECT * FROM tblproduct ORDER BY id ASC");
-            if(!empty($produit_array)){
-                foreach($produit_array as $key=>$value){
-                    ?>
-                    <div class="produit_item">
-                        <form method="post" action="panier.php?action=ajoute&code=<?php echo $produit_array[$key]["code"]; ?>">
-                            <div class="image-produit"><img src="<?php echo $produit_array[$key]["image"] ;?>" alt=""></div>
-                            <div class="produit-tile-footer">
-                                <div class="produit-title"><?php echo $produit_array[$key]["name"]; ?></div>
-                                <div class="produit-prix"><?php echo "$" . $produit_array[$key]["price"]; ?></div>
-                                <div class="action-panier"><input type="text" class="produit-quantity" name="quantity" value="1" size="2"/><input type ="submit" value="Ajouter au panier" class="btnAjouteAction" /></div>
-                            </div>
-                        </form>
-                    </div>
-                <?php
-                }
-            }
-        ?>
-    </div>
+
+
 </section>
 
 <footer class="footer section">

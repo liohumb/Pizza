@@ -1,3 +1,7 @@
+<?php
+    include('../ajout-panier.php');
+?>
+
 <!doctype html>
 <html lang=fr>
 <head>
@@ -63,7 +67,7 @@
                     <img src="../assets/img/discover3.jpg" alt="" class="about__img-two">
                 </div>
             </div>
-
+            <form method="post" action="mozza.php">
             <div class="contact__data">
                 <h1 class="product-name">La Pizza Mozza</h1>
                 <h2 class="product-price">12€50</h2>
@@ -79,12 +83,12 @@
                     </li>
                     <li>
                         <span class="list-name">Quantité :</span>
-                        <select class="qty">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <select name="quantity" class="qty">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </li>
                 </ul>
@@ -92,7 +96,10 @@
         </div>
         <div class="btn-choix">
             <a href="../menu.html" class="button btn-ret-aj">Retour au menu</a>
-            <a href="#" class="button btn-ret-aj">Ajouter au panier</a>
+         
+             <input type="hidden" name="id" value ="6">
+            <input type ="submit" name="ajoute" class="button btn-ret-aj" value="Ajouter au panier"></input>
+        </form>
         </div>
     </section>
     <section class="discover section" id="discover">
