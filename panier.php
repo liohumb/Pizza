@@ -5,18 +5,18 @@ session_start();
 if(!empty($_GET["action"])){
     switch($_GET["action"]){
         case "ajoute":
-            if(!empty($_POST["qte"])){
+            if(!empty($_POST["quantity"])){
                 $produitByCode = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_GET["code"] . "'");
-                $itemArray = array($produitByCode[0]["code"]=>array('name'=>$produitByCode[0]["name"], 'code'=>$produitByCode[0]["code"], 'qte'=>$_POST["qte"],'prix'=>$produitByCode[0]["prix"], 'image'=>$produitByCode[0]["image"]));
+                $itemArray = array($produitByCode[0]["code"]=>array('name'=>$produitByCode[0]["name"], 'code'=>$produitByCode[0]["code"], 'quantity'=>$_POST["quantity"],'price'=>$produitByCode[0]["price"], 'image'=>$produitByCode[0]["image"]));
 
                 if(!empty($_SESSION["Panier_item"])){
                     if(in_array($produitByCode[0]["code"],array_keys($_SESSION["Panier_item"]))){
                         foreach($_SESSION["Panier_item"]as $k => $v){
                             if($produitByCode[0]["code"] == $k){
-                                if(empty($_SESSION["Panier_item"][$k]["qte"])){
-                                    $_SESSION["Panier_item"][$k]["qte"]=0;
+                                if(empty($_SESSION["Panier_item"][$k]["quantity"])){
+                                    $_SESSION["Panier_item"][$k]["quantity"]=0;
                                 }
-                            $_SESSION["Panier_item"][$k]["qte"] += $_POST["qte"];
+                            $_SESSION["Panier_item"][$k]["quantity"] += $_POST["quantity"];
                             }
                         }
 
@@ -97,9 +97,10 @@ if(!empty($_GET["action"])){
             <h3 class="panier__title">Votre panier</h3>
             <a href="panier.php?action=vider" id="btnVider">Vider Panier</a>
              <?php
-                 if(isset($_SESSION["panier_item"])){
-                    $qteTotal = 0;
+                 if(isset($_SESSION["Panier_item"])){
+                    $quantityTotal = 0;
                     $PrxTotal = 0;
+                 
             ?>
             <table class="tbl-panier" cellpadding="10" cellspacing="1">
                 <tbody>
@@ -112,25 +113,25 @@ if(!empty($_GET["action"])){
                         <th>Supprimé</th>
                     </tr>
                     <?php
-                    foreach($_SESSION["panier-item"]as $item){
-                        $item_prix = $item["qte"]*$item["prix"];
+                    foreach($_SESSION["Panier_item"]as $item){
+                        $item_prix = $item["quantity"]*$item["price"];
                         ?>
                         <tr>
                         <td><img src="<?php echo $item["image"];?>" class="panier_item_image" alt=""><?php echo $item["name"]?></td>
                         <td><?php echo $item["code"]; ?></td>
-                        <td style="text-align:right;"><?php echo $item["qte"]; ?></td>
-                        <td  style="text-align:right;"><?php echo "$ ".$item["prix"]; ?></td>
+                        <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
+                        <td  style="text-align:right;"><?php echo "$ ".$item["price"]; ?></td>
                         <td  style="text-align:right;"><?php echo "$ ". number_format($item_prix,2); ?></td>
-                        <td style="text-align:center;"><a href="index.php?action=retire&code=<?php echo $item["code"]; ?>" class="btnRetireAction"><img src="icon-delete.png" alt="retire Item" /></a></td>
+                        <td style="text-align:center;"><a href="panier.php?action=retire&code=<?php echo $item["code"]; ?>" class="btnRetireAction"><img src="icon-delete.png" alt="retire Item" /></a></td>
 				        </tr>
                     <?php
-                    $qteTotal += $item["qte"];
-                    $PrxTotal += ($item["prix"]*$item["qte"]);
+                    $quantityTotal += $item["quantity"];
+                    $PrxTotal += ($item["price"]*$item["quantity"]);
                     }
                     ?>
                     <tr>
                         <td class ="right">Total:</td>
-                        <td class ="right"><?php echo $qteTotal;?></td>
+                        <td class ="right"><?php echo $quantityTotal;?></td>
                         <td class="right"><strong><?php echo"$ ".number_format($PrxTotal, 2); ?></strong></td>
                         <td></td>
                     </tr>
@@ -146,7 +147,7 @@ if(!empty($_GET["action"])){
                 ?>
         </div>
     </div>
-    <div id="prosuit_grid">
+    <div id="produit_grid">
         <h3 class="panier__title">Produits</h3>
         <?php
             $produit_array =$db_handle->runQuery("SELECT * FROM tblproduct ORDER BY id ASC");
@@ -154,12 +155,12 @@ if(!empty($_GET["action"])){
                 foreach($produit_array as $key=>$value){
                     ?>
                     <div class="produit_item">
-                        <form method="post" action="panier.php?action=ajout&code=<?php echo $produit_array[$key]["code"]; ?>">
-                            <div class="image-produit"><img src="<?php echo $produit_array[$key]["name"] ;?>" alt=""></div>
+                        <form method="post" action="panier.php?action=ajoute&code=<?php echo $produit_array[$key]["code"]; ?>">
+                            <div class="image-produit"><img src="<?php echo $produit_array[$key]["image"] ;?>" alt=""></div>
                             <div class="produit-tile-footer">
                                 <div class="produit-title"><?php echo $produit_array[$key]["name"]; ?></div>
                                 <div class="produit-prix"><?php echo "$" . $produit_array[$key]["price"]; ?></div>
-                                <div class="action-panier"><input type="text" class="prduit-qte" name="qte" value="1" size="2"/><input type ="submit" value="Ajouter au panier" class="btnAjoutAction" /></div>
+                                <div class="action-panier"><input type="text" class="produit-quantity" name="quantity" value="1" size="2"/><input type ="submit" value="Ajouter au panier" class="btnAjouteAction" /></div>
                             </div>
                         </form>
                     </div>
@@ -217,3 +218,4 @@ if(!empty($_GET["action"])){
 <script src="assets/js/main.js"></script>
 </body>
 </html>
+
