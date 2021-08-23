@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/inscription.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/produit.css">
     <title>Pizza</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
                     <a href="index.html" class="nav__link">Acceuil</a>
                 </li>
                 <li class="nav__item">
-                    <a href="index.html" class="nav__link">À propos</a>
+                    <a href="index.html#about" class="nav__link">À propos</a>
                 </li>
                 <li class="nav__item">
                     <a href="menu.html" class="nav__link">Le Menu</a>
@@ -34,71 +34,39 @@
 
         <a href="panier.html" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
 
+
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
         </div>
     </nav>
-
-    <div class="connexion">
-        <a href="inscription.html" class="btn-conn">Inscription</a>
-        |
-        <a href="connexion.html" class="btn-conn">Connexion</a>
-    </div>
-
-    <!--    <div class="connexion-bis">
-            <a href="mon-compte.html" class="btn-conn">Mon compte</a>
+        <div class="connexion-bis">
+            <a href="" class="btn-conn">Mon compte</a>
             |
             <a href="" class="btn-conn">Déconnexion</a>
         </div>
-    -->
 </header>
-<section class="contact section">
-    <div id="container">
-        <h1>Ravi de vous rencontrer !</h1>
-        <form action="#" method="post" id="contact_form">
-            <div class="nom">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre nom" name="name" id="name_input" required>
-            </div>
-            <div class="prenom">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre prenom" name="name" id="name_input" required>
-            </div>
-            <div class="addresse">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre adresse de livraison" name="name" id="name_input" required>
-            </div>
-            <div class="cmpt-adresse">
-                <label for="name"></label>
-                <input type="text" placeholder="Complément adresse" name="name" id="name_input" required>
-            </div>
-            <div class="cp">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre code postal" name="name" id="name_input" required>
-            </div>
-            <div class="ville">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre ville" name="name" id="name_input" required>
-            </div>
-            <div class="email">
-                <label for="email"></label>
-                <input type="email" placeholder="Votre email" name="email" id="email_input" required>
-            </div>
-            <div class="mdp">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre mot de passe" name="telephone" id="telephone_input" required>
-            </div>
-            <div class="mdp">
-                <label for="name"></label>
-                <input type="text" placeholder="Confirmez votre mot de passe" name="telephone" id="telephone_input" required>
-            </div>
-            <div class="submit">
-                <input type="submit" value="S'inscrire" id="form_button" />
-            </div>
-        </form>
-    </div>
-</section>
 
+<main class="home" id="home">
+    <section class="about section">
+        <div class="about__container container grid">
+
+            <div class="about__img">
+                <h1 class="product-name">John Doe</h1>
+            </div>
+
+            <div class="contact__data">
+                <h3 class="product-slogan">06 06 06 06 06</h3>
+                <h3 class="product-slogan">21 rue de Marseille <br> 75001 PARIS</h3>
+                <h3 class="product-slogan">john@doe.fr</h3>
+            </div>
+        </div>
+        <div class="btn-choix">
+            <a href="index.html" class="button btn-ret-aj">Retour à l'acceuil</a>
+            <a href="modifier-mon-compte.html" class="button btn-ret-aj">Modifier informations</a>
+            <a href="modifier-mdp.html" class="button btn-ret-aj">Modifier mot de passe</a>
+        </div>
+    </section>
+</main>
 <footer class="footer section">
     <div class="footer__container container grid">
         <div class="footer__content grid">
@@ -141,8 +109,8 @@
         </div>
     </div>
 </footer>
-<script src="assets/js/scrollreveal.min.js"></script>
-<script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="../assets/js/scrollreveal.min.js"></script>
+<script src="../assets/js/swiper-bundle.min.js"></script>
+<script src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -185,10 +185,9 @@ textarea {
     cursor: pointer;
     display: inline-block;
     font-family: 'Helvetica', Arial, sans-serif;
-    font-size: 0.875em;
     font-weight: bold;
     outline: none;
-    padding: 20px 35px;
+    padding: 17px 35px;
     text-transform: uppercase;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
