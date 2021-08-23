@@ -85,7 +85,6 @@
 }
 
 .qty {
-    display: block;
     width: 70px;
     padding: 2px 0 2px 20px;
     border-radius: 7px;
@@ -93,4 +92,24 @@
     font-weight: 700;
     border: 2px solid var(--first-color);
     cursor: pointer;
+}
+
+.taille {
+    width: 70px;
+    padding: 2px 0 2px 20px;
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: 700;
+    border: 2px solid var(--first-color);
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.btn-choix {
+    display: flex;
+    justify-content: center;
+}
+.btn-ret-aj {
+    margin-top: 4rem;
+    margin-right: 1rem;
 }
