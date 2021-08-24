@@ -1,5 +1,7 @@
 <?php
     include('../ajout-panier.php');
+ require_once("../dbcontroller.php");
+ $db_handle= new DBcontroller();
 ?>
 
 <!doctype html>
@@ -97,7 +99,7 @@
         <div class="btn-choix">
             <a href="../menu.html" class="button btn-ret-aj">Retour au menu</a>
          
-             <!-- <input type="hidden" name="id" value ="6"> -->
+             <input type="hidden" name="id" value =<?php $db_handle->runQuery("SELECT id FROM tblproduct") ?>>
             <input type ="submit" name="ajoute" class="button btn-ret-aj" value="Ajouter au panier"></input>
         </form>
         </div>

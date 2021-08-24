@@ -5,10 +5,12 @@ switch($_GET["action"]) {
 	case "retire":
 		if(!empty($_SESSION["Panier_item"])) {
 			foreach($_SESSION["Panier_item"] as $k => $v) {
-					if($_GET["id"] == $k)
-						unset($_SESSION["Panier_item"][$k]);				
-					if(empty($_SESSION["Panier_item"]))
+					if($_GET["id"] == $k){
+						unset($_SESSION["Panier_item"][$k]);
+                    }				
+					if(empty($_SESSION["Panier_item"])){
 						unset($_SESSION["Panier_item"]);
+                    }
 			}
 		}
 	break;
