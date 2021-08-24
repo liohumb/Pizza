@@ -12,7 +12,7 @@
 <body>
     <header class="header nav_menu-page" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">LORENZZO'S PIZZA</a>
+            <a href="index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -26,6 +26,11 @@
                         <a href="inscription.php" class="btn-conn">Inscription</a>
                         |
                         <a href="connexion.php" class="btn-conn">Connexion</a>
+                        <!--
+                        <a href="" class="btn-conn">Mon compte</a>
+                        |
+                        <a href="" class="btn-conn">Déconnexion</a>
+                        -->
                     </li>
                 </ul>
 
@@ -39,13 +44,6 @@
                 <i class="uil uil-bars"></i>
             </div>
         </nav>
-
-        <!--    <div class="connexion-bis">
-                <a href="" class="btn-conn">Mon compte</a>
-                |
-                <a href="" class="btn-conn">Déconnexion</a>
-            </div>
-        -->
     </header>
 
     <main class="home" id="home">

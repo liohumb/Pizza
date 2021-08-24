@@ -11,47 +11,38 @@
 <body>
 <header class="header nav_menu-page" id="header">
     <nav class="nav container">
-        <a href="#" class="nav__logo">LORENZZO'S PIZZA</a>
+        <a href="../index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="../index.php" class="nav__link">Acceuil</a>
+                    <a href="../menu.php" class="nav__link">Le menu</a>
                 </li>
                 <li class="nav__item">
-                    <a href="../index.php#about" class="nav__link">À propos</a>
+                    <a href="../contact.php" class="nav__link">Nous contacter</a>
                 </li>
                 <li class="nav__item">
-                    <a href="../menu.php" class="nav__link">Le Menu</a>
-                </li>
-                <li class="nav__item">
-                    <a href="../contact.php" class="nav__link">Contact</a>
+                    <a href="../inscription.php" class="btn-conn">Inscription</a>
+                    |
+                    <a href="../connexion.php" class="btn-conn">Connexion</a>
+                    <!--
+                    <a href="../mon-compte.php" class="btn-conn">Mon compte</a>
+                    |
+                    <a href="../index.php" class="btn-conn">Déconnexion</a>
+                    -->
                 </li>
             </ul>
 
             <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
 
-        <a href="../panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
 
+        <a href="../panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
         </div>
     </nav>
-
-    <div class="connexion">
-        <a href="../inscription.php" class="btn-conn">Inscription</a>
-        |
-        <a href="../connexion.php" class="btn-conn">Connexion</a>
-    </div>
-
-    <!--    <div class="connexion-bis">
-            <a href="" class="btn-conn">Mon compte</a>
-            |
-            <a href="" class="btn-conn">Déconnexion</a>
-        </div>
-    -->
 </header>
 
 <main class="home" id="home">
