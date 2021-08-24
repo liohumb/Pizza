@@ -1,5 +1,5 @@
 <?php
-include('ajout-panier.php');
+include ('../ajout-panier.php')
 ?>
 
 <!doctype html>
@@ -45,9 +45,9 @@ include('ajout-panier.php');
     </nav>
 
     <div class="connexion">
-        <a href="inscription.php" class="btn-conn">Inscription</a>
+        <a href="../inscription.php" class="btn-conn">Inscription</a>
         |
-        <a href="connexion.php" class="btn-conn">Connexion</a>
+        <a href="../connexion.php" class="btn-conn">Connexion</a>
     </div>
 
     <!--    <div class="connexion-bis">

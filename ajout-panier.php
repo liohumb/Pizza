@@ -29,3 +29,5 @@ if(!empty($_POST["ajoute"])){
         }
     }
 }
+
+?>
