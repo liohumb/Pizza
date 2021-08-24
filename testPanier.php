@@ -98,17 +98,17 @@ switch($_GET["action"]) {
 
             <div class="contact__data">
                 <h1 class="product-name"><?php echo $item["name"]?></h1>
-                <h2 class="product-price">10€90</h2>
+                <h2 class="product-price"><?php echo $item_prix . " €"; ?></h2>
                 <ul class="preferences">
                     <li>
                         <span class="list-name">Quantité :</span>
                         <a href="" class="list-name"><i class="uil uil-minus"></i></a>
-                        <span class="list-name">1</span>
+                        <span class="list-name"><?php echo $item["quantity"]; ?></span>
                         <a href="" class="list-name"><i class="uil uil-plus"></i></a>
 
                     </li>
                 </ul>
-                <span class="cart-subtitle">Prix unitaire : <b>10€90</b></span>
+                <span class="cart-subtitle">Prix unitaire :<?php echo $item["price"] . " €"; ?></b></span>
             </div>
         </div>
 
@@ -117,30 +117,43 @@ switch($_GET["action"]) {
                 <h2 class="section__title menu_suggestion">Récapitulatif</h2>
             </div>
             <div class="recap__total">
-                <h2 class="section__title menu_suggestion">Sous-total : <b>10€90</b></h2>
-                <h2 class="section__title menu_suggestion">Livraison : <b>3€50</b></h2>
+                <h2 class="section__title menu_suggestion">Sous-total : <b><?php echo  number_format($item_prix,2) . " €"; ?></b></h2>
+                <h2 class="section__title menu_suggestion">Livraison : <b>3.50 €</b></h2>
                 <br>
-                <h2 class="section__title menu_suggestion">Total : <b>14€40</b></h2>
+                <h2 class="section__title menu_suggestion">Total : <b><?php echo (number_format($item_prix,2) + 3.50) . " €"; ?></b></h2>
 
             </div>
         </div>
+        <?php
+                    $quantityTotal += $item["quantity"];
+                    $PrxTotal += ($item["price"]*$item["quantity"]);
+                    }
+                ?>
+                    <div class="btn-choix">
+                    <a href="menu.html" class="button btn-ret-aj">Retour au menu</a>
+                    <a href="testPanier.php?action=vider" class="button-supp">Vider le panier</a>
+                    <a href="#" class="button btn-ret-aj">Valider mon panier</a>
+                </div>
+                <?php
+                }
 
-        <div class="btn-choix">
-            <a href="menu.html" class="button btn-ret-aj">Retour au menu</a>
-            <a href="#" class="button-supp">Vider le panier</a>
-            <a href="#" class="button btn-ret-aj">Valider mon panier</a>
-        </div>
+                else{
+                    ?>
+                                    
+                            <div class="empty__cart">
+                                    <h1 class="product-name">Votre Panier est vide</h1>
+                            </div>
+                            <div class="btn-choix">
+                                <a href="menu.html" class="button btn-ret-aj">Retour au menu</a>
+                            </div>
+                       
+   
+                    <?php
+                } 
+                ?>
+
     </section>
-    <!--
-    <section class="about section">
-        <div class="empty__cart">
-                <h1 class="product-name">Votre Panier est vide</h1>
-        </div>
-        <div class="btn-choix">
-            <a href="menu.html" class="button btn-ret-aj">Retour au menu</a>
-        </div>
-    </section>
-    -->
+    
 
 </main>
 <footer class="footer section">

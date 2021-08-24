@@ -71,7 +71,7 @@ switch($_GET["action"]) {
                     $PrxTotal = 0;
                  
             ?>
-            <!-- <table class="tbl-panier" cellpadding="10" cellspacing="1">
+             <table class="tbl-panier" cellpadding="10" cellspacing="1">
                 <tbody>
                     <tr>
                         <th>Nom</th>
@@ -80,7 +80,7 @@ switch($_GET["action"]) {
                         <th>Prix unitaire</th>
                         <th>Prix</th>
                         <th>Supprimé</th>
-                    </tr> -->
+                    </tr>
                     <?php
                     foreach($_SESSION["Panier_item"]as $item){
                         $item_prix = $item["quantity"]*$item["price"];

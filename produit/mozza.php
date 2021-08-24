@@ -36,7 +36,7 @@
             <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
 
-        <a href="../panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+        <a href="../testPanier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
 
 
         <div class="nav__toggle" id="nav-toggle">
@@ -97,7 +97,7 @@
         <div class="btn-choix">
             <a href="../menu.html" class="button btn-ret-aj">Retour au menu</a>
          
-             <input type="hidden" name="id" value ="6">
+             <!-- <input type="hidden" name="id" value ="6"> -->
             <input type ="submit" name="ajoute" class="button btn-ret-aj" value="Ajouter au panier"></input>
         </form>
         </div>
