@@ -56,7 +56,7 @@
             </div>
 
             <div class="contact__data">
-                <h1 class="product-name">CocaCola</h1>
+                <h1 class="product-name">Coca-Cola</h1>
                 <h2 class="product-price">3€00</h2>
                 <h3 class="product-slogan">Description résumée de la pizza sélectionné</h3>
                 <ul class="preferences">

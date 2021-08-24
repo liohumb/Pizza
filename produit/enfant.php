@@ -105,7 +105,7 @@
                     <a href="../produit/coca.php">
                         <img src="../assets/img/drink3.jpg" alt="" class="discover__img">
                         <div class="discover__data">
-                            <h2 class="discover__title">Coca Cola</h2>
+                            <h2 class="discover__title">Coca-Cola</h2>
                         </div>
                     </a>
                 </div>
