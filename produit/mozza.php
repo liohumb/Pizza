@@ -1,3 +1,7 @@
+<?php
+include('ajout-panier.php');
+?>
+
 <!doctype html>
 <html lang=fr>
 <head>
@@ -32,7 +36,7 @@
             <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
 
-        <a href="../panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+        <a href="../testPanier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
 
 
         <div class="nav__toggle" id="nav-toggle">
@@ -41,9 +45,9 @@
     </nav>
 
     <div class="connexion">
-        <a href="../inscription.php" class="btn-conn">Inscription</a>
+        <a href="inscription.php" class="btn-conn">Inscription</a>
         |
-        <a href="../connexion.php" class="btn-conn">Connexion</a>
+        <a href="connexion.php" class="btn-conn">Connexion</a>
     </div>
 
     <!--    <div class="connexion-bis">
@@ -63,36 +67,39 @@
                     <img src="../assets/img/discover3.jpg" alt="" class="about__img-two">
                 </div>
             </div>
-
-            <div class="contact__data">
-                <h1 class="product-name">La Pizza Mozza</h1>
-                <h2 class="product-price">12€50</h2>
-                <h3 class="product-slogan">Description résumée de la pizza sélectionné</h3>
-                <ul class="preferences">
-                    <li>
-                        <span class="list-name">Taille (en cm) :</span>
-                        <select class="taille">
-                            <option>24</option>
-                            <option>36</option>
-                            <option>42</option>
-                        </select>
-                    </li>
-                    <li>
-                        <span class="list-name">Quantité :</span>
-                        <select class="qty">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </li>
-                </ul>
-            </div>
+            <form method="post" action="mozza.php">
+                <div class="contact__data">
+                    <h1 class="product-name">La Pizza Mozza</h1>
+                    <h2 class="product-price">12€50</h2>
+                    <h3 class="product-slogan">Description résumée de la pizza sélectionné</h3>
+                    <ul class="preferences">
+                        <li>
+                            <span class="list-name">Taille (en cm) :</span>
+                            <select class="taille">
+                                <option>24</option>
+                                <option>36</option>
+                                <option>42</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span class="list-name">Quantité :</span>
+                            <select name="quantity" class="qty">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
         </div>
         <div class="btn-choix">
             <a href="../menu.php" class="button btn-ret-aj">Retour au menu</a>
-            <a href="#" class="button btn-ret-aj">Ajouter au panier</a>
+
+            <input type="hidden" name="id" value ="6">
+            <input type ="submit" name="ajoute" class="button btn-ret-aj" value="Ajouter au panier">
+            </form>
         </div>
     </section>
     <section class="discover section" id="discover">
