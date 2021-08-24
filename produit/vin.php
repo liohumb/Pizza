@@ -70,6 +70,14 @@
                 <h3 class="product-slogan">Description résumée de la pizza sélectionné</h3>
                 <ul class="preferences">
                     <li>
+                        <span class="list-name">Couleur :</span>
+                        <select class="taille">
+                            <option>rouge</option>
+                            <option>blanc</option>
+                            <option>rosé</option>
+                        </select>
+                    </li>
+                    <li>
                         <span class="list-name">Quantité :</span>
                         <select class="qty">
                             <option>1</option>

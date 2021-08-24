@@ -70,6 +70,13 @@
                 <h3 class="product-slogan">Description résumée de la pizza sélectionné</h3>
                 <ul class="preferences">
                     <li>
+                        <span class="list-name">Taille bouteille :</span>
+                        <select class="taille">
+                            <option>33 cl</option>
+                            <option>1 l</option>
+                        </select>
+                    </li>
+                    <li>
                         <span class="list-name">Quantité :</span>
                         <select class="qty">
                             <option>1</option>
