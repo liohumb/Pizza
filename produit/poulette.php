@@ -16,23 +16,23 @@
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="../index.html" class="nav__link">Acceuil</a>
+                    <a href="../index.php" class="nav__link">Acceuil</a>
                 </li>
                 <li class="nav__item">
-                    <a href="../index.html#about" class="nav__link">À propos</a>
+                    <a href="../index.php#about" class="nav__link">À propos</a>
                 </li>
                 <li class="nav__item">
-                    <a href="../menu.html" class="nav__link">Le Menu</a>
+                    <a href="../menu.php" class="nav__link">Le Menu</a>
                 </li>
                 <li class="nav__item">
-                    <a href="../contact.html" class="nav__link">Contact</a>
+                    <a href="../contact.php" class="nav__link">Contact</a>
                 </li>
             </ul>
 
             <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
 
-        <a href="../panier.html" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+        <a href="../panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
 
 
         <div class="nav__toggle" id="nav-toggle">
@@ -41,9 +41,9 @@
     </nav>
 
     <div class="connexion">
-        <a href="inscription.html" class="btn-conn">Inscription</a>
+        <a href="../inscription.php" class="btn-conn">Inscription</a>
         |
-        <a href="connexion.html" class="btn-conn">Connexion</a>
+        <a href="../connexion.php" class="btn-conn">Connexion</a>
     </div>
 
     <!--    <div class="connexion-bis">
@@ -60,13 +60,13 @@
 
             <div class="about__img">
                 <div class="about__img-overlay">
-                    <img src="../assets/img/discover2.jpg" alt="" class="about__img-two">
+                    <img src="../assets/img/pizza3.jpg" alt="" class="about__img-two">
                 </div>
             </div>
 
             <div class="contact__data">
-                <h1 class="product-name">La Pizza 4 Fromages</h1>
-                <h2 class="product-price">11€50</h2>
+                <h1 class="product-name">La Pizza Poulette</h1>
+                <h2 class="product-price">14€90</h2>
                 <h3 class="product-slogan">Description résumée de la pizza sélectionné</h3>
                 <ul class="preferences">
                     <li>
@@ -91,7 +91,7 @@
             </div>
         </div>
         <div class="btn-choix">
-            <a href="../menu.html" class="button btn-ret-aj">Retour au menu</a>
+            <a href="../menu.php" class="button btn-ret-aj">Retour au menu</a>
             <a href="#" class="button btn-ret-aj">Ajouter au panier</a>
         </div>
     </section>
@@ -101,7 +101,7 @@
         <div class="discover__container container swiper-container">
             <div class="swiper-wrapper">
                 <div class="discover__card swiper-slide">
-                    <a href="../produit/schweppes.html">
+                    <a href="../produit/schweppes.php">
                         <img src="../assets/img/drink1.jpg" alt="" class="discover__img">
                         <div class="discover__data">
                             <h2 class="discover__title">Schweppes</h2>
@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="discover__card swiper-slide">
-                    <a href="../produit/carlsberg.html">
+                    <a href="../produit/carlsberg.php">
                         <img src="../assets/img/drink2.jpg" alt="" class="discover__img">
                         <div class="discover__data">
                             <h2 class="discover__title">Carlsberg</h2>
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="discover__card swiper-slide">
-                    <a href="../produit/coca.html">
+                    <a href="../produit/coca.php">
                         <img src="../assets/img/drink3.jpg" alt="" class="discover__img">
                         <div class="discover__data">
                             <h2 class="discover__title">Coca Cola</h2>
@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="discover__card swiper-slide">
-                    <a href="../produit/vin.html">
+                    <a href="../produit/vin.php">
                         <img src="../assets/img/drink4.jpg" alt="" class="discover__img">
                         <div class="discover__data">
                             <h2 class="discover__title">Vin </h2>

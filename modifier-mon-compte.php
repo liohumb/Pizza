@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/connexion.css">
+    <link rel="stylesheet" href="assets/css/inscription.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Pizza</title>
 </head>
@@ -16,56 +16,74 @@
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="index.html" class="nav__link">Acceuil</a>
+                    <a href="index.php" class="nav__link">Acceuil</a>
                 </li>
                 <li class="nav__item">
-                    <a href="index.html" class="nav__link">À propos</a>
+                    <a href="index.php" class="nav__link">À propos</a>
                 </li>
                 <li class="nav__item">
-                    <a href="menu.html" class="nav__link">Le Menu</a>
+                    <a href="menu.php" class="nav__link">Le Menu</a>
                 </li>
                 <li class="nav__item">
-                    <a href="contact.html" class="nav__link">Contact</a>
+                    <a href="contact.php" class="nav__link">Contact</a>
                 </li>
             </ul>
 
             <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
 
-        <a href="panier.html" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+        <a href="panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
         </div>
     </nav>
+    <!--
+        <div class="connexion">
+            <a href="inscription.php" class="btn-conn">Inscription</a>
+            |
+            <a href="connexion.php" class="btn-conn">Connexion</a>
+        </div>
+        -->
 
-    <div class="connexion">
-        <a href="inscription.html" class="btn-conn">Inscription</a>
+    <div class="connexion-bis">
+        <a href="mon-compte.php" class="btn-conn">Mon compte</a>
         |
-        <a href="connexion.html" class="btn-conn">Connexion</a>
+        <a href="" class="btn-conn">Déconnexion</a>
     </div>
 
-    <!--    <div class="connexion-bis">
-            <a href="" class="btn-conn">Mon compte</a>
-            |
-            <a href="" class="btn-conn">Déconnexion</a>
-        </div>
-    -->
 </header>
 <section class="contact section">
     <div id="container">
-        <h1>Bienvenue !</h1>
-        <form action="#" method="post" id="connexion_form">
-            <div class="email">
+        <h1>Quoi de neuf ?</h1>
+        <form action="#" method="post" id="contact_form">
+            <div class="nom">
                 <label for="name"></label>
-                <input type="email" placeholder="Votre adresse email" name="name" id="mail_input" required>
+                <input type="text" placeholder="Votre nom" name="name" id="name_input" required>
             </div>
-            <div class="mdp">
+            <div class="prenom">
                 <label for="name"></label>
-                <input type="text" placeholder="Votre mot de passe" name="name" id="mdp_input" required>
+                <input type="text" placeholder="Votre prenom" name="name" id="name_input" required>
+            </div>
+            <div class="addresse">
+                <label for="name"></label>
+                <input type="text" placeholder="Votre adresse de livraison" name="name" id="name_input" required>
+            </div>
+            <div class="cmpt-adresse">
+                <label for="name"></label>
+                <input type="text" placeholder="Complément adresse" name="name" id="name_input" required>
+            </div>
+            <div class="cp">
+                <label for="name"></label>
+                <input type="text" placeholder="Votre code postal" name="name" id="name_input" required>
+            </div>
+            <div class="ville">
+                <label for="name"></label>
+                <input type="text" placeholder="Votre ville" name="name" id="name_input" required>
             </div>
             <div class="submit">
-                <input type="submit" value="Connexion" id="form_button" />
+                <input type="submit" value="Modifier mes informations" id="form_button" />
+                <a href="mon-compte.php" class="button">Retour à mon compte</a>
             </div>
         </form>
     </div>

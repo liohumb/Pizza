@@ -17,23 +17,23 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="index.html" class="nav__link">Acceuil</a>
+                        <a href="index.php" class="nav__link">Acceuil</a>
                     </li>
                     <li class="nav__item">
                         <a href="#about" class="nav__link">À propos</a>
                     </li>
                     <li class="nav__item">
-                        <a href="menu.html" class="nav__link">Le Menu</a>
+                        <a href="menu.php" class="nav__link">Le Menu</a>
                     </li>
                     <li class="nav__item">
-                        <a href="contact.html" class="nav__link">Contact</a>
+                        <a href="contact.php" class="nav__link">Contact</a>
                     </li>
                 </ul>
 
                 <i class="uil uil-times nav__close" id="nav-close"></i>
             </div>
 
-            <a href="panier.html" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+            <a href="panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
 
 
             <div class="nav__toggle" id="nav-toggle">
@@ -42,9 +42,9 @@
         </nav>
 
         <div class="connexion">
-            <a href="inscription.html" class="btn-conn">Inscription</a>
+            <a href="inscription.php" class="btn-conn">Inscription</a>
             |
-            <a href="connexion.html" class="btn-conn">Connexion</a>
+            <a href="connexion.php" class="btn-conn">Connexion</a>
         </div>
 
         <!--    <div class="connexion-bis">
@@ -63,7 +63,7 @@
                 <div class="home__data">
                     <span class="home__data-subtitle">Bienvenue</span>
                     <h1 class="home__data-title">Venez <br> manger de <b>délicieuses <br> pizzas</b></h1>
-                    <a href="menu.html" class="button">Le Menu</a>
+                    <a href="menu.php" class="button">Le Menu</a>
                 </div>
 
                 <div class="home__social">
@@ -105,7 +105,7 @@
             <div class="discover__container container swiper-container">
                 <div class="swiper-wrapper">
                     <div class="discover__card swiper-slide">
-                        <a href="produit/chevre.html">
+                        <a href="produit/chevre.php">
                             <img src="assets/img/discover1.jpg" alt="" class="discover__img">
                             <div class="discover__data">
                                 <h2 class="discover__title">La chèvre</h2>
@@ -114,7 +114,7 @@
                     </div>
 
                     <div class="discover__card swiper-slide">
-                        <a href="produit/quatre.html">
+                        <a href="produit/quatre.php">
                             <img src="assets/img/discover2.jpg" alt="" class="discover__img">
                             <div class="discover__data">
                                 <h2 class="discover__title">La 4 fromages</h2>
@@ -123,7 +123,7 @@
                     </div>
 
                     <div class="discover__card swiper-slide">
-                        <a href="produit/mozza.html">
+                        <a href="produit/mozza.php">
                             <img src="assets/img/discover3.jpg" alt="" class="discover__img">
                             <div class="discover__data">
                                 <h2 class="discover__title">La Mozza</h2>
@@ -132,7 +132,7 @@
                     </div>
 
                     <div class="discover__card swiper-slide">
-                        <a href="produit/pepperoni.html">
+                        <a href="produit/pepperoni.php">
                             <img src="assets/img/discover4.jpg" alt="" class="discover__img">
                             <div class="discover__data">
                                 <h2 class="discover__title">La pepperoni </h2>
@@ -157,7 +157,7 @@
                     <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
-                    <a href="contact.html" class="button">Contactez nous</a>
+                    <a href="contact.php" class="button">Contactez nous</a>
                 </div>
             </div>
         </section>

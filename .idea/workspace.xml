@@ -3,8 +3,30 @@
   <component name="ChangeListManager">
     <list default="true" id="cc52d482-016c-42df-8c5f-79d1f4ea2b40" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/infos.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/infos.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion.html" beforeDir="false" afterPath="$PROJECT_DIR$/connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/inscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modifier-mdp.html" beforeDir="false" afterPath="$PROJECT_DIR$/modifier-mdp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modifier-mon-compte.html" beforeDir="false" afterPath="$PROJECT_DIR$/modifier-mon-compte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mon-compte.html" beforeDir="false" afterPath="$PROJECT_DIR$/mon-compte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panier.html" beforeDir="false" afterPath="$PROJECT_DIR$/panier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/carlsberg.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/carlsberg.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/chevre.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/chevre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/chorizzo.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/chorizzo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/coca.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/coca.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/cookie.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/cookie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/enfant.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/enfant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/glace.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/glace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/mozza.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/mozza.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/muffins.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/muffins.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/pepperoni.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/pepperoni.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/poulette.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/poulette.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/quatre.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/quatre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/schweppes.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/schweppes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/tiramisu.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/tiramisu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit/vin.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit/vin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
