@@ -5,7 +5,7 @@ $db_handle= new DBcontroller();
 if(!empty($_POST["ajoute"])){
 
     if(!empty($_POST["quantity"])){
-        $produitById = $db_handle->runQuery("SELECT * FROM tblproduct WHERE id='" . $_POST["id"] . "'");
+        $produitById = $db_handle->runQuery("SELECT * FROM product WHERE id='" . $_POST["id"] . "'");
         $itemArray = array($produitById[0]["id"]=>array('name'=>$produitById[0]["name"], 'id'=>$produitById[0]["id"], 'quantity'=>$_POST["quantity"],'price'=>$produitById[0]["price"], 'image'=>$produitById[0]["image"]));
 
         if(!empty($_SESSION["Panier_item"])){
