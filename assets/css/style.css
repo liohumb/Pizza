@@ -262,12 +262,12 @@ button {
 }
 
 .home {
-    margin-top: 6rem;
+    margin-top: 3rem;
 }
 
 .home__img {
     position: absolute;
-    top: 100px;
+    top: 80px;
     left: 0;
     width: 100%;
     height: 100vh;
@@ -281,6 +281,10 @@ button {
     height: calc(100vh - var(--header-height));
     align-content: center;
     row-gap: 3rem;
+}
+
+.home__data {
+    margin-top: 8rem;
 }
 
 .home__data-subtitle,
@@ -532,6 +536,7 @@ button {
     }
     .home__data {
         align-self: flex-end;
+        margin-top: 12rem;
     }
     .home__social {
         flex-direction: row;
