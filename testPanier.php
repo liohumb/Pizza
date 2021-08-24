@@ -20,9 +20,6 @@ switch($_GET["action"]) {
 }
 }
 ?>
-
-
-
 <!doctype html>
 <html lang=fr>
 <head>

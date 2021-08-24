@@ -1,7 +1,5 @@
 <?php
     include('../ajout-panier.php');
- require_once("../dbcontroller.php");
- $db_handle= new DBcontroller();
 ?>
 
 <!doctype html>
