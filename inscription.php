@@ -84,8 +84,8 @@
                 <label for="name"></label>
                 <input type="text" placeholder="Confirmez votre mot de passe" name="telephone" id="telephone_input" required>
             </div>
-            <div class="submit">
-                <input type="submit" value="S'inscrire" id="form_button" />
+            <div>
+                <input type="submit" class="button" value="S'inscrire"/>
             </div>
         </form>
     </div>

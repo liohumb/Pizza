@@ -56,8 +56,8 @@
                 <label for="name"></label>
                 <input type="text" placeholder="Votre mot de passe" name="name" id="mdp_input" required>
             </div>
-            <div class="submit">
-                <input type="submit" value="Connexion" id="form_button" />
+            <div>
+                <input type="submit" value="Connexion" class="button" />
             </div>
         </form>
     </div>
