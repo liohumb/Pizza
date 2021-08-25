@@ -4,8 +4,8 @@ require_once "models/products.models.php";
 require_once "models/category.model.php";
     require_once("dbcontroller.php");
     $db_handle= new DBcontroller();
-    $category = $db_handle->runQuery("SELECT * FROM category");
-    $products= $db_handle->runQuery("SELECT * FROM product");
+    $categories = $db_handle->runQuery("SELECT * FROM category");
+    $products= $db_handle->runQuery("SELECT * FROM produit");
 ?>
 
 
@@ -62,76 +62,52 @@ require_once "models/category.model.php";
     <section class="discover section" id="discover">
         <h1 class="home__data-title menu_title">Vous avez faim ?</h1>
         <p class="menu_title">Faites votre choix</p>
-
-        <h2 class="section__title menu_suggestion">Nos suggestions</h2>
-
-        <div class="discover__container container swiper-container">
-            <div class="swiper-wrapper">
-                <div class="discover__card swiper-slide">
-                    <img src="assets/img/pizza1.jpg" alt="" class="discover__img">
-                    <div class="discover__data">
-                        <h2 class="discover__title">Nos pizza fait maison</h2>
-                    </div>
-                </div>
-
-                <div class="discover__card swiper-slide">
-                    <a href="produit/chorizzo.php">
-                        <img src="assets/img/pizza2.jpg" alt="" class="discover__img">
-                        <div class="discover__data">
-                            <h2 class="discover__title">La chorizzo</h2>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="discover__card swiper-slide">
-                    <a href="produit/poulette.php">
-                        <img src="assets/img/pizza3.jpg" alt="" class="discover__img">
-                        <div class="discover__data">
-                            <h2 class="discover__title">La poulette</h2>
-                        </div></a>
-                </div>
-
-                <div class="discover__card swiper-slide">
-                    <a href="produit/enfant.php">
-                        <img src="assets/img/pizza4.jpg" alt="" class="discover__img">
-                        <div class="discover__data">
-                            <h2 class="discover__title">La pizza enfant</h2>
-                        </div></a>
-                </div>
-            </div>
-        </div>
             <?php
-                    foreach($category as $categories){?>
-                    <h2 class="section__title menu_pizza"><?=$categories['name'] ?></h2>
-                        <?phpforeach($products){
-                            ?>
-                        <div class="discover__container container swiper-container">
+                    foreach($categories as $category){
+                        $filteredProducts = array_filter($products, function($item) use($category){
+                            if($item['category_id'] == $category['id']){
+                                return $item;
+                            }
+                        })
+                        ?>
+                    <h2 class="section__title menu_pizza"><?=$category['name'] ?></h2>
+                    <div class="discover__container container swiper-container">
+                    
                             <div class="swiper-wrapper">
+                            <?php foreach($filteredProducts as $produit){
+                            ?>
                                 <div class="discover__card swiper-slide">
+                        
+                            
                                     <a href="produit/produits.php">
-                                        <img src=<?php $products['img_path'] ?> alt="" class="discover__img">
+                                        <img src="<?= $produit['img_path'] ?>" alt="" class="discover__img">
                                         <div class="discover__data">
-                                            <h2 class="discover__title"><?php $products['name'] ?></h2>
+                                            <h2 class="discover__title"><?= $produit['name'] ?></h2>
                                         </div>
                                     </a>
                                 </div>
-                                </div>
-                        </div>
+                                
+                        
                                 
                     <?php 
-                        }
+                        
                     } 
                     ?>
- 
-                <!-- <div class="discover__card swiper-slide">
-                    <a href="produit/quatre.php">
-                        <img src="assets/img/discover2.jpg" alt="" class="discover__img">
-                        <div class="discover__data">
-                            <h2 class="discover__title">La 4 fromages</h2>
-                        </div></a>
-                </div>
-
+                    </div></div>
+                    <?php 
+                        
+                    } 
+                    ?>
+<!--  
                 <div class="discover__card swiper-slide">
+                    <a href="produit/quatre.php">
+                        <img src="" alt="" class="discover__img">
+                        <div class="discover__data">
+                            <h2 class="discover__title"> </h2>
+                        </div></a>
+                </div> -->
+
+                <!-- <div class="discover__card swiper-slide">
                     <a href="produit/mozza.php">
                         <img src="assets/img/discover3.jpg" alt="" class="discover__img">
                         <div class="discover__data">

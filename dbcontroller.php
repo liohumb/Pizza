@@ -3,7 +3,7 @@ class DBController {
     private $host = "localhost";
     private $user = "root";
     private $password = "";
-    private $database = "pizza_test";
+    private $database = "lorenzzobd";
     private $conn;
 
 
