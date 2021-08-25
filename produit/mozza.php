@@ -141,7 +141,7 @@ include ('../ajout-panier.php')
     <div class="footer__container container grid">
         <div class="footer__content grid">
             <div class="footer__data">
-                <h3 class="footer__title">PIZZA</h3>
+                <h3 class="footer__title">LORENZZO'S PIZZA</h3>
                 <p class="footer__description">Venez manger de <br> délicieuses pizzas.
                 </p>
             </div>
@@ -150,25 +150,10 @@ include ('../ajout-panier.php')
                 <h3 class="footer__subtitle">A propos</h3>
                 <ul>
                     <li class="footer__item">
-                        <a href="" class="footer__link">À propos de nous</a>
+                        <a href="#about" class="footer__link">À propos de nous</a>
                     </li>
                     <li class="footer__item">
-                        <a href="" class="footer__link">Nos pizza</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer__data">
-                <h3 class="footer__subtitle">Le Menu</h3>
-                <ul>
-                    <li class="footer__item">
-                        <a href="" class="footer__link">Les pizzas</a>
-                    </li>
-                    <li class="footer__item">
-                        <a href="" class="footer__link">Les boissons</a>
-                    </li>
-                    <li class="footer__item">
-                        <a href="" class="footer__link">Les desserts</a>
+                        <a href="menu.php" class="footer__link">Nos pizza</a>
                     </li>
                 </ul>
             </div>
