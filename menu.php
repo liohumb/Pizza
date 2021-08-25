@@ -8,6 +8,7 @@ require_once "Model/product.model.php";
 
 
 
+
 <!doctype html>
 <html lang=fr>
 <head>
