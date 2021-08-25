@@ -1,3 +1,13 @@
+<?php
+session_start();
+require_once "Model/category.model.php";
+require_once "Model/product.model.php";
+    require_once("../dbcontroller.php");
+    $db_handle= new DBcontroller();
+?>
+
+
+
 <!doctype html>
 <html lang=fr>
 <head>

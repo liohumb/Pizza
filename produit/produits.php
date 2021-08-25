@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once("../dbcontroller.php");
 $db_handle= new DBcontroller();
 if(!empty($_POST["ajoute"])){
