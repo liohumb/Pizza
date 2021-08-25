@@ -1,9 +1,11 @@
 <?php
 session_start();
-require_once "Model/category.model.php";
-require_once "Model/product.model.php";
-    require_once("../dbcontroller.php");
+require_once "models/products.models.php";
+require_once "models/category.model.php";
+    require_once("dbcontroller.php");
     $db_handle= new DBcontroller();
+    $category = $db_handle->runQuery("SELECT * FROM category");
+    $products= $db_handle->runQuery("SELECT * FROM product");
 ?>
 
 
@@ -98,21 +100,30 @@ require_once "Model/product.model.php";
                 </div>
             </div>
         </div>
-
-        <h2 class="section__title menu_pizza">Nos pizzas</h2>
-
-        <div class="discover__container container swiper-container">
-            <div class="swiper-wrapper">
-                <div class="discover__card swiper-slide">
-                    <a href="produit/chevre.php">
-                        <img src="assets/img/discover1.jpg" alt="" class="discover__img">
-                        <div class="discover__data">
-                            <h2 class="discover__title">La chèvre</h2>
+            <?php
+                    foreach($category as $categories){?>
+                    <h2 class="section__title menu_pizza"><?=$categories['name'] ?></h2>
+                        <?phpforeach($products){
+                            ?>
+                        <div class="discover__container container swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="discover__card swiper-slide">
+                                    <a href="produit/produits.php">
+                                        <img src=<?php $products['img_path'] ?> alt="" class="discover__img">
+                                        <div class="discover__data">
+                                            <h2 class="discover__title"><?php $products['name'] ?></h2>
+                                        </div>
+                                    </a>
+                                </div>
+                                </div>
                         </div>
-                    </a>
-                </div>
-
-                <div class="discover__card swiper-slide">
+                                
+                    <?php 
+                        }
+                    } 
+                    ?>
+ 
+                <!-- <div class="discover__card swiper-slide">
                     <a href="produit/quatre.php">
                         <img src="assets/img/discover2.jpg" alt="" class="discover__img">
                         <div class="discover__data">
@@ -135,11 +146,10 @@ require_once "Model/product.model.php";
                             <h2 class="discover__title">La pepperoni </h2>
                         </div>
                     </a>
-                </div>
-            </div>
-        </div>
+                </div> -->
 
-        <h2 class="section__title menu_boisson">Nos boissons</h2>
+
+        <!-- <h2 class="section__title menu_boisson"></h2>
 
         <div class="discover__container container swiper-container">
             <div class="swiper-wrapper">
@@ -181,7 +191,7 @@ require_once "Model/product.model.php";
             </div>
         </div>
 
-        <h2 class="section__title menu_dessert">Nos desserts</h2>
+        <h2 class="section__title menu_dessert"></h2>
 
         <div class="discover__container container swiper-container">
             <div class="swiper-wrapper">
@@ -221,7 +231,7 @@ require_once "Model/product.model.php";
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <h2 class="section__title menu_dessert">Récapitulatif</h2>
     </section>
