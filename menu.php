@@ -79,12 +79,12 @@ require_once "models/category.model.php";
                                 <div class="discover__card swiper-slide">
                         
                             
-                                    <a href="produit/produits.php">
+                                    <div onclick = "window.location='produit/produits.php?id=<?= $produit['id'] ?>'">
                                         <img src="<?= $produit['img_path'] ?>" alt="" class="discover__img"> <!-- recupere la colone ,img_path, dans la table produit present dans la BA qui contient la source de l'image ,le chemin -->
                                         <div class="discover__data">
                                             <h2 class="discover__title"><?= $produit['name'] ?></h2><!-- recupere la colone ,name, de la table produit -->
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                                 
                         
