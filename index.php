@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/info.css">
     <title>Pizza</title>
 </head>
 <body>
@@ -151,7 +150,7 @@
                 </div>
             </div>
         </section>
-        <section class="ftco-section">
+        <section class="card section">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-12">
