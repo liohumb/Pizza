@@ -123,12 +123,23 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                      
 
                         <?php 
-                        }elseif($product[0]['name'] == 'Vin'){?>
+                        }elseif($product[0]['name'] == 'Vin '){?>
                             <span class="list-name">Robe :</span>
                         <select class="taille">
                             <option value="<?= $size[7]['opt'] ?>"><?= $size[7]['opt'] ?></option>
                             <option value="<?= $size[8]['opt'] ?>"><?= $size[8]['opt'] ?></option>
                             <option value="<?= $size[9]['opt'] ?>"><?= $size[9]['opt'] ?></option>
+                        </select>
+                    <?php
+                    }
+                        
+                        elseif($product[0]['name'] == 'Glace'){?>
+                            <span class="list-name">Parfum :</span>
+                        <select class="taille">
+                            <option value="<?= $size[3]['opt'] ?>"><?= $size[3]['opt'] ?></option>
+                            <option value="<?= $size[4]['opt'] ?>"><?= $size[4]['opt'] ?></option>
+                            <option value="<?= $size[5]['opt'] ?>"><?= $size[5]['opt'] ?></option>
+                            <option value="<?= $size[6]['opt'] ?>"><?= $size[6]['opt'] ?></option>
                         </select>
                     <?php
                     }
