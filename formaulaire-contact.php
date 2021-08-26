@@ -45,27 +45,27 @@
     </nav>
 </header>
 
-<section class="contact section">
-    <div>
+<section class="about section" id="about">
+    <h1>Bien le bonjour <?php echo $_POST['nom']?> !</h1>
+    <div class="about__container container grid">
+        <div class="about__data">
+            <h2 class="section__title">Nous avons bien reçu <br>votre message ! </h2>
+            <p class="about__description">Nous vous répondrons dans les plus bref délais à l'adresse : <?php echo $_POST['email'] ?> .
+                <br>En attendant pourquoi pas commander une bonne pizza ?
+                <br><br>À bientôt <?php echo $_POST['nom']?> !
+            </p>
+            <a href="menu.php" class="button" >Découvrir le menu</a>
+        </div>
 
-        <h1>Bien le bonjour <?php echo ?></h1>
-        <h2>Bonjour,  <?php echo $_POST['nom'] ?></h2>
-        <h3>Votre email est : <?php echo $_POST['email'] ?></h3>
+        <div class="about__img">
+            <div class="about__img-overlay">
+                <img src="assets/img/about1.jpg" alt="" class="about__img-one">
+            </div>
 
-        <?php
-        $nom = $_POST['nom'];
-        $mail = $_POST['email'];
-        $msg = $_POST['message'];
-        ?>
-
-        Votre nom est stocké dans la variable <b>$nom</b>
-        dont le type est <i><?php echo gettype($nom) ?></i>
-        <br>
-        Votre email est stocké dans la variable <b>$mail</b> dont le type est <i><?php echo gettype($mail); ?></i>
-        <br/>
-        <br>
-        Votre message est : <?php echo $_POST['message'] ?>
-
+            <div class="about__img-overlay">
+                <img src="assets/img/about2.jpg" alt="" class="about__img-two">
+            </div>
+        </div>
     </div>
 </section>
 

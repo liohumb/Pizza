@@ -50,7 +50,7 @@
         <form action="formaulaire-contact.php" method="post" id="contact_form">
             <div class="name">
                 <label for="name">
-                    <input type="text" placeholder="Votre nom" name="nom" id="name_input" required>
+                    <input type="text" placeholder="Votre premon" name="nom" id="name_input" required>
                 </label>
             </div>
             <div class="email">
