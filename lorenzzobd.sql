@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 25 août 2021 à 13:00
+-- Généré le : mer. 25 août 2021 à 14:26
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.4.9
 
@@ -32,16 +32,17 @@ CREATE TABLE IF NOT EXISTS `category` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `category`
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'Nos Pizzas'),
-(2, 'Nos Boissons'),
-(3, 'Nos Desserts');
+(1, 'Nos Suggestion'),
+(2, 'Nos Pizzas'),
+(3, 'Nos Boissons'),
+(4, 'Nos Dessert');
 
 -- --------------------------------------------------------
 
@@ -144,10 +145,10 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `details` text COLLATE utf8mb4_general_ci NOT NULL,
   `img_path` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `category_id` int NOT NULL,
+  `category_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_product_category` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `produit`
@@ -157,18 +158,19 @@ INSERT INTO `produit` (`id`, `name`, `details`, `img_path`, `category_id`) VALUE
 (1, 'La chorizzo', 'pizza base tomate et chorizzo', 'assets/img/pizza2.jpg', 1),
 (2, 'La poulette', 'pizza au poulet', 'assets/img/pizza3.jpg', 1),
 (3, 'La pizza enfant ', 'taille unique pizza classique jambon formage', 'assets/img/pizza4.jpg', 1),
-(4, 'La chèvre', 'pizza au chevre', 'assets/img/discover1.jpg', 1),
-(5, 'La 4 fromages', '', 'assets/img/discover2.jpg', 1),
-(6, 'La Mozza', 'Pizza tomate mozza', 'assets/img/discover3.jpg', 1),
-(7, 'La pepperoni', 'pizza tomate pepperoni', 'assets/img/discover4.jpg', 1),
-(8, 'Schweppes', 'Boisson fraiche gazeuse', 'assets/img/drink1.jpg', 2),
-(9, 'Carlsberg', 'La ptite binouze', 'assets/img/drink2.jpg', 2),
-(10, 'Coca-Cola', 'Coca-Cola rouge', 'assets/img/drink3.jpg', 2),
-(11, 'Vin ', 'vin blanc , rouge ou rosé', 'assets/img/drink4.jpg', 2),
-(12, 'Tiramisu', '', 'assets/img/sweet1.jpg', 3),
-(13, 'Cookie', '', 'assets/img/sweet2.jpg', 3),
-(14, 'Glace', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet3.jpg', 3),
-(15, 'Muffins', '', 'assets/img/sweet4.jpg', 3);
+(4, 'La chèvre', 'pizza au chevre', 'assets/img/discover1.jpg', 2),
+(5, 'La 4 fromages', '', 'assets/img/discover2.jpg', 2),
+(6, 'La Mozza', 'Pizza tomate mozza', 'assets/img/discover3.jpg', 2),
+(7, 'La pepperoni', 'pizza tomate pepperoni', 'assets/img/discover4.jpg', 2),
+(8, 'Schweppes', 'Boisson fraiche gazeuse', 'assets/img/drink1.jpg', 3),
+(9, 'Carlsberg', 'La ptite binouze', 'assets/img/drink2.jpg', 3),
+(10, 'Coca-Cola', 'Coca-Cola rouge', 'assets/img/drink3.jpg', 3),
+(11, 'Vin ', 'vin blanc , rouge ou rosé', 'assets/img/drink4.jpg', 3),
+(12, 'Tiramisu', '', 'assets/img/sweet1.jpg', 4),
+(13, 'Cookie', '', 'assets/img/sweet2.jpg', 4),
+(14, 'Glace', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet3.jpg', 4),
+(15, 'Muffins', '', 'assets/img/sweet4.jpg', 4),
+(18, 'Nos pizza fait maison', '', 'assets/img/pizza1.jpg', 1);
 
 --
 -- Contraintes pour les tables déchargées

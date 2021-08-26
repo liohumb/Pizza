@@ -44,45 +44,28 @@
         </div>
     </nav>
 </header>
+
 <section class="contact section">
-    <div id="container">
-        <h1>Dites nous tout !</h1>
-        <form action="formaulaire-contact.php" method="post" id="contact_form">
-            <div class="name">
-                <label for="name">
-                    <input type="text" placeholder="Votre nom" name="nom" id="name_input" required>
-                </label>
-            </div>
-            <div class="email">
-                <label for="mail">
-                    <input type="email" placeholder="Votre email" name="email" id="email_input" required>
-                </label>
-            </div>
-            <div class="telephone">
-                <label for="phone">
-                    <input type="text" placeholder="Votre numéro de téléphone" name="telephone" id="telephone_input" required>
-                </label>
-            </div>
-            <div class="subject">
-                <label for="subject">
-                    <select placeholder="Subject line" name="subject" id="subject_input">
-                        <option disabled hidden selected>Selectionnez l'objet de votre message</option>
-                        <option>Je souhaite avoir des informtions sur les pizzas</option>
-                        <option>J'ai un soucis avec ma commande</option>
-                        <option>Je n'arrive pas à passer commande</option>
-                        <option>Je veux juste faire blabla :)</option>
-                    </select>
-                </label>
-            </div>
-            <div class="message">
-                <label for="message">
-                    <textarea name="message" placeholder="Je suis toute ouïe" id="message_input" cols="30" rows="5" required></textarea>
-                </label>
-            </div>
-            <div>
-                <input type="submit" value="Envoyer" class="button" />
-            </div>
-        </form>
+    <div>
+
+        <h1>Bien le bonjour <?php echo ?></h1>
+        <h2>Bonjour,  <?php echo $_POST['nom'] ?></h2>
+        <h3>Votre email est : <?php echo $_POST['email'] ?></h3>
+
+        <?php
+        $nom = $_POST['nom'];
+        $mail = $_POST['email'];
+        $msg = $_POST['message'];
+        ?>
+
+        Votre nom est stocké dans la variable <b>$nom</b>
+        dont le type est <i><?php echo gettype($nom) ?></i>
+        <br>
+        Votre email est stocké dans la variable <b>$mail</b> dont le type est <i><?php echo gettype($mail); ?></i>
+        <br/>
+        <br>
+        Votre message est : <?php echo $_POST['message'] ?>
+
     </div>
 </section>
 
