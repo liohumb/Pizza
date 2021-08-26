@@ -54,7 +54,6 @@
                 <br>En attendant pourquoi pas commander une bonne pizza ?
                 <br><br>À bientôt <?php echo $_POST['nom']?> !
             </p>
-            <a href="menu.php" class="button" >Découvrir le menu</a>
         </div>
 
         <div class="about__img">
@@ -66,6 +65,10 @@
                 <img src="assets/img/about2.jpg" alt="" class="about__img-two">
             </div>
         </div>
+    </div>
+
+    <div class="btn-choix">
+        <a href="menu.php" class="button" >Découvrir le menu</a>
     </div>
 </section>
 

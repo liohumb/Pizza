@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/connexion.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/inscription.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Pizza</title>
 </head>
@@ -44,22 +45,29 @@
         </div>
     </nav>
 </header>
-<section class="contact section">
-    <div id="container">
-        <h1>Bienvenue !</h1>
-        <form action="#" method="post" id="connexion_form">
-            <div class="email">
-                <label for="name"></label>
-                <input type="email" placeholder="Votre adresse email" name="name" id="mail_input" required>
+
+<section class="about section" id="about">
+    <h1>Bien le bonjour <?php echo $_POST['prenom']?> !</h1>
+    <div class="about__container container grid">
+        <div class="about__data">
+            <h2 class="section__title">Vous voilà devenu <br> notre client préféré !</h2>
+            <p class="about__description">C'est l'heure de passer votre première commande ! <br>
+                Vos identifant de connexion sont votre email (<?php echo $_POST['email']?>) et votre mot de passe.
+            </p>
+        </div>
+
+        <div class="about__img">
+            <div class="about__img-overlay">
+                <img src="assets/img/about1.jpg" alt="" class="about__img-one">
             </div>
-            <div class="mdp">
-                <label for="name"></label>
-                <input type="password" placeholder="Votre mot de passe" name="name" id="mdp_input" required>
+
+            <div class="about__img-overlay">
+                <img src="assets/img/about2.jpg" alt="" class="about__img-two">
             </div>
-            <div>
-                <input type="submit" value="Connexion" class="button" />
-            </div>
-        </form>
+        </div>
+    </div>
+    <div class="btn-choix">
+        <a href="connexion.php" class="button" >Connectez vous</a>
     </div>
 </section>
 

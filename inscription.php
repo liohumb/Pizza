@@ -47,42 +47,67 @@
 <section class="contact section">
     <div id="container">
         <h1>Ravi de vous rencontrer !</h1>
-        <form action="#" method="post" id="contact_form">
-            <div class="nom">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre nom" name="name" id="name_input" required>
-            </div>
+        <form action="formulaire-inscription.php" method="post" id="contact_form">
             <div class="prenom">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre prenom" name="name" id="name_input" required>
+                <label for="first_name">
+                    <input type="text" placeholder="Votre prenom" name="prenom" required>
+                </label>
             </div>
-            <div class="addresse">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre adresse de livraison" name="name" id="name_input" required>
+            <div class="nom">
+                <label for="last_name">
+                <input type="text" placeholder="Votre nom" name="nom" required>
+                </label>
             </div>
-            <div class="cmpt-adresse">
-                <label for="name"></label>
-                <input type="text" placeholder="Complément adresse" name="name" id="name_input" required>
+            <div class="adresse">
+                <label for="address">
+                <input type="text" placeholder="Votre adresse de livraison" name="adresse" required>
+                </label>
+            </div>
+            <div class="cpt-adresse">
+                <label for="cpt_address">
+                <input type="text" placeholder="Complément adresse" name="cpt-adresse">
+                </label>
             </div>
             <div class="cp">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre code postal" name="name" id="name_input" required>
+                <label for="post_code">
+                <input type="text" id="cp" placeholder="Votre code postal" name="cp" required>
+                </label>
             </div>
             <div class="ville">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre ville" name="name" id="name_input" required>
+                <label for="city">
+                <input type="text" id="ville" placeholder="Votre ville" name="ville" required>
+                </label>
+            </div>
+            <ul>
+                <li data-vicopo="#ville, #cp" data-vicopo-click='{"#cp": "code", "#ville": "ville"}'>
+                    <strong data-vicopo-code-postal></strong>
+                    <span data-vicopo-ville></span>
+                </li>
+            </ul>
+            <div class="phone">
+                <label for="phone">
+                <input type="tel" placeholder="Votre numéro de téléphone" name="telephone" required>
+                </label>
             </div>
             <div class="email">
-                <label for="email"></label>
-                <input type="email" placeholder="Votre email" name="email" id="email_input" required>
+                <label for="email">
+                <input name="email" type="text" id="email" placeholder="Votre email" required>
+                </label>
+            </div>
+            <div class="email">
+                <label for="conf-email">
+                <input name="emailConfirm" type="text" id="confemail" onblur="confirmEmail()" placeholder="Confirmez votre email" required>
+                </label>
             </div>
             <div class="mdp">
-                <label for="name"></label>
-                <input type="text" placeholder="Votre mot de passe" name="telephone" id="telephone_input" required>
+                <label for="password">
+                <input type="password" id="password" placeholder="Votre mot de passe" name="mdp" required>
+                </label>
             </div>
             <div class="mdp">
-                <label for="name"></label>
-                <input type="text" placeholder="Confirmez votre mot de passe" name="telephone" id="telephone_input" required>
+                <label for="conf_password">
+                <input type="password" id="confirm_password" placeholder="Confirmez votre mot de passe" name="conf-mdp" required>
+                </label>
             </div>
             <div>
                 <input type="submit" class="button" value="S'inscrire"/>
@@ -120,6 +145,8 @@
 </footer>
 <script src="assets/js/scrollreveal.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="assets/js/vicopo.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
