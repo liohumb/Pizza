@@ -237,3 +237,11 @@ textarea {
         font-size: 0.875em;
     }
 }
+
+.about {
+    margin-top: 4rem;
+}
+
+.about__container {
+    margin-top: 7rem;
+}

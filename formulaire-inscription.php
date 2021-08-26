@@ -4,30 +4,32 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/inscription.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav__menu-page" id="header">
+<header class="header nav_menu-page" id="header">
     <nav class="nav container">
         <a href="index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li>
+                <li class="nav__item">
                     <a href="menu.php" class="nav__link">Le menu</a>
                 </li>
-                <li>
+                <li class="nav__item">
                     <a href="contact.php" class="nav__link">Nous contacter</a>
                 </li>
-                <li>
+                <li class="nav__item">
                     <a href="inscription.php" class="btn-conn">Inscription</a>
                     |
                     <a href="connexion.php" class="btn-conn">Connexion</a>
                     <!--
-                    <a href="" class="btn-conn">Mon compte</a>
+                    <a href="mon-compte.php" class="btn-conn">Mon compte</a>
                     |
-                    <a href="" class="btn-conn">Déconnexion</a>
+                    <a href="index.php" class="btn-conn">Déconnexion</a>
                     -->
                 </li>
             </ul>
@@ -36,52 +38,36 @@
         </div>
 
 
-        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
+        <a href="panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
         </div>
     </nav>
 </header>
-<section class="form__contact section">
-    <div class="container">
-        <h1 class="form__contact-title">Dites nous tout !</h1>
-        <form action="formulaire-contact.php" method="post" id="contact_form">
-            <div class="form__contact-name">
-                <label for="name">
-                    <input type="text" placeholder="Votre premon" name="nom" id="name_input" required>
-                </label>
+
+<section class="about section" id="about">
+    <h1>Bien le bonjour <?php echo $_POST['prenom']?> !</h1>
+    <div class="about__container container grid">
+        <div class="about__data">
+            <h2 class="section__title">Vous voilà devenu <br> notre client préféré !</h2>
+            <p class="about__description">C'est l'heure de passer votre première commande ! <br>
+                Vos identifant de connexion sont votre email (<?php echo $_POST['email']?>) et votre mot de passe.
+            </p>
+        </div>
+
+        <div class="about__img">
+            <div class="about__img-overlay">
+                <img src="assets/img/about1.jpg" alt="" class="about__img-one">
             </div>
-            <div class="form__contact-email">
-                <label for="mail">
-                    <input type="email" placeholder="Votre email" name="email" id="email_input" required>
-                </label>
+
+            <div class="about__img-overlay">
+                <img src="assets/img/about2.jpg" alt="" class="about__img-two">
             </div>
-            <div class="form__contact-phone">
-                <label for="phone">
-                    <input type="text" placeholder="Votre numéro de téléphone" name="telephone" id="telephone_input" required>
-                </label>
-            </div>
-            <div class="form__contact-subject">
-                <label for="subject">
-                    <select placeholder="Subject line" name="subject" id="subject_input">
-                        <option disabled hidden selected>Selectionnez l'objet de votre message</option>
-                        <option>Je souhaite avoir des informtions sur les pizzas</option>
-                        <option>J'ai un soucis avec ma commande</option>
-                        <option>Je n'arrive pas à passer commande</option>
-                        <option>Je veux juste faire blabla :)</option>
-                    </select>
-                </label>
-            </div>
-            <div class="form__contact-message">
-                <label for="message">
-                    <textarea name="message" placeholder="Je suis toute ouïe" id="message_input" cols="30" rows="5" required></textarea>
-                </label>
-            </div>
-            <div>
-                <input type="submit" value="Envoyer" class="button" />
-            </div>
-        </form>
+        </div>
+    </div>
+    <div class="btn-choix">
+        <a href="connexion.php" class="button" >Connectez vous</a>
     </div>
 </section>
 

@@ -100,7 +100,7 @@ h1 {
     text-transform: uppercase;
 }
 
-input[type='text'], [type='email'], select, textarea {
+input[type='text'], [type='email'], [type='password'], [type='tel'], select, textarea {
     background: none;
     border: none;
     border-bottom: solid 2px var(--first-color);
@@ -123,17 +123,18 @@ input[type='text'], [type='email'], select, textarea {
     transition: all 0.3s;
 }
 
-input[type='text']:focus, [type='email']:focus, textarea:focus {
+input[type='text']:focus, [type='email']:focus, [type='password']:focus, [type='tel']:focus,
+textarea:focus {
     outline: none;
     padding: 0 0 0.875em 0;
 }
 
-.nom {
+.prenom {
     float: left;
     width: 49%;
 }
 
-.prenom {
+.nom {
     float: right;
     width: 49%;
 }
@@ -261,4 +262,10 @@ textarea {
     opacity: 0;
     position: absolute;
     z-index: -1;
+}
+
+.btn-choix {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
 }

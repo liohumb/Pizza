@@ -77,11 +77,11 @@
                     <option>Les desserts</option>
                 </select>
             </div>
-            <div class="nom">
+            <div class="prenom">
                 <label for="name"></label>
                 <input type="text" placeholder="Nom du produit" name="name" id="name_input" required>
             </div>
-            <div class="prenom">
+            <div class="nom">
                 <label for="subject"></label>
                 <select placeholder="Subject line" name="subject" id="subject_input" required>
                     <option disabled hidden selected>Choisissez une option</option>
