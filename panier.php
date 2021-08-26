@@ -93,7 +93,7 @@ if(!empty($_GET["action"])) {
                         <li>
                             <span class="list-name">Quantité :</span>
                             <a href="" class="list-name"><i class="uil uil-minus"></i></a>
-                            <span class="list-name"><?php echo $item["quantity"]; ?></span>
+                            <span class="list-name"><?php echo $item["quantity"]; ?></span> <!-- recupere la quantité choicie qui a pour nom quantity -->
                             <a href="" class="list-name"><i class="uil uil-plus"></i></a>
 
                         </li>

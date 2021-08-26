@@ -1,10 +1,11 @@
 <?php
+session_start();
 require_once("../dbcontroller.php");
 $db_handle= new DBcontroller();
 if(!empty($_POST["ajoute"])){
 
     if(!empty($_POST["quantity"])){
-        $produitById = $db_handle->runQuery("SELECT * FROM product WHERE id='" . $_POST["id"] . "'");
+        $produitById = $db_handle->runQuery("SELECT * FROM produit WHERE id='" . $_POST["id"] . "'");
         $itemArray = array($produitById[0]["id"]=>array('name'=>$produitById[0]["name"], 'id'=>$produitById[0]["id"], 'quantity'=>$_POST["quantity"],'price'=>$produitById[0]["price"], 'image'=>$produitById[0]["image"]));
 
         if(!empty($_SESSION["Panier_item"])){
@@ -28,6 +29,10 @@ if(!empty($_POST["ajoute"])){
         }
     }
 }
+$id=$_GET['id'] ?? 1;
+$product = $db_handle->runQuery("SELECT * FROM produit WHERE id=$id");
+$price = $db_handle->runQuery("SELECT * FROM price WHERE produit_id=$id");
+$size =$db_handle->runQuery("SELECT * FROM option_product");
 ?>
 
 
@@ -85,22 +90,60 @@ if(!empty($_POST["ajoute"])){
 
             <div class="about__img">
                 <div class="about__img-overlay">
-                    <img src="../assets/img/pizza3.jpg" alt="" class="about__img-two">
+                    <img src="../<?= $product[0]['img_path'] ?>" alt="" class="about__img-two">
                 </div>
             </div>
             <form method="post" action="">
             <div class="contact__data">
-                <h1 class="product-name">La Pizza Mozza</h1>
-                <h2 class="product-price">12€50</h2>
-                <h3 class="product-slogan">Description résumée de la pizza sélectionné</h3>
+                <h1 class="product-name"><?= $product[0]['name'] ?></h1>
+                <h2 class="product-price"><?= $price[0]['price'] ." €"?></h2>
+                <h3 class="product-slogan"><?= $product[0]['details'] ?></h3>
                 <ul class="preferences">
                     <li>
+                        <?php
+                        if ($product[0]['category_id']== 1 ||$product[0]['category_id']== 2){
+                            ?>
+                        
                         <span class="list-name">Taille (en cm) :</span>
                         <select class="taille">
-                            <option>24</option>
-                            <option>36</option>
-                            <option>42</option>
+                            <option value="<?= $size[0]['opt'] ?>"><?= $size[0]['opt'] ?></option>
+                            <option value="<?= $size[1]['opt'] ?>"><?= $size[1]['opt'] ?></option>
+                            <option value="<?= $size[2]['opt'] ?>"><?= $size[2]['opt'] ?></option>
                         </select>
+                        <?php
+                    }
+                     elseif($product[0]['category_id']== 3 && ($product[0]['name'] !='Vin ')){
+                         ?>
+                              <span class="list-name">Taille (en cl) :</span>
+                        <select class="taille">
+                            <option value="<?= $size[10]['opt'] ?>"><?= $size[10]['opt'] ?></option>
+                            <option value="<?= $size[11]['opt'] ?>"><?= $size[11]['opt'] ?></option>
+                        
+                        </select>
+                     
+
+                        <?php 
+                        }elseif($product[0]['name'] == 'Vin '){?>
+                            <span class="list-name">Robe :</span>
+                        <select class="taille">
+                            <option value="<?= $size[7]['opt'] ?>"><?= $size[7]['opt'] ?></option>
+                            <option value="<?= $size[8]['opt'] ?>"><?= $size[8]['opt'] ?></option>
+                            <option value="<?= $size[9]['opt'] ?>"><?= $size[9]['opt'] ?></option>
+                        </select>
+                    <?php
+                    }
+                        
+                        elseif($product[0]['name'] == 'Glace'){?>
+                            <span class="list-name">Parfum :</span>
+                        <select class="taille">
+                            <option value="<?= $size[3]['opt'] ?>"><?= $size[3]['opt'] ?></option>
+                            <option value="<?= $size[4]['opt'] ?>"><?= $size[4]['opt'] ?></option>
+                            <option value="<?= $size[5]['opt'] ?>"><?= $size[5]['opt'] ?></option>
+                            <option value="<?= $size[6]['opt'] ?>"><?= $size[6]['opt'] ?></option>
+                        </select>
+                    <?php
+                    }
+                        ?>
                     </li>
                     <li>
                         <span class="list-name">Quantité :</span>
@@ -116,7 +159,7 @@ if(!empty($_POST["ajoute"])){
             </div>
         </div>
         <div class="btn-choix">
-            <a href="../menu.html" class="button btn-ret-aj">Retour au menu</a>
+            <a href="../menu.php" class="button btn-ret-aj">Retour au menu</a>
          
              <input type="hidden" name="id" value ="">
             <input type ="submit" name="ajoute" class="button btn-ret-aj" value="Ajouter au panier"></input>
