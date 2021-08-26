@@ -5,23 +5,23 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/infos.css">
+    <link rel="stylesheet" href="assets/css/info.css">
     <title>Pizza</title>
 </head>
 <body>
-    <header class="header nav_menu-page" id="header">
+    <header class="header nav__menu-page" id="header">
         <nav class="nav container">
             <a href="index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item">
+                    <li>
                         <a href="menu.php" class="nav__link">Le menu</a>
                     </li>
-                    <li class="nav__item">
+                    <li>
                         <a href="contact.php" class="nav__link">Nous contacter</a>
                     </li>
-                    <li class="nav__item">
+                    <li>
                         <a href="inscription.php" class="btn-conn">Inscription</a>
                         |
                         <a href="connexion.php" class="btn-conn">Connexion</a>
@@ -37,7 +37,7 @@
             </div>
 
 
-            <a href="panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+            <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
 
             <div class="nav__toggle" id="nav-toggle">
                 <i class="uil uil-bars"></i>
@@ -95,7 +95,7 @@
             <div class="discover__container container swiper-container">
                 <div class="swiper-wrapper">
                     <div class="discover__card swiper-slide">
-                        <a href="produit/chevre.php">
+                        <a href="menu.php">
                             <img src="assets/img/discover1.jpg" alt="" class="discover__img">
                             <div class="discover__data">
                                 <h2 class="discover__title">La chèvre</h2>
@@ -104,7 +104,7 @@
                     </div>
 
                     <div class="discover__card swiper-slide">
-                        <a href="produit/quatre.php">
+                        <a href="menu.php">
                             <img src="assets/img/discover2.jpg" alt="" class="discover__img">
                             <div class="discover__data">
                                 <h2 class="discover__title">La 4 fromages</h2>
@@ -113,7 +113,7 @@
                     </div>
 
                     <div class="discover__card swiper-slide">
-                        <a href="produit/mozza.php">
+                        <a href="menu.php">
                             <img src="assets/img/discover3.jpg" alt="" class="discover__img">
                             <div class="discover__data">
                                 <h2 class="discover__title">La Mozza</h2>
@@ -122,7 +122,7 @@
                     </div>
 
                     <div class="discover__card swiper-slide">
-                        <a href="produit/pepperoni.php">
+                        <a href="menu.php">
                             <img src="assets/img/discover4.jpg" alt="" class="discover__img">
                             <div class="discover__data">
                                 <h2 class="discover__title">La pepperoni </h2>
@@ -132,19 +132,19 @@
                 </div>
             </div>
         </section>
-        <section class="about section">
-            <div class="about__container container grid">
+        <section class="contact section">
+            <div class="contact__container container grid">
 
-                <div class="about__img">
+                <div class="contact__img">
 
-                    <div class="about__img-overlay">
+                    <div class="contact__img-overlay">
                         <img src="assets/img/contact2.jpg" alt="" class="about__img-two">
                     </div>
                 </div>
 
                 <div class="contact__data">
                     <h2 class="section__title">On reste en contact ?</h2>
-                    <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    <p class="contact__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     <a href="contact.php" class="button">Contactez nous</a>
@@ -274,7 +274,7 @@
     <footer class="footer section">
         <div class="footer__container container grid">
             <div class="footer__content grid">
-                <div class="footer__data">
+                <div>
                     <h3 class="footer__title">LORENZZO'S PIZZA</h3>
                     <p class="footer__description">Venez manger de <br> délicieuses pizzas.
                     </p>
