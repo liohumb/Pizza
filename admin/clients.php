@@ -58,7 +58,7 @@
                 <h3 class="product-slogan">Nombre de message (non-lu) : ##</h3>
             </div>
         </div>
-        <div class="btn-choix">
+        <div class="btn-back">
             <a href="admin.php" class="button btn-ret-aj">Retour Acceuil</a>
         </div>
     </section>

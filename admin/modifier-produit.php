@@ -69,7 +69,7 @@
                     <span>• › <a href="#boissons">Les Boissons</a></span> <br>
                     <span>• › <a href="#desserts">Les Desserts</a></span></div>
             </div>
-            <div class="btn-choix">
+            <div class="btn-back">
                 <a href="admin.php" class="button btn-ret-aj">Retour Acceuil</a>
             </div>
         </div>
@@ -77,7 +77,7 @@
     <section>
         <div class="container grid categories" id="suggestions">
             <h2 class="section__title menu_boisson">Les Suggestions</h2>
-            <input type="submit" class="button btn-add" value="ajouter">
+            <a href="ajouter.php" class="button btn-add">ajouter</a>
 
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0">
@@ -136,7 +136,7 @@
 
         <div class="container grid categories" id="pizzas">
             <h2 class="section__title menu_boisson">Les Pizzas</h2>
-            <input type="submit" class="button btn-add" value="ajouter">
+            <a href="ajouter.php" class="button btn-add">ajouter</a>
 
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0">
@@ -206,7 +206,7 @@
 
         <div class="container grid categories" id="boissons">
             <h2 class="section__title menu_boisson">Les Boissons</h2>
-            <input type="submit" class="button btn-add" value="ajouter">
+            <a href="ajouter.php" class="button btn-add">ajouter</a>
 
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0">
@@ -276,7 +276,7 @@
 
         <div class="container grid categories" id="desserts">
             <h2 class="section__title menu_boisson">Les Desserts</h2>
-            <input type="submit" class="button btn-add" value="ajouter">
+            <a href="ajouter.php" class="button btn-add">ajouter</a>
 
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0">

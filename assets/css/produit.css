@@ -103,10 +103,21 @@
     margin-right: 1rem;
 }
 
+.mini__menu {
+    margin-top: 3rem;
+}
+
 .btn-choix {
     display: flex;
     justify-content: center;
 }
+
+.btn-back {
+    display: flex;
+    justify-content: end;
+    margin-right: 7rem;
+}
+
 .btn-ret-aj {
     margin-top: 4rem;
     margin-right: 1rem;
