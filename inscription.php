@@ -4,31 +4,30 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/inscription.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav_menu-page" id="header">
+<header class="header nav__menu-page" id="header">
     <nav class="nav container">
         <a href="index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item">
+                <li>
                     <a href="menu.php" class="nav__link">Le menu</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="contact.php" class="nav__link">Nous contacter</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="inscription.php" class="btn-conn">Inscription</a>
                     |
                     <a href="connexion.php" class="btn-conn">Connexion</a>
                     <!--
-                    <a href="mon-compte.php" class="btn-conn">Mon compte</a>
+                    <a href="" class="btn-conn">Mon compte</a>
                     |
-                    <a href="index.php" class="btn-conn">Déconnexion</a>
+                    <a href="" class="btn-conn">Déconnexion</a>
                     -->
                 </li>
             </ul>
@@ -37,74 +36,74 @@
         </div>
 
 
-        <a href="panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
         </div>
     </nav>
 </header>
-<section class="contact section">
-    <div id="container">
-        <h1>Ravi de vous rencontrer !</h1>
+<section class="subscribe section">
+    <div id="subscribe__container">
+        <h1 class="subscribe__title">Ravi de vous rencontrer !</h1>
         <form action="formulaire-inscription.php" method="post" id="contact_form">
-            <div class="prenom">
+            <div class="subscribe__form-firstName">
                 <label for="first_name">
                     <input type="text" placeholder="Votre prenom" name="prenom" required>
                 </label>
             </div>
-            <div class="nom">
+            <div class="subscribe__form-lastName">
                 <label for="last_name">
                 <input type="text" placeholder="Votre nom" name="nom" required>
                 </label>
             </div>
-            <div class="adresse">
+            <div class="subscribe__form-address">
                 <label for="address">
                 <input type="text" placeholder="Votre adresse de livraison" name="adresse" required>
                 </label>
             </div>
-            <div class="cpt-adresse">
+            <div class="subscribe__form-cptAddress">
                 <label for="cpt_address">
                 <input type="text" placeholder="Complément adresse" name="cpt-adresse">
                 </label>
             </div>
-            <div class="cp">
+            <div class="subscribe__form-postCode">
                 <label for="post_code">
-                <input type="text" id="cp" placeholder="Votre code postal" name="cp" required>
+                <input type="text" id="post_code" placeholder="Votre code postal" name="cp" required>
                 </label>
             </div>
-            <div class="ville">
+            <div class="subscribe__form-city">
                 <label for="city">
-                <input type="text" id="ville" placeholder="Votre ville" name="ville" required>
+                <input type="text" id="city" placeholder="Votre ville" name="ville" required>
                 </label>
             </div>
             <ul>
-                <li data-vicopo="#ville, #cp" data-vicopo-click='{"#cp": "code", "#ville": "ville"}'>
+                <li data-vicopo="#city, #post_code" data-vicopo-click='{"#post_code": "code", "#city": "ville"}'>
                     <strong data-vicopo-code-postal></strong>
                     <span data-vicopo-ville></span>
                 </li>
             </ul>
-            <div class="phone">
+            <div class="subscribe__form-phone">
                 <label for="phone">
                 <input type="tel" placeholder="Votre numéro de téléphone" name="telephone" required>
                 </label>
             </div>
-            <div class="email">
+            <div class="subscribe__form-email">
                 <label for="email">
                 <input name="email" type="text" id="email" placeholder="Votre email" required>
                 </label>
             </div>
-            <div class="email">
+            <div class="subscribe__form-confEmail">
                 <label for="conf-email">
                 <input name="emailConfirm" type="text" id="confemail" onblur="confirmEmail()" placeholder="Confirmez votre email" required>
                 </label>
             </div>
-            <div class="mdp">
+            <div class="subscribe__form-password">
                 <label for="password">
                 <input type="password" id="password" placeholder="Votre mot de passe" name="mdp" required>
                 </label>
             </div>
-            <div class="mdp">
+            <div class="subscribe__form-confPassword">
                 <label for="conf_password">
                 <input type="password" id="confirm_password" placeholder="Confirmez votre mot de passe" name="conf-mdp" required>
                 </label>

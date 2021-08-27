@@ -9,26 +9,26 @@
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav_menu-page" id="header">
+<header class="header nav__menu-page" id="header">
     <nav class="nav container">
         <a href="index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item">
+                <li>
                     <a href="menu.php" class="nav__link">Le menu</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="contact.php" class="nav__link">Nous contacter</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="inscription.php" class="btn-conn">Inscription</a>
                     |
                     <a href="connexion.php" class="btn-conn">Connexion</a>
                     <!--
-                    <a href="mon-compte.php" class="btn-conn">Mon compte</a>
+                    <a href="" class="btn-conn">Mon compte</a>
                     |
-                    <a href="index.php" class="btn-conn">Déconnexion</a>
+                    <a href="" class="btn-conn">Déconnexion</a>
                     -->
                 </li>
             </ul>
@@ -37,14 +37,14 @@
         </div>
 
 
-        <a href="panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
         </div>
     </nav>
 </header>
-<section class="contact section">
+<section class="form__account section">
     <div id="container">
         <h1>Quoi de neuf ?</h1>
         <form action="#" method="post" id="contact_form">

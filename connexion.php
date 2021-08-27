@@ -4,31 +4,30 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/connexion.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav_menu-page" id="header">
+<header class="header nav__menu-page" id="header">
     <nav class="nav container">
         <a href="index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item">
+                <li>
                     <a href="menu.php" class="nav__link">Le menu</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="contact.php" class="nav__link">Nous contacter</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="inscription.php" class="btn-conn">Inscription</a>
                     |
                     <a href="connexion.php" class="btn-conn">Connexion</a>
                     <!--
-                    <a href="mon-compte.php" class="btn-conn">Mon compte</a>
+                    <a href="" class="btn-conn">Mon compte</a>
                     |
-                    <a href="index.php" class="btn-conn">Déconnexion</a>
+                    <a href="" class="btn-conn">Déconnexion</a>
                     -->
                 </li>
             </ul>
@@ -37,24 +36,24 @@
         </div>
 
 
-        <a href="panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
         </div>
     </nav>
 </header>
-<section class="contact section">
+<section class="connexion__section section">
     <div id="container">
-        <h1>Bienvenue !</h1>
+        <h1 class="connexion__form-title">Bienvenue !</h1>
         <form action="#" method="post" id="connexion_form">
-            <div class="email">
-                <label for="name"></label>
-                <input type="email" placeholder="Votre adresse email" name="name" id="mail_input" required>
+            <div class="connexion__form-email">
+                <label for="email"></label>
+                <input type="email" placeholder="Votre adresse email" name="email" id="mail_input" required>
             </div>
-            <div class="mdp">
-                <label for="name"></label>
-                <input type="password" placeholder="Votre mot de passe" name="name" id="mdp_input" required>
+            <div class="connexion__form-password">
+                <label for="password"></label>
+                <input type="password" placeholder="Votre mot de passe" name="password" id="mdp_input" required>
             </div>
             <div>
                 <input type="submit" value="Connexion" class="button" />

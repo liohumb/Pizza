@@ -4,31 +4,30 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/inscription.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav_menu-page" id="header">
+<header class="header nav__menu-page" id="header">
     <nav class="nav container">
         <a href="index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item">
+                <li>
                     <a href="menu.php" class="nav__link">Le menu</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="contact.php" class="nav__link">Nous contacter</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="inscription.php" class="btn-conn">Inscription</a>
                     |
                     <a href="connexion.php" class="btn-conn">Connexion</a>
                     <!--
-                    <a href="mon-compte.php" class="btn-conn">Mon compte</a>
+                    <a href="" class="btn-conn">Mon compte</a>
                     |
-                    <a href="index.php" class="btn-conn">Déconnexion</a>
+                    <a href="" class="btn-conn">Déconnexion</a>
                     -->
                 </li>
             </ul>
@@ -37,31 +36,31 @@
         </div>
 
 
-        <a href="panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
         </div>
     </nav>
 </header>
-<section class="contact section">
-    <div id="container">
-        <h1>Sécurité avant tout !</h1>
+<section class="form__password section">
+    <div class="form__password-container container grid">
+        <h1 class="form__password-title">Sécurité avant tout !</h1>
         <form action="#" method="post" id="contact_form">
-            <div class="mdp">
+            <div class="form__password-oldPassword">
                 <label for="name"></label>
                 <input type="text" placeholder="Votre ancien mot de passe" name="telephone" id="telephone_input" required>
             </div>
-            <div class="mdp">
+            <div class="form__password-newPassword">
                 <label for="name"></label>
                 <input type="text" placeholder="Votre nouveau mot de passe" name="telephone" id="telephone_input" required>
             </div>
-            <div class="mdp">
+            <div class="form__password-confNewPassword">
                 <label for="name"></label>
                 <input type="text" placeholder="Confirmez votre nouveau mot de passe" name="telephone" id="telephone_input" required>
             </div>
-            <div class="submit">
-                <input type="submit" value="Modifier mon mot de passe" id="form_button" />
+            <div>
+                <input type="submit" value="Modifier mon mot de passe" class="button"/>
                 <a href="mon-compte.php" class="button">Retour à mon compte</a>
             </div>
         </form>

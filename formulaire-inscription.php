@@ -4,32 +4,30 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/contact.css">
-    <link rel="stylesheet" href="assets/css/inscription.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav_menu-page" id="header">
+<header class="header nav__menu-page" id="header">
     <nav class="nav container">
         <a href="index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item">
+                <li>
                     <a href="menu.php" class="nav__link">Le menu</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="contact.php" class="nav__link">Nous contacter</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="inscription.php" class="btn-conn">Inscription</a>
                     |
                     <a href="connexion.php" class="btn-conn">Connexion</a>
                     <!--
-                    <a href="mon-compte.php" class="btn-conn">Mon compte</a>
+                    <a href="" class="btn-conn">Mon compte</a>
                     |
-                    <a href="index.php" class="btn-conn">Déconnexion</a>
+                    <a href="" class="btn-conn">Déconnexion</a>
                     -->
                 </li>
             </ul>
@@ -38,7 +36,7 @@
         </div>
 
 
-        <a href="panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
@@ -46,27 +44,27 @@
     </nav>
 </header>
 
-<section class="about section" id="about">
-    <h1>Bien le bonjour <?php echo $_POST['prenom']?> !</h1>
-    <div class="about__container container grid">
-        <div class="about__data">
+<section class="form__subscribe section">
+    <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['prenom']?> !</h1>
+    <div class="form__subscribe-container container grid">
+        <div class="form__subscribe-data">
             <h2 class="section__title">Vous voilà devenu <br> notre client préféré !</h2>
-            <p class="about__description">C'est l'heure de passer votre première commande ! <br>
+            <p class="form__subscribe-description">C'est l'heure de passer votre première commande! <br>
                 Vos identifant de connexion sont votre email (<?php echo $_POST['email']?>) et votre mot de passe.
             </p>
         </div>
 
-        <div class="about__img">
-            <div class="about__img-overlay">
-                <img src="assets/img/about1.jpg" alt="" class="about__img-one">
+        <div class="form__subscribe-img">
+            <div class="form__subscribe-imgOverlay">
+                <img src="assets/img/about1.jpg" alt="" class="form__subscribe-imgOne">
             </div>
 
-            <div class="about__img-overlay">
-                <img src="assets/img/about2.jpg" alt="" class="about__img-two">
+            <div class="form__subscribe-imgOverlay">
+                <img src="assets/img/about2.jpg" alt="" class=form__subscribe-imgTwo">
             </div>
         </div>
     </div>
-    <div class="btn-choix">
+    <div class="form__subscribe-button">
         <a href="connexion.php" class="button" >Connectez vous</a>
     </div>
 </section>
