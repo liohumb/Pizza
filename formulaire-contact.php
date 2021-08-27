@@ -58,11 +58,11 @@
 
         <div class="form__response-img">
             <div class="form__response-imgOverlay">
-                <img src="assets/img/about1.jpg" alt="" class="about__img-one">
+                <img src="assets/img/about1.jpg" alt="" class="form__response-imgOne">
             </div>
 
             <div class="form__response-imgOverlay">
-                <img src="assets/img/about2.jpg" alt="" class="about__img-two">
+                <img src="assets/img/about2.jpg" alt="" class="form__response-imgTwo">
             </div>
         </div>
     </div>
