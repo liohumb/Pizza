@@ -496,38 +496,27 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
 
 
 
-.ftco-section {
+.card__container {
     padding: 7em 0;
 }
 
-.container {
-    min-width: 992px !important;
-}
-
-.row {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.card__row {
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
 }
 
-.justify-content-center {
+.card__justify {
     -webkit-box-pack: center !important;
     -ms-flex-pack: center !important;
     justify-content: center !important;
 }
 
-.col-md-12, .col-lg-6, .col-md-4, .col-md-3 {
+.card__col-12, .card__col-6, .card__col-4, .card__col-3 {
     position: relative;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
 }
 
-.wrapper {
+.card__wrapper {
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
@@ -549,29 +538,29 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
 
 
 
-.contact-wrap {
+.card__infos {
     background: #fff;
 }
 
-.contact-wrap h3 {
+.card__infos h3 {
     color: #000;
 }
 
-.w-100 {
+.card__width {
     width: 100% !important;
 }
 
 @media (min-width: 768px) {
-    .p-md-5 {
-        padding: 3rem !important;
+    .card__padding {
+        padding: 2rem;
     }
-    .col-md-3 {
+    .card__col-3 {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 25%;
         flex: 0 0 25%;
         max-width: 25%;
     }
-    .col-md-4 {
+    .card__col-4 {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 33.33333%;
         flex: 0 0 33.33333%;
@@ -580,13 +569,13 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
 }
 
 @media (min-width: 1200px) {
-    .p-4 {
+    .card__padding-big {
         padding: 1.5rem !important;
     }
 }
 
 @media (min-width: 992px) {
-    .col-lg-6 {
+    .card__col-6 {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
@@ -594,22 +583,22 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
     }
 }
 
-.dbox {
+.card__box {
     width: 100%;
     margin-bottom: 25px;
 }
 
 @media (min-width: 768px) {
-    .dbox {
+    .card__box {
         margin-bottom: 0;
     }
 }
 
-.dbox p {
+.card__box p {
     margin-bottom: 0;
 }
 
-.dbox p span {
+.card__box p span {
     font-weight: 400;
     color: rgba(0, 0, 0, 0.2);
     display: block;
@@ -618,27 +607,24 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
     font-weight: 600;
 }
 
-.dbox p a {
+.card__box p a {
     color: rgba(0, 0, 0, 0.7);
-}
-
-.dbox .text {
     width: 100%;
 }
 
-.d-flex {
+.card__flex {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
 }
 
-.align-items-start {
+.card__items {
     -webkit-box-align: start !important;
     -ms-flex-align: start !important;
     align-items: flex-start !important;
 }
 
-.mb-3 {
+.card__margin {
     margin-bottom: 1rem !important;
 }
 
@@ -649,12 +635,12 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
 }
 
 @media (max-width: 991.98px) {
-    .info-wrap {
+    .card__infos-wrap {
         height: 400px;
     }
 }
 
-.p-5 {
+.card__infos-img {
     padding: 3rem !important;
 }
 
@@ -666,19 +652,24 @@ img {
     background-position: center center;
 }
 
-.map-responsive {
+.card__infos-map {
     overflow:hidden;
     padding-bottom:56.25%;
-    position:relative;>
-height:0;
+    position:relative; > height:0;
 }
 
-.map-responsive iframe {
+.card__infos-map iframe {
     left:0;
     top:0;
     height:100%;
     width:100%;
     position:absolute;
+}
+
+@media screen and (max-width: 768px) {
+    .card{
+        display: none;
+    }
 }
 
 

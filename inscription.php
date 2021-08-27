@@ -44,8 +44,8 @@
         </div>
     </nav>
 </header>
-<section class="contact section">
-    <div id="container">
+<section class="subscribe section">
+    <div id="subscribe__container">
         <h1>Ravi de vous rencontrer !</h1>
         <form action="formulaire-inscription.php" method="post" id="contact_form">
             <div class="prenom">
