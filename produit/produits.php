@@ -2,33 +2,35 @@
 session_start();
 require_once("../dbcontroller.php");
 $db_handle= new DBcontroller();
-if(!empty($_POST["ajoute"])){
 
-    if(!empty($_POST["quantity"])){
-        $produitById = $db_handle->runQuery("SELECT * FROM produit WHERE id='" . $_POST["id"] . "'");
-        $itemArray = array($produitById[0]["id"]=>array('name'=>$produitById[0]["name"], 'id'=>$produitById[0]["id"], 'quantity'=>$_POST["quantity"],'price'=>$produitById[0]["price"], 'image'=>$produitById[0]["image"]));
+include_once '../ajout-panier.php';
+// if(!empty($_POST["ajoute"])){
 
-        if(!empty($_SESSION["Panier_item"])){
-            if(in_array($produitById[0]["id"],array_keys($_SESSION["Panier_item"]))){
-                foreach($_SESSION["Panier_item"]as $k => $v){
-                    if($produitById[0]["id"] == $k){
-                        if(empty($_SESSION["Panier_item"][$k]["quantity"])){
-                            $_SESSION["Panier_item"][$k]["quantity"]=0;
-                        }
-                        $_SESSION["Panier_item"][$k]["quantity"] += $_POST["quantity"];
-                    }
-                }
+//     if(!empty($_POST["quantity"])){
+//         $produitById = $db_handle->runQuery("SELECT * FROM produit WHERE id='" . $_POST["id"] . "'");
+//         $itemArray = array($produitById[0]["id"]=>array('name'=>$produitById[0]["name"], 'id'=>$produitById[0]["id"], 'quantity'=>$_POST["quantity"], 'img_path'=>$produitById[0]["img_path"]));
 
-            }
-            else{
-                $_SESSION["Panier_item"] = array_merge($_SESSION["Panier_item"],$itemArray);
-            }
-        }
-        else{
-            $_SESSION["Panier_item"] = $itemArray;
-        }
-    }
-}
+//         if(!empty($_SESSION["Panier_item"])){
+//             if(in_array($produitById[0]["id"],array_keys($_SESSION["Panier_item"]))){
+//                 foreach($_SESSION["Panier_item"]as $k => $v){
+//                     if($produitById[0]["id"] == $k){
+//                         if(empty($_SESSION["Panier_item"][$k]["quantity"])){
+//                             $_SESSION["Panier_item"][$k]["quantity"]=0;
+//                         }
+//                         $_SESSION["Panier_item"][$k]["quantity"] += $_POST["quantity"];
+//                     }
+//                 }
+
+//             }
+//             else{
+//                 $_SESSION["Panier_item"] = array_merge($_SESSION["Panier_item"],$itemArray);
+//             }
+//         }
+//         else{
+//             $_SESSION["Panier_item"] = $itemArray;
+//         }
+//     }
+// }
 $id=$_GET['id'] ?? 1;
 $product = $db_handle->runQuery("SELECT * FROM produit WHERE id=$id");
 $price = $db_handle->runQuery("SELECT * FROM price WHERE produit_id=$id");
@@ -48,41 +50,41 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav_menu-page" id="header">
-    <nav class="nav container">
-        <a href="../index.php" class="nav__logo">LORENZZO'S PIZZA</a>
+<header class="header nav__menu-page" id="header">
+        <nav class="nav container">
+            <a href="index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
-        <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a href="../menu.php" class="nav__link">Le menu</a>
-                </li>
-                <li class="nav__item">
-                    <a href="../contact.php" class="nav__link">Nous contacter</a>
-                </li>
-                <li class="nav__item">
-                    <a href="../inscription.php" class="btn-conn">Inscription</a>
-                    |
-                    <a href="../connexion.php" class="btn-conn">Connexion</a>
-                    <!--
-                    <a href="../mon-compte.php" class="btn-conn">Mon compte</a>
-                    |
-                    <a href="../index.php" class="btn-conn">Déconnexion</a>
-                    -->
-                </li>
-            </ul>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li>
+                        <a href="menu.php" class="nav__link">Le menu</a>
+                    </li>
+                    <li>
+                        <a href="contact.php" class="nav__link">Nous contacter</a>
+                    </li>
+                    <li>
+                        <a href="inscription.php" class="btn-conn">Inscription</a>
+                        |
+                        <a href="connexion.php" class="btn-conn">Connexion</a>
+                        <!--
+                        <a href="" class="btn-conn">Mon compte</a>
+                        |
+                        <a href="" class="btn-conn">Déconnexion</a>
+                        -->
+                    </li>
+                </ul>
 
-            <i class="uil uil-times nav__close" id="nav-close"></i>
-        </div>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
 
 
-        <a href="../panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+            <a href="../panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
 
-        <div class="nav__toggle" id="nav-toggle">
-            <i class="uil uil-bars"></i>
-        </div>
-    </nav>
-</header>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="uil uil-bars"></i>
+            </div>
+        </nav>
+    </header>
 
 <main class="home" id="home">
     <section class="about section">
@@ -146,6 +148,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                         ?>
                     </li>
                     <li>
+                    
                         <span class="list-name">Quantité :</span>
                         <select name="quantity" class="qty">
                             <option value="1">1</option>
@@ -161,7 +164,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         <div class="btn-choix">
             <a href="../menu.php" class="button btn-ret-aj">Retour au menu</a>
          
-             <input type="hidden" name="id" value ="">
+             <input type="hidden" name="id" value ="<?=$id?>">
             <input type ="submit" name="ajoute" class="button btn-ret-aj" value="Ajouter au panier"></input>
         </form>
         </div>

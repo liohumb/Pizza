@@ -1,5 +1,8 @@
-<?php
-include("ajout-panier.php");
+<?php session_start();
+require_once("dbcontroller.php");
+
+
+$db_handle= new DBcontroller();
 if(!empty($_GET["action"])) {
     switch($_GET["action"]) {
         case "retire":
@@ -82,7 +85,7 @@ if(!empty($_GET["action"])) {
 
                 <div class="about__img">
                     <div class="about__img-overlay">
-                        <img src="<?php echo $item["image"];?>" alt="" class="about__img-two">
+                        <img src="<?php echo $item["img_path"];?>" alt="" class="about__img-two">
                     </div>
                 </div>
 
@@ -121,7 +124,7 @@ if(!empty($_GET["action"])) {
             ?>
             <div class="btn-choix">
                 <a href="menu.php" class="button btn-ret-aj">Retour au menu</a>
-                <a href="testPanier.php?action=vider" class="button-supp">Vider le panier</a>
+                <a href="panier.php?action=vider" class="button-supp">Vider le panier</a>
                 <a href="#" class="button btn-ret-aj">Valider mon panier</a>
             </div>
             <?php
