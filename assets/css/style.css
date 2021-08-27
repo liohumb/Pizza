@@ -94,6 +94,11 @@ a {
 img {
     max-width: 100%;
     height: auto;
+    vertical-align: middle;
+    border-style: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 button,
@@ -135,7 +140,7 @@ form {
     margin: 50px 0;
 }
 
-input[type='text'], [type='email'], select, textarea {
+input[type='text'], [type='email'], [type='tel'], [type='password'], select, textarea {
     background: none;
     border: none;
     border-bottom: solid 2px var(--first-color);
@@ -158,7 +163,7 @@ input[type='text'], [type='email'], select, textarea {
     transition: all 0.3s;
 }
 
-input[type='text']:focus, [type='email']:focus, textarea:focus {
+input[type='text']:focus, [type='email']:focus, [type='tel']:focus, [type='password']:focus, textarea:focus {
     outline: none;
     padding: 0 0 0.875em 0;
 }
@@ -599,7 +604,6 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
 }
 
 .card__box p span {
-    font-weight: 400;
     color: rgba(0, 0, 0, 0.2);
     display: block;
     text-transform: uppercase;
@@ -644,14 +648,6 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
     padding: 3rem !important;
 }
 
-img {
-    vertical-align: middle;
-    border-style: none;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
 .card__infos-map {
     overflow:hidden;
     padding-bottom:56.25%;
@@ -671,6 +667,7 @@ img {
         display: none;
     }
 }
+
 
 
 
@@ -703,6 +700,52 @@ img {
 
 .form__contact-message {
     float: none;
+}
+
+
+
+.subscribe__title {
+    color: var(--text-color);
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.subscribe__form-firstName {
+    float: left;
+    width: 49%;
+}
+
+.subscribe__form-lastName {
+    float: right;
+    width: 49%;
+}
+
+.subscribe__form-postCode {
+    float: left;
+    width: 29%;
+}
+
+.subscribe__form-city {
+    float: right;
+    width: 69%;
+}
+
+.subscribe__form-password, .subscribe__form-confPassword {
+    width: 100%;
+}
+
+
+
+.connexion__form-title {
+    color: var(--text-color);
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 
