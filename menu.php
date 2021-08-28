@@ -1,12 +1,12 @@
 <?php
-session_start();
+/*session_start();
 require_once "models/products.models.php";
 require_once "models/category.model.php";
     require_once("dbcontroller.php");// lance la connexion a la base de donnée;
     $db_handle= new DBcontroller();//lance la connexion a la base de donnée;
     $categories = $db_handle->runQuery("SELECT * FROM category"); //va rechercher tout ce que contient category présente dans la base de donnée;
     $products= $db_handle->runQuery("SELECT * FROM produit");//va chercher tout ce que contient présente dans la base de donnée
-?>
+*/?>
 
 
 
@@ -21,26 +21,26 @@ require_once "models/category.model.php";
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav_menu-page" id="header">
+<header class="header nav__menu-page" id="header">
     <nav class="nav container">
         <a href="index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item">
+                <li>
                     <a href="menu.php" class="nav__link">Le menu</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="contact.php" class="nav__link">Nous contacter</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="inscription.php" class="btn-conn">Inscription</a>
                     |
                     <a href="connexion.php" class="btn-conn">Connexion</a>
                     <!--
-                    <a href="mon-compte.php" class="btn-conn">Mon compte</a>
+                    <a href="" class="btn-conn">Mon compte</a>
                     |
-                    <a href="index.php" class="btn-conn">Déconnexion</a>
+                    <a href="" class="btn-conn">Déconnexion</a>
                     -->
                 </li>
             </ul>
@@ -49,7 +49,7 @@ require_once "models/category.model.php";
         </div>
 
 
-        <a href="panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
@@ -57,11 +57,11 @@ require_once "models/category.model.php";
     </nav>
 </header>
 
-<main class="home" id="home">
+<main class="menu" id="menu">
 
-    <section class="discover section" id="discover">
-        <h1 class="home__data-title menu_title">Vous avez faim ?</h1>
-        <p class="menu_title">Faites votre choix</p>
+    <section class="menu_section section" id="menu_section">
+        <h1 class="menu__data-title">Vous avez faim ?</h1>
+        <p class="menu__data-subtitle">Faites votre choix</p>
             <?php
                 foreach($categories as $category){ // parcour chaque element dans category pour éxecuter ce qui suit pour chacune d'elle
                         $filteredProducts = array_filter($products, function($item) use($category){
@@ -70,19 +70,19 @@ require_once "models/category.model.php";
                             }
                         });
                         ?>
-                    <h2 class="section__title menu_pizza"><?=$category['name'] ?></h2> <!-- place le 'name' présent dans category -->
-                    <div class="discover__container container swiper-container">
+                    <h2 class="menu__category section__title"><?=$category['name'] ?></h2> <!-- place le 'name' présent dans category -->
+                    <div class="menu__container container swiper-container">
                     
                             <div class="swiper-wrapper">
                             <?php foreach($filteredProducts as $produit){ // parcour pour chaque Produit filtrer précedament
                             ?>
-                                <div class="discover__card swiper-slide">
+                                <div class="menu__card swiper-slide">
                         
                             
                                     <div onclick = "window.location='produit/produits.php?id=<?= $produit['id'] ?>'">
-                                        <img src="<?= $produit['img_path'] ?>" alt="" class="discover__img"> <!-- recupere la colone ,img_path, dans la table produit present dans la BA qui contient la source de l'image ,le chemin -->
-                                        <div class="discover__data">
-                                            <h2 class="discover__title"><?= $produit['name'] ?></h2><!-- recupere la colone ,name, de la table produit -->
+                                        <img src="<?= $produit['img_path'] ?>" alt="" class="menu__img"> <!-- recupere la colone ,img_path, dans la table produit present dans la BA qui contient la source de l'image ,le chemin -->
+                                        <div class="menu__data">
+                                            <h2 class="menu__data-titleProduct"><?= $produit['name'] ?></h2><!-- recupere la colone ,name, de la table produit -->
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@ require_once "models/category.model.php";
                  } 
                     ?>
 
-        <h2 class="section__title menu_dessert">Récapitulatif</h2>
+        <h2 class="section__title menu__recap">Récapitulatif</h2>
     </section>
 </main>
 <footer class="footer section">
