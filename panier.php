@@ -23,8 +23,6 @@ if(!empty($_GET["action"])) {
 
 <?php include ('base/head.php') ?>
 
-<body>
-
 <?php include ('base/header.php')?>
 
 <main class="home" id="home">
@@ -108,8 +106,4 @@ if(!empty($_GET["action"])) {
 
 <?php include ('base/footer.php') ?>
 
-<script src="assets/js/scrollreveal.min.js"></script>
-<script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+<?php include ('base/script.php') ?>

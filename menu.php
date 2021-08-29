@@ -10,8 +10,6 @@ require_once "models/category.model.php";
 
 <?php include ('base/head.php') ?>
 
-<body>
-
 <?php include ('base/header.php')?>
 
 <main class="menu" id="menu">
@@ -63,8 +61,4 @@ require_once "models/category.model.php";
 
 <?php include ('base/footer.php') ?>
 
-<script src="assets/js/scrollreveal.min.js"></script>
-<script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+<?php include ('base/script.php') ?>
