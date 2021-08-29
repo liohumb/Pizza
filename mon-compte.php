@@ -5,30 +5,29 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/produit.css">
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav_menu-page" id="header">
+<header class="header nav__menu-page" id="header">
     <nav class="nav container">
         <a href="index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item">
+                <li>
                     <a href="menu.php" class="nav__link">Le menu</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="contact.php" class="nav__link">Nous contacter</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="inscription.php" class="btn-conn">Inscription</a>
                     |
                     <a href="connexion.php" class="btn-conn">Connexion</a>
                     <!--
-                    <a href="mon-compte.php" class="btn-conn">Mon compte</a>
+                    <a href="" class="btn-conn">Mon compte</a>
                     |
-                    <a href="index.php" class="btn-conn">Déconnexion</a>
+                    <a href="" class="btn-conn">Déconnexion</a>
                     -->
                 </li>
             </ul>
@@ -37,7 +36,7 @@
         </div>
 
 
-        <a href="panier.php" class="nav__link nav__cart"><i class="uil uil-pizza-slice cart_logo"></i></a>
+        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
@@ -45,24 +44,24 @@
     </nav>
 </header>
 
-<main class="home" id="home">
-    <section class="about section">
-        <div class="about__container container grid">
+<main class="account" id="account">
+    <section class="account__section section">
+        <div class="account__container container grid">
 
-            <div class="about__img">
-                <h1 class="product-name">John Doe</h1>
+            <div class="account__info">
+                <h1 class="account__info-title">John Doe</h1>
             </div>
 
-            <div class="contact__data">
-                <h3 class="product-slogan">06 06 06 06 06</h3>
-                <h3 class="product-slogan">21 rue de Marseille <br> 75001 PARIS</h3>
-                <h3 class="product-slogan">john@doe.fr</h3>
+            <div class="account__data">
+                <h3 class="account__data-title">06 06 06 06 06</h3>
+                <h3 class="account__data-title">21 rue de Marseille <br> 75001 PARIS</h3>
+                <h3 class="account__data-title">john@doe.fr</h3>
             </div>
         </div>
-        <div class="btn-choix">
-            <a href="index.php" class="button btn-ret-aj">Retour à l'acceuil</a>
-            <a href="modifier-mon-compte.php" class="button btn-ret-aj">Modifier informations</a>
-            <a href="modifier-mdp.php" class="button btn-ret-aj">Modifier mot de passe</a>
+        <div class="account__button">
+            <a href="index.php" class="account__button-option button">Retour à l'acceuil</a>
+            <a href="modifier-mon-compte.php" class="account__button-option button">Modifier informations</a>
+            <a href="modifier-mdp.php" class="account__button-option button">Modifier mot de passe</a>
         </div>
     </section>
 </main>

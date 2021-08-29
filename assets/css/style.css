@@ -1107,6 +1107,52 @@ input[type='text']:focus, [type='email']:focus, [type='tel']:focus, [type='passw
 
 
 
+.account {
+    margin-top: 3rem;
+}
+
+.account__info {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.account__info-title {
+    font-size: 2em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.account__data {
+    text-align: end;
+    margin-right: 6rem;
+}
+
+.account__data-title {
+    margin-top: 1rem;
+}
+
+.account__button {
+    display: flex;
+    justify-content: center;
+}
+
+.cart__button-option {
+    margin-top: 4rem;
+    margin-right: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .account__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+}
+
+
+
+
 .footer__container {
     row-gap: 5rem;
 }

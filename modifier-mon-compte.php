@@ -45,7 +45,7 @@
     </nav>
 </header>
 <section class="form__account section">
-    <div id="container">
+    <div id="form__container container grid">
         <h1>Quoi de neuf ?</h1>
         <form action="#" method="post" id="contact_form">
             <div class="nom">

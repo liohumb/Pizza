@@ -44,16 +44,18 @@
     </nav>
 </header>
 <section class="connexion__section section">
-    <div id="container">
+    <div id="connexion__container container grid">
         <h1 class="connexion__form-title">Bienvenue !</h1>
         <form action="#" method="post" id="connexion_form">
             <div class="connexion__form-email">
-                <label for="email"></label>
+                <label for="email">
                 <input type="email" placeholder="Votre adresse email" name="email" id="mail_input" required>
+                </label>
             </div>
             <div class="connexion__form-password">
-                <label for="password"></label>
+                <label for="password">
                 <input type="password" placeholder="Votre mot de passe" name="password" id="mdp_input" required>
+                </label>
             </div>
             <div>
                 <input type="submit" value="Connexion" class="button" />
