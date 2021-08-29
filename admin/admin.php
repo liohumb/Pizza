@@ -5,29 +5,28 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/produit.css">
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav_menu-page" id="header">
+<header class="header nav__menu-page" id="header">
     <nav class="nav container">
         <a href="../index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item">
+                <li>
                     <a href="commandes.php" class="nav__link">Commandes</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="modifier-produit.php" class="nav__link">Produits</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="messages.php" class="nav__link">Messages</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="clients.php" class="nav__link">Utilisateurs</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="modifier-informations.php" class="btn-conn"><i class="uil uil-user-circle"></i></a>
                     |
                     <a href="../index.php" class="btn-conn"><i class="uil uil-times"></i></a>
@@ -43,30 +42,29 @@
     </nav>
 </header>
 
-<main class="home" id="home">
-    <section class="about section">
-        <div class="about__container container grid">
+    <section class="admin section">
+        <div class="admin__container container grid">
 
-            <div class="about__img">
-                <h1 class="product-name">Bonjour, John Doe !</h1>
+            <div class="admin__info">
+                <h1 class="admin__info-title">Bonjour, John Doe !</h1>
             </div>
 
-            <div class="contact__data">
-                <h3 class="product-slogan">statut : admin</h3>
-                <h3 class="product-slogan">Nombre de commande : ##</h3>
-                <h3 class="product-slogan">Nombre de message (non-lu) : ##</h3>
+            <div class="admin__data">
+                <h3 class="admin__data-title">statut : admin</h3>
+                <h3 class="admin__data-title">Nombre de commande : ##</h3>
+                <h3 class="admin__data-title">Nombre de message (non-lu) : ##</h3>
             </div>
         </div>
-        <div class="btn-choix">
-            <a href="../modifier-mon-compte.php" class="button btn-ret-aj">Modifier les produits</a>
-            <a href="../modifier-mdp.php" class="button btn-ret-aj">Acceder aux commandes</a>
+        <div class="admin__button">
+            <a href="modifier-produit.php" class="admin__button-option button">Modifier les produits</a>
+            <a href="commandes.php" class="admin__button-option button">Acceder aux commandes</a>
         </div>
-        <div class="btn-choix">
-            <a href="../modifier-mdp.php" class="button btn-ret-aj">Lire les messages</a>
-            <a href="../modifier-mdp.php" class="button btn-ret-aj">Modifier informations</a>
+        <div class="admin__button">
+            <a href="messages.php" class="admin__button-option button">Lire les messages</a>
+            <a href="modifier-informations.php" class="admin__button-option button">Modifier informations</a>
         </div>
     </section>
-</main>
+
 <footer class="footer section">
     <div class="footer__container container grid">
         <div class="footer__content grid">

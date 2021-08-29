@@ -5,30 +5,28 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/produit.css">
-    <link rel="stylesheet" href="../assets/css/table.css">
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav_menu-page" id="header">
+<header class="header nav__menu-page" id="header">
     <nav class="nav container">
         <a href="../index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item">
+                <li>
                     <a href="commandes.php" class="nav__link">Commandes</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="modifier-produit.php" class="nav__link">Produits</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="messages.php" class="nav__link">Messages</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="clients.php" class="nav__link">Utilisateurs</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="modifier-informations.php" class="btn-conn"><i class="uil uil-user-circle"></i></a>
                     |
                     <a href="../index.php" class="btn-conn"><i class="uil uil-times"></i></a>
@@ -44,31 +42,30 @@
     </nav>
 </header>
 
-<main class="home" id="home">
-    <section class="about section">
-        <div class="container grid home__menu">
-            <div class="about__container container grid">
+    <section class="order section">
+        <div class="container grid">
+            <div class="order__container container grid">
 
-                <div class="about__img">
-                    <h1 class="product-name">Au boulot !</h1>
+                <div class="order__info">
+                    <h1 class="order__info-title">Au boulot !</h1>
                 </div>
 
-                <div class="contact__data">
-                    <h3 class="product-slogan">statut : admin</h3>
-                    <h3 class="product-slogan">Nombre de commande : ##</h3>
-                    <h3 class="product-slogan">Nombre de message (non-lu) : ##</h3>
+                <div class="order__data">
+                    <h3 class="order__data-title">statut : admin</h3>
+                    <h3 class="order__data-title">Nombre de commande : ##</h3>
+                    <h3 class="order__data-title">Nombre de message (non-lu) : ##</h3>
                 </div>
             </div>
-            <div class="btn-back">
-                <a href="admin.php" class="button btn-ret-aj">Retour Acceuil</a>
+            <div class="order__button">
+                <a href="admin.php" class="order__button-option button">Retour Acceuil</a>
             </div>
         </div>
     </section>
     <section>
-        <div class="container grid categories" id="suggestions">
-            <h2 class="section__title menu_boisson">Les commandes en préparations / livraisons</h2>
+        <div class="container grid" id="suggestions">
+            <h2 class="order__title section__title">Les commandes en préparations / livraisons</h2>
 
-            <div class="tbl-header">
+            <div class="order__table-header">
                 <table cellpadding="0" cellspacing="0" border="0">
                     <thead>
                     <tr>
@@ -82,7 +79,7 @@
                     </thead>
                 </table>
             </div>
-            <div class="tbl-content">
+            <div class="order__table-content">
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tbody>
                     <tr>
@@ -91,7 +88,7 @@
                         <td>- La Mozza (x2) <br>- Carlsberg (x1) <br>- Coca-Cola (x 1)</td>
                         <td>27.00</td>
                         <td>en livraison</td>
-                        <td class="icon__statut">
+                        <td class="order__table-icon">
                             <i class="uil uil-clock"></i> <i class="uil uil-pizza-slice"></i> <i class="uil uil-truck"></i>
                             <br> <i class="uil uil-check"></i> <i class="uil uil-multiply"></i>
                         </td>
@@ -102,7 +99,7 @@
                         <td>- La pepperoni (x1) <br>- Vin (rosé) (x1)</td>
                         <td>19.00</td>
                         <td>en préparation</td>
-                        <td class="icon__statut">
+                        <td class="order__table-icon">
                             <i class="uil uil-clock"></i> <i class="uil uil-pizza-slice"></i> <i class="uil uil-truck"></i>
                             <br> <i class="uil uil-check"></i> <i class="uil uil-multiply"></i>
                         </td>
@@ -114,7 +111,7 @@
                             <br>- Glace (vanille-choco) (x1) <br>- Coca-Cola (x1) <br>- Carlsberg (x1) <br>- Vin (rosé) (x1)</td>
                         <td>19.00</td>
                         <td>en attente</td>
-                        <td class="icon__statut">
+                        <td class="order__table-icon">
                             <i class="uil uil-clock"></i> <i class="uil uil-pizza-slice"></i> <i class="uil uil-truck"></i>
                             <br> <i class="uil uil-check"></i> <i class="uil uil-multiply"></i>
                         </td>
@@ -124,10 +121,10 @@
             </div>
         </div>
 
-        <div class="container grid categories" id="suggestions">
-            <h2 class="section__title menu_boisson">Les commandes terminées</h2>
+        <div class="container grid" id="suggestions">
+            <h2 class="order__title section__title">Les commandes terminées</h2>
 
-            <div class="tbl-header">
+            <div class="order__table-header">
                 <table cellpadding="0" cellspacing="0" border="0">
                     <thead>
                     <tr>
@@ -141,7 +138,7 @@
                     </thead>
                 </table>
             </div>
-            <div class="tbl-content">
+            <div class="order__table-content">
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tbody>
                     <tr>
@@ -150,7 +147,7 @@
                         <td>- La Mozza (x2) <br>- Carlsberg (x1) <br>- Coca-Cola (x 1)</td>
                         <td>27.00</td>
                         <td>livré</td>
-                        <td class="icon__statut">
+                        <td class="order__table-icon">
                             <i class="uil uil-clock"></i> <i class="uil uil-pizza-slice"></i> <i class="uil uil-truck"></i>
                             <br> <i class="uil uil-check"></i> <i class="uil uil-multiply"></i>
                         </td>
@@ -161,7 +158,7 @@
                         <td>- La pepperoni (x1) <br>- Vin (rosé) (x1)</td>
                         <td>19.00</td>
                         <td>annulé</td>
-                        <td class="icon__statut">
+                        <td class="order__table-icon">
                             <i class="uil uil-clock"></i> <i class="uil uil-pizza-slice"></i> <i class="uil uil-truck"></i>
                             <br> <i class="uil uil-check"></i> <i class="uil uil-multiply"></i>
                         </td>
@@ -173,7 +170,7 @@
                             <br>- Glace (vanille-choco) (x1) <br>- Coca-Cola (x1) <br>- Carlsberg (x1) <br>- Vin (rosé) (x1)</td>
                         <td>19.00</td>
                         <td>livré</td>
-                        <td class="icon__statut">
+                        <td class="order__table-icon">
                             <i class="uil uil-clock"></i> <i class="uil uil-pizza-slice"></i> <i class="uil uil-truck"></i>
                             <br> <i class="uil uil-check"></i> <i class="uil uil-multiply"></i>
                         </td>
@@ -183,7 +180,6 @@
             </div>
         </div>
 
-</main>
 <footer class="footer section">
     <div class="footer__container container grid">
         <div class="footer__content grid">

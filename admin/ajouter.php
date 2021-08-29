@@ -4,32 +4,29 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="../assets/css/inscription.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/produit.css">
-    <link rel="stylesheet" href="../assets/css/table.css">
     <title>Pizza</title>
 </head>
 <body>
-<header class="header nav_menu-page" id="header">
+<header class="header nav__menu-page" id="header">
     <nav class="nav container">
         <a href="../index.php" class="nav__logo">LORENZZO'S PIZZA</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item">
+                <li>
                     <a href="commandes.php" class="nav__link">Commandes</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="modifier-produit.php" class="nav__link">Produits</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="messages.php" class="nav__link">Messages</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="clients.php" class="nav__link">Utilisateurs</a>
                 </li>
-                <li class="nav__item">
+                <li>
                     <a href="modifier-informations.php" class="btn-conn"><i class="uil uil-user-circle"></i></a>
                     |
                     <a href="../index.php" class="btn-conn"><i class="uil uil-times"></i></a>
@@ -44,46 +41,48 @@
         </div>
     </nav>
 </header>
-<section class="about section">
-    <div class="container grid home__menu">
-        <div class="about__container container grid">
+<section class="section">
+    <div class="container grid">
+        <div class="add__container container grid">
 
-            <div class="about__img">
-                <h1 class="product-name">Il y a de la nouveauté ?</h1>
+            <div class="add__info">
+                <h1 class="add__info-title">Il y a de la nouveauté ?</h1>
             </div>
 
-            <div class="contact__data">
-                <h3 class="product-slogan">statut : admin</h3>
-                <h3 class="product-slogan">Nombre de commande : ##</h3>
-                <h3 class="product-slogan">Nombre de message (non-lu) : ##</h3>
+            <div class="add__data">
+                <h3 class="add__data-title">statut : admin</h3>
+                <h3 class="add__data-title">Nombre de commande : ##</h3>
+                <h3 class="add__data-title">Nombre de message (non-lu) : ##</h3>
             </div>
         </div>
-        <div class="btn-back">
-            <a href="admin.php" class="button btn-ret-aj">Retour Acceuil</a>
+        <div class="add__button">
+            <a href="admin.php" class="add__button-option button">Retour Acceuil</a>
         </div>
     </div>
 </section>
-<section class="contact section">
-    <div id="container">
-        <h1>Quoi de neuf ?</h1>
+<section class="add section">
+    <div class="container grid">
+        <h1 class="add__title">Quoi de neuf ?</h1>
         <form action="#" method="post" id="contact_form">
-            <div class="subject">
-                <label for="subject"></label>
-                <select placeholder="Subject line" name="subject" id="subject_input" required>
-                    <option disabled hidden selected>Choisissez une catégorie</option>
-                    <option>Les suggestions</option>
-                    <option>Les pizzas</option>
-                    <option>Les boissons</option>
-                    <option>Les desserts</option>
-                </select>
+            <div class="add__form-categories">
+                <label for="subject">
+                    <select name="subject" id="subject_input" required>
+                        <option disabled hidden selected>Choisissez une catégorie</option>
+                        <option>Les suggestions</option>
+                        <option>Les pizzas</option>
+                        <option>Les boissons</option>
+                        <option>Les desserts</option>
+                    </select>
+                </label>
             </div>
-            <div class="prenom">
-                <label for="name"></label>
+            <div class="add__form-name">
+                <label for="name">
                 <input type="text" placeholder="Nom du produit" name="name" id="name_input" required>
+                </label>
             </div>
-            <div class="nom">
-                <label for="subject"></label>
-                <select placeholder="Subject line" name="subject" id="subject_input" required>
+            <div class="add__form-option">
+                <label for="subject">
+                <select name="subject" id="subject_input" required>
                     <option disabled hidden selected>Choisissez une option</option>
                     <option>Aucune option</option>
                     <option>Taille : 26 cm</option>
@@ -96,21 +95,24 @@
                     <option>Parfum : fraise</option>
                     <option>Parfum : pistache</option>
                 </select>
+                </label>
             </div>
-            <div>
-                <label for="name"></label>
+            <div class="add__form-description">
+                <label for="name">
                 <input type="text" placeholder="Description du produit" name="name" id="name_input" required>
+                </label>
             </div>
-            <div class="cp">
-                <label for="name"></label>
+            <div class="add__form-price">
+                <label for="name">
                 <input type="text" placeholder="Prix" name="name" id="name_input" required>
+                </label>
             </div>
-            <div class="ville import">
+            <div class="add__form-upload">
                 <label class="label-ajout" for="upload-photo">Importer photo</label>
-                <input type="file" name="photo" id="upload-photo" />
+                <input type="file" name="photo" class="add__form-uploadPicture">
             </div>
             <div>
-                <input type="submit" class="button btn-add" value="Ajouter"/>
+                <input type="submit" class="user__form-button button" value="Ajouter"/>
             </div>
         </form>
     </div>
