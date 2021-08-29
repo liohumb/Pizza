@@ -44,12 +44,12 @@
     </nav>
 </header>
 <section class="form__contact section">
-    <div class="container">
+    <div class="form__container container grid">
         <h1 class="form__contact-title">Dites nous tout !</h1>
         <form action="formulaire-contact.php" method="post" id="contact_form">
             <div class="form__contact-name">
                 <label for="name">
-                    <input type="text" placeholder="Votre premon" name="nom" id="name_input" required>
+                    <input type="text" placeholder="Votre prémon" name="nom" id="name_input" required>
                 </label>
             </div>
             <div class="form__contact-email">

@@ -44,12 +44,12 @@
     </nav>
 </header>
 <section class="subscribe section">
-    <div id="subscribe__container container grid">
+    <div class="subscribe__container container grid">
         <h1 class="subscribe__title">Ravi de vous rencontrer !</h1>
         <form action="formulaire-inscription.php" method="post" id="contact_form">
             <div class="subscribe__form-firstName">
                 <label for="first_name">
-                    <input type="text" placeholder="Votre prenom" name="prenom" required>
+                    <input type="text" placeholder="Votre prénom" name="prenom" required>
                 </label>
             </div>
             <div class="subscribe__form-lastName">

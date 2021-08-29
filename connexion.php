@@ -44,7 +44,7 @@
     </nav>
 </header>
 <section class="connexion__section section">
-    <div id="connexion__container container grid">
+    <div class="connexion__container container grid">
         <h1 class="connexion__form-title">Bienvenue !</h1>
         <form action="#" method="post" id="connexion_form">
             <div class="connexion__form-email">
