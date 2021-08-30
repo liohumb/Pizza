@@ -1,4 +1,10 @@
+/* FONT (google) */
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap");
+
+
+/* VARIABLES CSS */
+
 
 :root {
     --header-height: 3rem;
@@ -55,6 +61,7 @@
 }
 
 
+/* CLASSES BALISES PREDIFINI */
 
 
 * {
@@ -192,6 +199,7 @@ td {
 }
 
 
+/* ELEMENT PRINCIPAUX */
 
 
 .main {
@@ -251,6 +259,7 @@ td {
 }
 
 
+/* BARRE DE MENU NAVIGATION */
 
 
 .header {
@@ -373,6 +382,7 @@ td {
 }
 
 
+/* HERO */
 
 
 .home {
@@ -432,7 +442,7 @@ td {
 }
 
 
-
+/* EN SAVOIR PLUS */
 
 
 .about__data {
@@ -469,6 +479,7 @@ td {
 }
 
 
+/* DECOUVERTE PIZZAS*/
 
 
 .discover__card {
@@ -502,6 +513,7 @@ td {
 }
 
 
+/* SWIPER */
 
 
 .swiper-container-3d .swiper-slide-shadow-left,
@@ -510,6 +522,7 @@ td {
 }
 
 
+/* CONTACT INDEX */
 
 
 .contact__container {
@@ -530,6 +543,12 @@ td {
 .contact__data {
     text-align: end;
 }
+
+
+
+
+/* ADRESSE , JOURS , HORAIRES & MAP */
+
 
 
 
@@ -572,8 +591,6 @@ td {
     padding-right: 0;
     padding-left: 0;
 }
-
-
 
 .card__infos {
     background: #fff;
@@ -701,6 +718,7 @@ td {
 }
 
 
+/* PAGE MENU */
 
 
 .menu {
@@ -777,6 +795,89 @@ td {
 }
 
 
+/* PAGE PRODUITS */
+
+
+.products__info {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.products__info-title {
+    overflow: var(--img-hidden);
+}
+
+.products__data {
+    text-align: end;
+    margin-right: 6rem;
+}
+
+.products__data-name {
+    font-size: 2em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.products__data-price {
+    font-size: 4em;
+    font-weight: 900;
+    color: var(--first-color);
+}
+
+.products__data-description {
+    margin-top: 1rem;
+}
+
+.products__data-preferences {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: 2em;
+}
+
+.products__data-preferencesTailleOption,
+.products__data-preferencesColorOption,
+.products__data-preferencesParfumOption {
+    width: 70px;
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: 700;
+    border: 2px solid var(--first-color);
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.products__data-preferencesQuantityOption {
+    width: 70px;
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: 700;
+    border: 2px solid var(--first-color);
+    cursor: pointer;
+}
+
+.products__button {
+    display: flex;
+    justify-content: center;
+}
+
+.products__button-option {
+    margin-top: 4rem;
+    margin-right: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .products__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+}
+
+
+/* PAGE CONTACT */
 
 
 .form__contact-title {
@@ -810,6 +911,8 @@ td {
     float: none;
 }
 
+
+/* PAGE INSCRIPTION */
 
 
 .subscribe__title {
@@ -846,6 +949,8 @@ td {
 }
 
 
+/* PAGE CONNEXION */
+
 
 .connexion__form-title {
     color: var(--text-color);
@@ -856,6 +961,8 @@ td {
     text-transform: uppercase;
 }
 
+
+/* PAGE REPONSE FORMULIARE CONTACT */
 
 
 .form__response-container {
@@ -927,6 +1034,7 @@ td {
 }
 
 
+/* PAGE REPONSE FORMULAIRE INSCRIPTION */
 
 
 .form__subscribe {
@@ -1008,6 +1116,7 @@ td {
 }
 
 
+/* PAGE MODIFIER MON MOT DE PASSE */
 
 
 .form__password-title {
@@ -1020,6 +1129,7 @@ td {
 }
 
 
+/* PAGE PANIER */
 
 
 .cart__img {
@@ -1129,6 +1239,7 @@ td {
 }
 
 
+/* PAGE MON COMPTE */
 
 
 .account {
@@ -1175,6 +1286,7 @@ td {
 }
 
 
+/* PAGE MODIFIER MON COMPTE */
 
 
 .editAccount__title {
@@ -1207,6 +1319,7 @@ td {
  }
 
 
+/* PAGE -> ADMIN */
 
 
 .admin__info {
@@ -1249,6 +1362,7 @@ td {
 }
 
 
+/* PAGE GESTION PRODUITS -> ADMIN */
 
 
 .product__info {
@@ -1330,6 +1444,7 @@ td {
 }
 
 
+/* PAGE GESTION COMMANDES -> ADMIN */
 
 
 .order__info {
@@ -1392,6 +1507,7 @@ td {
 }
 
 
+/* PAGE GESTION MESSAGES -> ADMIN */
 
 
 .message__info {
@@ -1445,6 +1561,7 @@ td {
 }
 
 
+/* PAGE GESTION UTILISATEUR -> ADMIN */
 
 
 .user__info {
@@ -1498,6 +1615,7 @@ td {
 }
 
 
+/* PAGE GESTION AJOUT PRODUITS -> ADMIN */
 
 
 .add__info {
@@ -1587,6 +1705,7 @@ td {
 }
 
 
+/* FOOTER */
 
 
 .footer__container {
@@ -1655,20 +1774,7 @@ td {
 }
 
 
-
-
-.menu_title {
-    color: var(--first-color);
-    text-align: center;
-}
-
-.menu_pizza,
-.menu_boisson,
-.menu_dessert {
-    margin-top: 7rem;
-}
-
-
+/* RESPONSIVE */
 
 
 @media screen and (max-width: 340px) {
