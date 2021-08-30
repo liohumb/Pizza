@@ -779,6 +779,87 @@ td {
 
 
 
+.products__info {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.products__info-title {
+    overflow: var(--img-hidden);
+}
+
+.products__data {
+    text-align: end;
+    margin-right: 6rem;
+}
+
+.products__data-name {
+    font-size: 2em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.products__data-price {
+    font-size: 4em;
+    font-weight: 900;
+    color: var(--first-color);
+}
+
+.products__data-description {
+    margin-top: 1rem;
+}
+
+.products__data-preferences {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: 2em;
+}
+
+.products__data-preferencesTailleOption,
+.products__data-preferencesColorOption,
+.products__data-preferencesParfumOption {
+    width: 70px;
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: 700;
+    border: 2px solid var(--first-color);
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.products__data-preferencesQuantityOption {
+    width: 70px;
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: 700;
+    border: 2px solid var(--first-color);
+    cursor: pointer;
+}
+
+.products__button {
+    display: flex;
+    justify-content: center;
+}
+
+.products__button-option {
+    margin-top: 4rem;
+    margin-right: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .products__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+}
+
+
+
+
 .form__contact-title {
     color: var(--text-color);
     font-size: 32px;
