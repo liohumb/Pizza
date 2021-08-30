@@ -34,7 +34,7 @@ require_once "models/category.model.php";
                                 <div class="menu__card swiper-slide">
                         
                             
-                                    <div onclick = "window.location='produit/produits.php?id=<?= $produit['id'] ?>'">
+                                    <div onclick = "window.location='produits.php?id=<?= $produit['id'] ?>'">
                                         <img src="<?= $produit['img_path'] ?>" alt="" class="menu__img"> <!-- recupere la colone ,img_path, dans la table produit present dans la BA qui contient la source de l'image ,le chemin -->
                                         <div class="menu__data">
                                             <h2 class="menu__data-titleProduct"><?= $produit['name'] ?></h2><!-- recupere la colone ,name, de la table produit -->

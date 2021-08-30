@@ -44,9 +44,9 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/produit.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/produit.css">
     <title>Pizza</title>
 </head>
 <body>
@@ -78,7 +78,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
             </div>
 
 
-            <a href="../panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
+            <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
 
             <div class="nav__toggle" id="nav-toggle">
                 <i class="uil uil-bars"></i>
@@ -162,7 +162,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
             </div>
         </div>
         <div class="btn-choix">
-            <a href="../menu.php" class="button btn-ret-aj">Retour au menu</a>
+            <a href="menu.php" class="button btn-ret-aj">Retour au menu</a>
          
              <input type="hidden" name="id" value ="<?=$id?>">
             <input type ="submit" name="ajoute" class="button btn-ret-aj" value="Ajouter au panier"></input>
@@ -176,7 +176,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
             <div class="swiper-wrapper">
                 <div class="discover__card swiper-slide">
                     <a href="../produit/schweppes.php">
-                        <img src="../assets/img/drink1.jpg" alt="" class="discover__img">
+                        <img src="assets/img/drink1.jpg" alt="" class="discover__img">
                         <div class="discover__data">
                             <h2 class="discover__title">Schweppes</h2>
                         </div>
@@ -185,7 +185,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
                 <div class="discover__card swiper-slide">
                     <a href="../produit/carlsberg.php">
-                        <img src="../assets/img/drink2.jpg" alt="" class="discover__img">
+                        <img src="assets/img/drink2.jpg" alt="" class="discover__img">
                         <div class="discover__data">
                             <h2 class="discover__title">Carlsberg</h2>
                         </div>
@@ -194,7 +194,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
                 <div class="discover__card swiper-slide">
                     <a href="../produit/coca.php">
-                        <img src="../assets/img/drink3.jpg" alt="" class="discover__img">
+                        <img src="assets/img/drink3.jpg" alt="" class="discover__img">
                         <div class="discover__data">
                             <h2 class="discover__title">Coca Cola</h2>
                         </div>
@@ -203,7 +203,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
                 <div class="discover__card swiper-slide">
                     <a href="../produit/vin.php">
-                        <img src="../assets/img/drink4.jpg" alt="" class="discover__img">
+                        <img src="assets/img/drink4.jpg" alt="" class="discover__img">
                         <div class="discover__data">
                             <h2 class="discover__title">Vin </h2>
                         </div>
@@ -240,8 +240,8 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         </div>
     </div>
 </footer>
-<script src="../assets/js/scrollreveal.min.js"></script>
-<script src="../assets/js/swiper-bundle.min.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="assets/js/scrollreveal.min.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
