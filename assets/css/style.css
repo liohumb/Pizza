@@ -746,6 +746,7 @@ td {
 }
 
 .menu__data-titleProduct {
+    color: var(--white-color);
     font-size: var(--h3-font-size);
     margin-bottom: var(--mb-0-25);
 }
