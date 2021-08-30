@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once("../dbcontroller.php");
+require_once("dbcontroller.php");
 $db_handle= new DBcontroller();
 
-include_once '../ajout-panier.php';
+include_once 'ajout-panier.php';
 // if(!empty($_POST["ajoute"])){
 
 //     if(!empty($_POST["quantity"])){
@@ -60,12 +60,57 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                     if ($product[0]['category_id']== 1 ||$product[0]['category_id']== 2){
                         ?>
 
+
                     <span class="products__data-preferencesTaille">Taille (en cm) :</span>
                     <select class="products__data-preferencesTailleOption">
                         <option value="<?= $size[0]['opt'] ?>"><?= $size[0]['opt'] ?></option>
                         <option value="<?= $size[1]['opt'] ?>"><?= $size[1]['opt'] ?></option>
                         <option value="<?= $size[2]['opt'] ?>"><?= $size[2]['opt'] ?></option>
                     </select>
+
+            <div class="about__img">
+                <div class="about__img-overlay">
+                    <img src="<?= $product[0]['img_path'] ?>" alt="" class="about__img-two">
+                </div>
+            </div>
+            <form class="calculate" method="post" action="">
+            <div class="contact__data">
+                <h1 class="product-name"><?= $product[0]['name'] ?></h1>
+                <h2 class="product-price"><?= $price[0]['price'] ." €"?></h2>
+                <h3 class="product-slogan"><?= $product[0]['details'] ?></h3>
+                <ul class="preferences">
+                    <li>
+                        <?php
+                        if ($product[0]['category_id']== 1 ||$product[0]['category_id']== 2){
+                            ?>
+                        
+                        <span class="list-name">Taille (en cm) :</span>
+                        <select class="taille">
+                            <option value="<?= $size[0]['opt'] ?>"><?= $size[0]['opt'] ?></option>
+                            <option value="<?= $size[1]['opt'] ?>"><?= $size[1]['opt'] ?></option>
+                            <option value="<?= $size[2]['opt'] ?>"><?= $size[2]['opt'] ?></option>
+                        </select>
+                        <?php
+                    }
+                     elseif($product[0]['category_id']== 3 && ($product[0]['name'] !='Vin ')){
+                         ?>
+                              <span class="list-name">Taille (en cl) :</span>
+                        <select class="taille">
+                            <option value="<?= $size[10]['opt'] ?>"><?= $size[10]['opt'] ?></option>
+                            <option value="<?= $size[11]['opt'] ?>"><?= $size[11]['opt'] ?></option>
+                        
+                        </select>
+                     
+
+                        <?php 
+                        }elseif($product[0]['name'] == 'Vin '){?>
+                            <span class="list-name">Robe :</span>
+                        <select class="taille">
+                            <option value="<?= $size[7]['opt'] ?>"><?= $size[7]['opt'] ?></option>
+                            <option value="<?= $size[8]['opt'] ?>"><?= $size[8]['opt'] ?></option>
+                            <option value="<?= $size[9]['opt'] ?>"><?= $size[9]['opt'] ?></option>
+                        </select>
+
                     <?php
                 }
                  elseif($product[0]['category_id']== 3 && ($product[0]['name'] !='Vin ')){
@@ -124,5 +169,6 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 </section>
 
 <?php include ('base/footer.php') ?>
+
 
 <?php include ('base/script.php') ?>
