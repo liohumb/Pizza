@@ -86,8 +86,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         </nav>
     </header>
 
-<main class="home" id="home">
-    <section class="about section">
+    <section class="products section">
         <div class="about__container container grid">
 
             <div class="about__img">
@@ -212,7 +211,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
             </div>
         </div>
     </section>
-</main>
+
 <footer class="footer section">
     <div class="footer__container container grid">
         <div class="footer__content grid">
