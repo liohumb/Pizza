@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once("../dbcontroller.php");
+require_once("dbcontroller.php");
 $db_handle= new DBcontroller();
 
-include_once '../ajout-panier.php';
+include_once 'ajout-panier.php';
 // if(!empty($_POST["ajoute"])){
 
 //     if(!empty($_POST["quantity"])){
@@ -91,10 +91,10 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
             <div class="about__img">
                 <div class="about__img-overlay">
-                    <img src="../<?= $product[0]['img_path'] ?>" alt="" class="about__img-two">
+                    <img src="<?= $product[0]['img_path'] ?>" alt="" class="about__img-two">
                 </div>
             </div>
-            <form method="post" action="">
+            <form class="calculate" method="post" action="">
             <div class="contact__data">
                 <h1 class="product-name"><?= $product[0]['name'] ?></h1>
                 <h2 class="product-price"><?= $price[0]['price'] ." €"?></h2>
@@ -242,5 +242,6 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 <script src="assets/js/scrollreveal.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="js/select.js"></script>
 </body>
 </html>
