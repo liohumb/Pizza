@@ -49,7 +49,7 @@
     <section class="discover section" id="discover">
         <h2 class="section__title">A la découverte <br> de nos pizzas</h2>
 
-        <div class="discover__container container swiper-container">
+        <div class="discover__container container swiper__container swiper-container">
             <div class="swiper-wrapper">
                 <div class="discover__card swiper-slide">
                     <a href="menu.php">

@@ -809,6 +809,15 @@ td {
     overflow: var(--img-hidden);
 }
 
+.products__info-img {
+    width: 180px;
+    transform: var(--img-transition);
+}
+
+.products__info-img:hover {
+    transform: var(--img-scale);
+}
+
 .products__data {
     text-align: end;
     margin-right: 6rem;
@@ -873,6 +882,12 @@ td {
     .products__container {
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .products__info-img {
+        width: 290px;
     }
 }
 
