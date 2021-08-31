@@ -22,9 +22,6 @@ if(!empty($_GET["action"])) {
         if(isset($_SESSION["Panier_item"])){
             $quantityTotal = 0;
             $PrxTotal = 0;
-            ?>
-            <div class="cart__container container grid">
-            <?php
             foreach($_SESSION["Panier_item"]as $item){
 
                 if(isset($_GET['action'])){ 
@@ -43,6 +40,8 @@ if(!empty($_GET["action"])) {
              }
                 $item_prix = $item["quantity"]*$item["price"];
                 ?>
+            <div class="cart__container container grid">
+            
 
                 <div class="cart__img">
                     <div class="cart__img-overlay">
@@ -89,7 +88,7 @@ if(!empty($_GET["action"])) {
                 </div>
             <div class="cart__button">
                 <a href="menu.php" class="cart__button-option button">Retour au menu</a>
-                <a href="panier.php?action=vider" class="cart__button-trash">Vider le panier</a>
+                <a href="panier.php?action=vider" class="cart__button-trash button">Vider le panier</a>
                 <a href="#" class="cart__button-option button">Valider mon panier</a>
             </div>
             <?php
