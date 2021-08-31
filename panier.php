@@ -6,7 +6,7 @@ $db_handle= new DBcontroller();
 if(!empty($_GET["action"])) {
 
             break;
-        case "vider":
+        case "vider";
             unset($_SESSION["Panier_item"]);
             break;
     }
