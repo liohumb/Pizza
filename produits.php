@@ -4,33 +4,7 @@ require_once("dbcontroller.php");
 $db_handle= new DBcontroller();
 
 include_once 'ajout-panier.php';
-// if(!empty($_POST["ajoute"])){
 
-//     if(!empty($_POST["quantity"])){
-//         $produitById = $db_handle->runQuery("SELECT * FROM produit WHERE id='" . $_POST["id"] . "'");
-//         $itemArray = array($produitById[0]["id"]=>array('name'=>$produitById[0]["name"], 'id'=>$produitById[0]["id"], 'quantity'=>$_POST["quantity"], 'img_path'=>$produitById[0]["img_path"]));
-
-//         if(!empty($_SESSION["Panier_item"])){
-//             if(in_array($produitById[0]["id"],array_keys($_SESSION["Panier_item"]))){
-//                 foreach($_SESSION["Panier_item"]as $k => $v){
-//                     if($produitById[0]["id"] == $k){
-//                         if(empty($_SESSION["Panier_item"][$k]["quantity"])){
-//                             $_SESSION["Panier_item"][$k]["quantity"]=0;
-//                         }
-//                         $_SESSION["Panier_item"][$k]["quantity"] += $_POST["quantity"];
-//                     }
-//                 }
-
-//             }
-//             else{
-//                 $_SESSION["Panier_item"] = array_merge($_SESSION["Panier_item"],$itemArray);
-//             }
-//         }
-//         else{
-//             $_SESSION["Panier_item"] = $itemArray;
-//         }
-//     }
-// }
 $id=$_GET['id'] ?? 1;
 $product = $db_handle->runQuery("SELECT * FROM produit WHERE id=$id");
 $price = $db_handle->runQuery("SELECT * FROM price WHERE produit_id=$id");
@@ -46,7 +20,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
         <div class="products__info">
             <div class="products__info-title">
-                <img src="../<?= $product[0]['img_path'] ?>" alt="" class="about__img-two">
+                <img src="<?= $product[0]['img_path'] ?>" class="products__info-img">
             </div>
         </div>
         <form method="post" action="">
@@ -84,36 +58,14 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                         if ($product[0]['category_id']== 1 ||$product[0]['category_id']== 2){
                             ?>
                         
-                        <span class="list-name">Taille (en cm) :</span>
-                        <select class="taille">
+                        <span class="products__data-preferencesTaille">Taille (en cm) :</span>
+                        <select class="products__data-preferencesTailleOption">
                             <option value="<?= $size[0]['opt'] ?>"><?= $size[0]['opt'] ?></option>
                             <option value="<?= $size[1]['opt'] ?>"><?= $size[1]['opt'] ?></option>
                             <option value="<?= $size[2]['opt'] ?>"><?= $size[2]['opt'] ?></option>
                         </select>
                         <?php
-                    }
-                     elseif($product[0]['category_id']== 3 && ($product[0]['name'] !='Vin ')){
-                         ?>
-                              <span class="list-name">Taille (en cl) :</span>
-                        <select class="taille">
-                            <option value="<?= $size[10]['opt'] ?>"><?= $size[10]['opt'] ?></option>
-                            <option value="<?= $size[11]['opt'] ?>"><?= $size[11]['opt'] ?></option>
-                        
-                        </select>
-                     
-
-                        <?php 
-                        }elseif($product[0]['name'] == 'Vin '){?>
-                            <span class="list-name">Robe :</span>
-                        <select class="taille">
-                            <option value="<?= $size[7]['opt'] ?>"><?= $size[7]['opt'] ?></option>
-                            <option value="<?= $size[8]['opt'] ?>"><?= $size[8]['opt'] ?></option>
-                            <option value="<?= $size[9]['opt'] ?>"><?= $size[9]['opt'] ?></option>
-                        </select>
-
-                    <?php
-                }
-                 elseif($product[0]['category_id']== 3 && ($product[0]['name'] !='Vin ')){
+                    } elseif($product[0]['category_id']== 3 && ($product[0]['name'] !='Vin ')){
                      ?>
                           <span class="products__data-preferencesTaille">Taille (en cl) :</span>
                     <select class="products__data-preferencesTailleOption">
@@ -123,7 +75,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
 
                     <?php
-                    }elseif($product[0]['name'] == 'Vin '){?>
+                    } elseif($product[0]['name'] == 'Vin '){?>
                         <span class="products__data-preferencesColor">Robe :</span>
                     <select class="products__data-preferencesColorOption">
                         <option value="<?= $size[7]['opt'] ?>"><?= $size[7]['opt'] ?></option>
@@ -169,6 +121,5 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 </section>
 
 <?php include ('base/footer.php') ?>
-
 
 <?php include ('base/script.php') ?>

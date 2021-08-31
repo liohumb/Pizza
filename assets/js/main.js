@@ -1,3 +1,5 @@
+/* MENU BARRE NAVIGATION */
+
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close')
@@ -16,7 +18,6 @@ if(navClose){
     })
 }
 
-
 const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
@@ -33,6 +34,10 @@ function scrollHeader(){
 }
 window.addEventListener('scroll', scrollHeader)
 
+
+/* AFFICHAGE MENU PRODUITS */
+
+
 let swiper = new Swiper(".swiper__container", {
     effect: "coverflow",
     grabCursor: true,
@@ -46,6 +51,9 @@ let swiper = new Swiper(".swiper__container", {
 })
 
 
+/* CONFIRMATION EMAIL */
+
+
 function confirmEmail() {
     var email = document.getElementById("email").value
     var confemail = document.getElementById("confemail").value
@@ -53,6 +61,10 @@ function confirmEmail() {
         alert('Attention ! \nVotre confirmation d\'email doit être identique de votre email.');
     }
 }
+
+
+/* CONFIRMATION MOT DE PASSE */
+
 
 var password = document.getElementById("password")
     , confirm_password = document.getElementById("confirm_password");
@@ -67,3 +79,6 @@ function validatePassword(){
 
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
+
+
+/* CALCUL PRIX SELON QUANTITE */
