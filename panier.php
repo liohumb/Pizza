@@ -14,7 +14,7 @@ if (isset($_POST['moins'])){
         $_POST['quantity']--;
 }
 elseif(isset($_POST['plus'])){
-    $_POST['quantity']++
+    $_POST['quantity']++;
 }
 ?>
 

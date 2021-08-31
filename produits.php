@@ -33,15 +33,6 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                     <?php
                     if ($product[0]['category_id']== 1 ||$product[0]['category_id']== 2){
                         ?>
-
-
-                    <span class="products__data-preferencesTaille">Taille (en cm) :</span>
-                    <select class="products__data-preferencesTailleOption">
-                        <option value="<?= $size[0]['opt'] ?>"><?= $size[0]['opt'] ?></option>
-                        <option value="<?= $size[1]['opt'] ?>"><?= $size[1]['opt'] ?></option>
-                        <option value="<?= $size[2]['opt'] ?>"><?= $size[2]['opt'] ?></option>
-                    </select>
-                        
                         <span class="products__data-preferencesTaille">Taille (en cm) :</span>
                         <select name='opt' class="products__data-preferencesTailleOption">
 
