@@ -87,7 +87,7 @@ if(!empty($_GET["action"])) {
                 </div>
             <div class="cart__button">
                 <a href="menu.php" class="cart__button-option button">Retour au menu</a>
-                <a href="panier.php?action=vider" class="cart__button-trash">Vider le panier</a>
+                <a href="panier.php?action=vider" class="cart__button-trash button">Vider le panier</a>
                 <a href="#" class="cart__button-option button">Valider mon panier</a>
             </div>
             <?php
