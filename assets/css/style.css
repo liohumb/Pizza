@@ -554,10 +554,6 @@ td {
 
 
 
-.card__container {
-    padding: 7em 0;
-}
-
 .card__row {
     display: flex;
     flex-wrap: wrap;
