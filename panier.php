@@ -22,28 +22,26 @@ if(!empty($_GET["action"])) {
         if(isset($_SESSION["Panier_item"])){
             $quantityTotal = 0;
             $PrxTotal = 0;
-            ?>
-            <div class="cart__container container grid">
-            <?php
             foreach($_SESSION["Panier_item"]as $item){
 
                 if(isset($_GET['action'])){ 
                     if($_GET['action']=='moin'){
                      $_SESSION['Panier_item'][$item['id']]['quantity']-=1;
                      $item["quantity"]--;  
+
                  }
                  if($_GET['action']=='plus'){
                      $_SESSION['Panier_item'][$item['id']]['quantity']+=1;
                      $item["quantity"]++;
                  }
-                //  if($_SESSION["Panier_item"][$item["id"]['quantity']==0]){
+                 var_dump($_SESSION);
+                //  if($item['quantity']==0){
                 //      unset($_SESSION["Panier_item"][$item["id"]]);
-
                 //  }
              }
                 $item_prix = $item["quantity"]*$item["price"];
                 ?>
-
+            <div class="cart__container container grid">
                 <div class="cart__img">
                     <div class="cart__img-overlay">
                         <img src="<?php echo $item["img_path"];?>" alt="" class="cart__img-one">
@@ -80,10 +78,10 @@ if(!empty($_GET["action"])) {
                         <h2 class="section__title">Récapitulatif</h2>
                     </div>
                     <div class="cart__recap-total">
-                        <h2 class="section__title">Sous-total : <b><?php echo  number_format($item_prix,2) . " €"; ?></b></h2>
+                        <h2 class="section__title">Sous-total : <b><?php echo  number_format($PrxTotal,2) . " €"; ?></b></h2>
                         <h2 class="section__title">Livraison : <b>3.50 €</b></h2>
                         <br>
-                        <h2 class="section__title">Total : <b><?php echo (number_format($item_prix,2) + 3.50) . " €"; ?></b></h2>
+                        <h2 class="section__title">Total : <b><?php echo (number_format($PrxTotal,2) + 3.50) . " €"; ?></b></h2>
 
                     </div>
                 </div>
