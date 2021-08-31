@@ -4,20 +4,17 @@ require_once("dbcontroller.php");
 
 $db_handle= new DBcontroller();
 if(!empty($_GET["action"])) {
-    switch($_GET["action"]) {
-        case "retire":
-            if(!empty($_SESSION["Panier_item"])) {
-                foreach($_SESSION["Panier_item"] as $k => $v) {
-                    if($_GET["id"] === $k){
-                        unset($_SESSION["Panier_item"][$k]);
-                    }
-                }
-            }
+
             break;
         case "vider":
             unset($_SESSION["Panier_item"]);
             break;
     }
+if (isset($_POST['moins'])){
+        $_POST['quantity']--;
+}
+elseif(isset($_POST['plus'])){
+    $_POST['quantity']++
 }
 ?>
 
@@ -50,16 +47,24 @@ if(!empty($_GET["action"])) {
                     <ul class="cart__preferences">
                         <li>
                             <span class="cart__preferences-list">Quantité :</span>
-                            <a href=""><i class="uil uil-minus"></i></a>
+                            <form action="" method="post">
+                            <a href="" name = "moin"><i class="uil uil-minus"></i></a>
                             <span class="cart__preferences-listName"><?php echo $item["quantity"]; ?></span> <!-- recupere la quantité choicie qui a pour nom quantity -->
-                            <a href=""><i class="uil uil-plus"></i></a>
+                            <a href="" name = "plus"><i class="uil uil-plus"></i></a>
+                            </form>
                         </li>
                     </ul>
                     <span class="cart__product-priceUnit">Prix unitaire :<?php echo $item["price"] . " €"; ?></b></span>
                 </div>
                 </div>
 
-                <div class="cart__recap">
+               
+                <?php
+                $quantityTotal += $item["quantity"];
+                $PrxTotal += ($item["price"]*$item["quantity"]);
+            }
+            ?>
+             <div class="cart__recap">
                     <div class="cart__recap-title">
                         <h2 class="section__title">Récapitulatif</h2>
                     </div>
@@ -71,11 +76,6 @@ if(!empty($_GET["action"])) {
 
                     </div>
                 </div>
-                <?php
-                $quantityTotal += $item["quantity"];
-                $PrxTotal += ($item["price"]*$item["quantity"]);
-            }
-            ?>
             <div class="cart__button">
                 <a href="menu.php" class="cart__button-option button">Retour au menu</a>
                 <a href="panier.php?action=vider" class="cart__button-trash">Vider le panier</a>
