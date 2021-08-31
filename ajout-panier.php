@@ -27,11 +27,14 @@ if(!empty($_POST["ajoute"])){
 
             }
             else{
-                $_SESSION["Panier_item"] = array_merge($_SESSION["Panier_item"],$itemArray);
+                 //$_SESSION["Panier_item"] = array_push($_SESSION["Panier_item"],$itemArray);
+                 $_SESSION["Panier_item"] +=  $itemArray;
+                $bp = 0;
             }
         }
         else{
             $_SESSION["Panier_item"] = $itemArray;
+            $bp = 0;
         }
     }
 }
