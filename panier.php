@@ -4,20 +4,14 @@ require_once("dbcontroller.php");
 
 $db_handle= new DBcontroller();
 if(!empty($_GET["action"])) {
-
-            break;
-        case "vider";
+    switch($_GET["action"]){
+        case "vider":
             unset($_SESSION["Panier_item"]);
             break;
-    }
-if (isset($_POST['moins'])){
-        $_POST['quantity']--;
-}
-elseif(isset($_POST['plus'])){
-    $_POST['quantity']++;
-}
-?>
 
+        }
+    }
+?>
 <?php include ('base/head.php') ?>
 
 <?php include ('base/header.php')?>
@@ -32,6 +26,21 @@ elseif(isset($_POST['plus'])){
             <div class="cart__container container grid">
             <?php
             foreach($_SESSION["Panier_item"]as $item){
+
+                if(isset($_GET['action'])){ 
+                    if($_GET['action']=='moin'){
+                     $_SESSION['Panier_item'][$item['id']]['quantity']-=1;
+                     $item["quantity"]--;  
+                 }
+                 if($_GET['action']=='plus'){
+                     $_SESSION['Panier_item'][$item['id']]['quantity']+=1;
+                     $item["quantity"]++;
+                 }
+                //  if($_SESSION["Panier_item"][$item["id"]['quantity']==0]){
+                //      unset($_SESSION["Panier_item"][$item["id"]]);
+
+                //  }
+             }
                 $item_prix = $item["quantity"]*$item["price"];
                 ?>
 
@@ -47,11 +56,11 @@ elseif(isset($_POST['plus'])){
                     <ul class="cart__preferences">
                         <li>
                             <span class="cart__preferences-list">Quantité :</span>
-                            <form action="" method="post">
-                            <a href="" name = "moin"><i class="uil uil-minus"></i></a>
+                            
+                            <a href="panier.php?action=moin"><i class="uil uil-minus"></i></a>
                             <span class="cart__preferences-listName"><?php echo $item["quantity"]; ?></span> <!-- recupere la quantité choicie qui a pour nom quantity -->
-                            <a href="" name = "plus"><i class="uil uil-plus"></i></a>
-                            </form>
+                            <a href="panier.php?action=plus"><i class="uil uil-plus"></i></a>
+                           
                         </li>
                     </ul>
                     <span class="cart__product-priceUnit">Prix unitaire :<?php echo $item["price"] . " €"; ?></b></span>
@@ -60,8 +69,10 @@ elseif(isset($_POST['plus'])){
 
                
                 <?php
+
                 $quantityTotal += $item["quantity"];
                 $PrxTotal += ($item["price"]*$item["quantity"]);
+
             }
             ?>
              <div class="cart__recap">
