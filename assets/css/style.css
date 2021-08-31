@@ -9,9 +9,9 @@
 :root {
     --header-height: 3rem;
 
-    --hue-color: 193;
+    --hue-color: 182;
 
-    --first-color: hsl(var(--hue-color), 64%, 22%);
+    --first-color: hsl(var(--hue-color), 89%, 17%);
     --first-color-alt: hsl(var(--hue-color), 64%, 15%);
     --title-color: hsl(var(--hue-color), 64%, 18%);
     --text-color: hsl(var(--hue-color), 24%, 35%);
