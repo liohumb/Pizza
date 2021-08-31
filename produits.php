@@ -41,25 +41,10 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                         <option value="<?= $size[1]['opt'] ?>"><?= $size[1]['opt'] ?></option>
                         <option value="<?= $size[2]['opt'] ?>"><?= $size[2]['opt'] ?></option>
                     </select>
-
-            <div class="about__img">
-                <div class="about__img-overlay">
-                    <img src="<?= $product[0]['img_path'] ?>" alt="" class="about__img-two">
-                </div>
-            </div>
-            <form class="calculate" method="post" action="">
-            <div class="contact__data">
-                <h1 class="product-name"><?= $product[0]['name'] ?></h1>
-                <h2 class="product-price"><?= $price[0]['price'] ." €"?></h2>
-                <h3 class="product-slogan"><?= $product[0]['details'] ?></h3>
-                <ul class="preferences">
-                    <li>
-                        <?php
-                        if ($product[0]['category_id']== 1 ||$product[0]['category_id']== 2){
-                            ?>
                         
                         <span class="products__data-preferencesTaille">Taille (en cm) :</span>
-                        <select class="products__data-preferencesTailleOption">
+                        <select name='opt' class="products__data-preferencesTailleOption">
+
                             <option value="<?= $size[0]['opt'] ?>"><?= $size[0]['opt'] ?></option>
                             <option value="<?= $size[1]['opt'] ?>"><?= $size[1]['opt'] ?></option>
                             <option value="<?= $size[2]['opt'] ?>"><?= $size[2]['opt'] ?></option>
@@ -68,7 +53,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                     } elseif($product[0]['category_id']== 3 && ($product[0]['name'] !='Vin ')){
                      ?>
                           <span class="products__data-preferencesTaille">Taille (en cl) :</span>
-                    <select class="products__data-preferencesTailleOption">
+                    <select name="opt" class="products__data-preferencesTailleOption">
                         <option value="<?= $size[10]['opt'] ?>"><?= $size[10]['opt'] ?></option>
                         <option value="<?= $size[11]['opt'] ?>"><?= $size[11]['opt'] ?></option>
                     </select>
@@ -77,7 +62,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                     <?php
                     } elseif($product[0]['name'] == 'Vin '){?>
                         <span class="products__data-preferencesColor">Robe :</span>
-                    <select class="products__data-preferencesColorOption">
+                    <select name="opt" class="products__data-preferencesColorOption">
                         <option value="<?= $size[7]['opt'] ?>"><?= $size[7]['opt'] ?></option>
                         <option value="<?= $size[8]['opt'] ?>"><?= $size[8]['opt'] ?></option>
                         <option value="<?= $size[9]['opt'] ?>"><?= $size[9]['opt'] ?></option>
@@ -87,7 +72,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
                     elseif($product[0]['name'] == 'Glace'){?>
                         <span class="products__data-preferencesParfum">Parfum :</span>
-                    <select class="products__data-preferencesParfumOption">
+                    <select name="opt" class="products__data-preferencesParfumOption">
                         <option value="<?= $size[3]['opt'] ?>"><?= $size[3]['opt'] ?></option>
                         <option value="<?= $size[4]['opt'] ?>"><?= $size[4]['opt'] ?></option>
                         <option value="<?= $size[5]['opt'] ?>"><?= $size[5]['opt'] ?></option>
@@ -100,7 +85,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                 <li>
 
                     <span class="products__data-preferencesQuantity">Quantité :</span>
-                    <select class="products__data-preferencesQuantityOption">
+                    <select name="quantity" class="products__data-preferencesQuantityOption">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -110,15 +95,14 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                 </li>
             </ul>
         </div>
-    </div>
-    <div class="products__button">
-        <a href="menu.php" class="products__button-option button">Retour au menu</a>
-
-         <input type="hidden" name="id" value ="<?=$id?>">
-        <input type="submit" name="ajoute" class="products__button-option button" value="Ajouter au panier"/>
-    </div>
+        <div class="products__button">
+            <a href="menu.php" class="products__button-option button">Retour au menu</a>
+         
+             <input type="hidden" name="id" value ="<?=$id?>">
+            <input type ="submit" name="ajoute" class="products__button-option button" value="Ajouter au panier"></input>
         </form>
-</section>
+        </div>
+    </section>
 
 <?php include ('base/footer.php') ?>
 
