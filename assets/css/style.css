@@ -809,12 +809,12 @@ td {
     overflow: var(--img-hidden);
 }
 
-.product__info-img {
+.products__info-img {
     width: 180px;
     transform: var(--img-transition);
 }
 
-.produc__info-img:hover {
+.products__info-img:hover {
     transform: var(--img-scale);
 }
 
@@ -886,7 +886,7 @@ td {
 }
 
 @media screen and (min-width: 1024px) {
-    .product__info-img {
+    .products__info-img {
         width: 290px;
     }
 }
