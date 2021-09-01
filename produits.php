@@ -25,8 +25,8 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         </div>
         <form method="post" action="">
             <div class="products__data">
-            <h1 class="products__data-name"><?= $product[0]['name'] ?></h1>
-            <h2 class="products__data-price"><?= $price[0]['price'] ." €"?></h2>
+            <h1 class="products__data-name" name="name"><?= $product[0]['name'] ?></h1>
+            <h2 class="products__data-price" name="price"><?= $price[0]['price'] ." €"?></h2>
             <h3 class="products__data-description"><?= $product[0]['details'] ?></h3>
             <ul class="products__data-preferences">
                 <li>
@@ -94,8 +94,10 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         </form>
         </div>
     </section>
-        
-       var prices = <?php echo json_encode($price); ?>
+        <script>
+            var prices = <?php echo json_encode($price); ?>
+        </script>
+       
 
 
 <?php include ('base/footer.php') ?>
