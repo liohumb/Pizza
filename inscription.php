@@ -10,22 +10,22 @@
         <form action="formulaire-inscription.php" method="post" id="contact_form">
             <div class="subscribe__form-firstName">
                 <label for="first_name">
-                    <input type="text" placeholder="Votre prénom" name="prenom" required>
+                    <input type="text" placeholder="Votre prénom" name="Prenom" required>
                 </label>
             </div>
             <div class="subscribe__form-lastName">
                 <label for="last_name">
-                <input type="text" placeholder="Votre nom" name="nom" required>
+                <input type="text" placeholder="Votre nom" name="Nom" required>
                 </label>
             </div>
             <div class="subscribe__form-address">
                 <label for="address">
-                <input type="text" placeholder="Votre adresse de livraison" name="adresse" required>
+                <input type="text" placeholder="Votre adresse de livraison" name="Adresse" required>
                 </label>
             </div>
             <div class="subscribe__form-cptAddress">
                 <label for="cpt_address">
-                <input type="text" placeholder="Complément adresse" name="cpt-adresse">
+                <input type="text" placeholder="Complément adresse" name="Cpt-adresse">
                 </label>
             </div>
             <div class="subscribe__form-postCode">
@@ -46,7 +46,7 @@
             </ul>
             <div class="subscribe__form-phone">
                 <label for="phone">
-                <input type="tel" placeholder="Votre numéro de téléphone" name="telephone" required>
+                <input type="tel" placeholder="Votre numéro de téléphone" name="Telephone" required>
                 </label>
             </div>
             <div class="subscribe__form-email">

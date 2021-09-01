@@ -3,6 +3,21 @@
 <?php include ('base/head.php') ?>
 
 <?php include ('base/header.php')?>
+<?php var_dump($_POST);
+$Prenom=$_POST['Prenom'];
+$Nom=$_POST['Nom'];
+$Adresse=$_POST['Adresse'];
+$Cpt_adresse=$_POST['Cpt-adresse'];
+$cp=$_POST['cp'];
+$ville=$_POST['ville'];
+$Telephone=$_POST['Telephone'];
+$email=$_POST['email'];
+$password=$_POST['password'];
+
+INSERT INTO `user`(`Prenom`, `Nom`, `Adresse`, `Cpt-adress`, `cp`, `ville`, `Telephone`, `email`, `password`) 
+VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10]);
+
+?>
 
 <section class="form__subscribe section">
     <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['prenom']?> !</h1>

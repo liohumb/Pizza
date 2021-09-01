@@ -12,13 +12,13 @@ class DBController {
     }
 
     function connectDB() {
-        $conn = mysqli_connect($this->host,$this->user,$this->password,$this->database);
+        $conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->database, $this->user, $this->password);
         return $conn;
     }
 
     function runQuery($query) {
-        $result = mysqli_query($this->conn,$query);
-        while($row=mysqli_fetch_assoc($result)) {
+        $result = $this->conn->query($query);
+        while($row=$result->fetch(PDO::FETCH_ASSOC)) {
             $resultset[] = $row;
         }
         if(!empty($resultset))
@@ -26,8 +26,8 @@ class DBController {
     }
 
     function numRows($query) {
-        $result  = mysqli_query($this->conn,$query);
-        $rowcount = mysqli_num_rows($result);
+        $result  = $this->conn->query($query);
+        $rowcount = $result->rowcount();
         return $rowcount;
     }
 }
