@@ -97,18 +97,20 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         </div>
 
         <div class="products__popup">
-            <div class="products__popup-data">
-                <div class="products__popup-dataText">
-                    <h1 class="products__popup-dataTitle"></h1>
-                    <h2 class="products__popup-dataSubtitle"></h2>
+            <div class="products__popup-content">
+                <div class="products__popup-data">
+                    <div class="products__popup-dataText">
+                        <h1 class="products__popup-dataTitle"></h1>
+                        <h2 class="products__popup-dataSubtitle"></h2>
+                    </div>
+                    <div class="products__popup-dataClose">
+                        <i class="uil uil-times products__popup-dataCloseIcon"></i>
+                    </div>
                 </div>
-                <div class="products__popup-dataClose">
-                    <i class="uil uil-times products__popup-dataCloseIcon"></i>
+                <div class="products__popup-button">
+                    <a href="menu.php" class="products__popup-buttonOption">retour au menu</a>
+                    <a href="panier.php" class="products__popup-buttonOption">accéder au panier</a>
                 </div>
-            </div>
-            <div class="products__popup-button">
-                <a href="menu.php" class="products__popup-buttonOption">retour au menu</a>
-                <a href="panier.php" class="products__popup-buttonOption">accéder au panier</a>
             </div>
         </div>
     
