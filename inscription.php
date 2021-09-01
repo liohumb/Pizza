@@ -61,7 +61,7 @@
             </div>
             <div class="subscribe__form-password">
                 <label for="password">
-                <input type="password" id="password" placeholder="Votre mot de passe" name="mdp" required>
+                <input type="password" id="password" placeholder="Votre mot de passe" name="password" required>
                 </label>
             </div>
             <div class="subscribe__form-confPassword">
