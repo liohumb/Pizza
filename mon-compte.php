@@ -1,6 +1,6 @@
-<?php include ('base/head.php') ?>
+<?php include ('panierController.php') ?>
 
-<body>
+<?php include ('base/head.php') ?>
 
 <?php include ('base/header.php')?>
 

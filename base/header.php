@@ -43,7 +43,7 @@
         }
         ?>
 
-        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i><span class="nav__cart-number"><?php echo $item["quantity"]; ?></span></a>
+        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i><span class="nav__cart-number"><?php echo $quantityTotal; ?></span></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
