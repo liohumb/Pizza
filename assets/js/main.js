@@ -106,15 +106,15 @@ console.log(prices);
 /* POPUP PANIER */
 
 
-const popupView = document.querySelectorAll('.products__popup'),
-    popupBTNS = document.querySelectorAll('.button__popup'),
+const popupViews = document.querySelectorAll('.products__popup'),
+    popupBtns = document.querySelectorAll('.button__popup'),
     popupCloses = document.querySelectorAll('.products__popup-dataCloseIcon')
 
 let popup = function (popupClick) {
-    popupView[popupClick].classList.add('products__popup-active')
+    popupViews[popupClick].classList.add('products__popup-active')
 }
 
-popupBTNS.forEach((popupBtn, i) => {
+popupBtns.forEach((popupBtn, i) => {
     popupBtn.addEventListener('click', () =>{
         popup(i)
     })
@@ -122,7 +122,7 @@ popupBTNS.forEach((popupBtn, i) => {
 
 popupCloses.forEach((popupClose) => {
     popupClose.addEventListener('click', () =>{
-        popupView.forEach((popupView) =>{
+        popupViews.forEach((popupView) =>{
             popupView.classList.remove('products__popup-active')
         })
     })
