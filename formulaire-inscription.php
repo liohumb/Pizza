@@ -1,4 +1,7 @@
-<?php include ('panierController.php') ?>
+<?php
+    require_once ('dbcontroller.php');
+    $pdo = new DBController();
+?>
 
 <?php include ('base/head.php') ?>
 
@@ -14,8 +17,10 @@ $Telephone=$_POST['Telephone'];
 $email=$_POST['email'];
 $password=$_POST['password'];
 
-INSERT INTO `user`(`Prenom`, `Nom`, `Adresse`, `Cpt-adress`, `cp`, `ville`, `Telephone`, `email`, `password`) 
-VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10]);
+$sql ="INSERT INTO `user`(`Prenom`, `Nom`, `Adresse`, `Cpt-adress`, `cp`, `ville`, `Telephone`, `email`, `password`) 
+VALUES (?,?,?,?,?,?,?,?,?)";
+$stmt= $conn->prepare($sql);
+$stmt->execute([$Prenom, $Nom, $Adresse, $Cpt_adresse, $cp, $ville, $Telephone, $email, $password]);
 
 ?>
 
