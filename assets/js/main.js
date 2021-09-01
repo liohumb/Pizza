@@ -103,24 +103,24 @@ let bp = 0;
 /* POPUP PANIER */
 
 
-const cvViews = document.querySelectorAll('.cv_detail'),
-    cvBtns = document.querySelectorAll('.services_button'),
-    cvCloses = document.querySelectorAll('.cv_detail-close')
+const popupViews = document.querySelectorAll('.products__popup'),
+    popupBtns = document.querySelectorAll('.button__popup'),
+    popupCloses = document.querySelectorAll('.products__popup-dataCloseIcon')
 
-let cv = function (cvClick) {
-    cvViews[cvClick].classList.add('active-cv')
+let popup = function (popupClick) {
+    popupViews[popupClick].classList.add('products__popup-active')
 }
 
-cvBtns.forEach((cvBtn, i) => {
-    cvBtn.addEventListener('click', () =>{
-        cv(i)
+popupBtns.forEach((popupBtn, i) => {
+    popupBtn.addEventListener('click', () =>{
+        popup(i)
     })
 })
 
-cvCloses.forEach((cvClose) => {
-    cvClose.addEventListener('click', () =>{
-        cvViews.forEach((cvView) =>{
-            cvView.classList.remove('active-cv')
+popupCloses.forEach((popupClose) => {
+    popupClose.addEventListener('click', () =>{
+        popupViews.forEach((popupView) =>{
+            popupView.classList.remove('products__popup-active')
         })
     })
 })
