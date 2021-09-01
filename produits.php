@@ -34,40 +34,40 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                     if ($product[0]['category_id']== 1 ||$product[0]['category_id']== 2){
                         ?>
                         <span class="products__data-preferencesTaille">Taille (en cm) :</span>
-                        <select name='opt' class="products__data-preferencesTailleOption">
+                        <select name="optionSelect" class="products__data-preferencesTailleOption" >
 
-                            <option value="<?= $size[0]['opt'] ?>"><?= $size[0]['opt'] ?></option>
-                            <option value="<?= $size[1]['opt'] ?>"><?= $size[1]['opt'] ?></option>
-                            <option value="<?= $size[2]['opt'] ?>"><?= $size[2]['opt'] ?></option>
+                            <option value="<?= $size[0]['id'] ?>"><?= $size[0]['opt'] ?></option>
+                            <option value="<?= $size[1]['id'] ?>"><?= $size[1]['opt'] ?></option>
+                            <option value="<?= $size[2]['id'] ?>"><?= $size[2]['opt'] ?></option>
                         </select>
                         <?php
                     } elseif($product[0]['category_id']== 3 && ($product[0]['name'] !='Vin ')){
                      ?>
                           <span class="products__data-preferencesTaille">Taille (en cl) :</span>
-                    <select name="opt" class="products__data-preferencesTailleOption">
-                        <option value="<?= $size[10]['opt'] ?>"><?= $size[10]['opt'] ?></option>
-                        <option value="<?= $size[11]['opt'] ?>"><?= $size[11]['opt'] ?></option>
+                    <select name="optionSelect" class="products__data-preferencesTailleOption">
+                        <option value="<?= $size[10]['id'] ?>"><?= $size[10]['opt'] ?></option>
+                        <option value="<?= $size[11]['id'] ?>"><?= $size[11]['opt'] ?></option>
                     </select>
 
 
                     <?php
                     } elseif($product[0]['name'] == 'Vin '){?>
                         <span class="products__data-preferencesColor">Robe :</span>
-                    <select name="opt" class="products__data-preferencesColorOption">
-                        <option value="<?= $size[7]['opt'] ?>"><?= $size[7]['opt'] ?></option>
-                        <option value="<?= $size[8]['opt'] ?>"><?= $size[8]['opt'] ?></option>
-                        <option value="<?= $size[9]['opt'] ?>"><?= $size[9]['opt'] ?></option>
+                    <select name="optionSelect" class="products__data-preferencesColorOption">
+                        <option value="<?= $size[7]['id'] ?>"><?= $size[7]['opt'] ?></option>
+                        <option value="<?= $size[8]['id'] ?>"><?= $size[8]['opt'] ?></option>
+                        <option value="<?= $size[9]['id'] ?>"><?= $size[9]['opt'] ?></option>
                     </select>
                 <?php
                 }
 
                     elseif($product[0]['name'] == 'Glace'){?>
                         <span class="products__data-preferencesParfum">Parfum :</span>
-                    <select name="opt" class="products__data-preferencesParfumOption">
-                        <option value="<?= $size[3]['opt'] ?>"><?= $size[3]['opt'] ?></option>
-                        <option value="<?= $size[4]['opt'] ?>"><?= $size[4]['opt'] ?></option>
-                        <option value="<?= $size[5]['opt'] ?>"><?= $size[5]['opt'] ?></option>
-                        <option value="<?= $size[6]['opt'] ?>"><?= $size[6]['opt'] ?></option>
+                    <select name="optionSelect" class="products__data-preferencesParfumOption">
+                        <option value="<?= $size[3]['id'] ?>"><?= $size[3]['opt'] ?></option>
+                        <option value="<?= $size[4]['id'] ?>"><?= $size[4]['opt'] ?></option>
+                        <option value="<?= $size[5]['id'] ?>"><?= $size[5]['opt'] ?></option>
+                        <option value="<?= $size[6]['id'] ?>"><?= $size[6]['opt'] ?></option>
                     </select>
                 <?php
                 }
@@ -94,6 +94,13 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         </form>
         </div>
     </section>
+
+    <script>
+        
+       var prices = <?php echo json_encode($price); ?>
+        
+    </script>
+    <script src="assets/js/PriceOptSelect.js"></script>
 
 <?php include ('base/footer.php') ?>
 

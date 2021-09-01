@@ -8,8 +8,19 @@ if(!empty($_GET["action"])) {
         case "vider":
             unset($_SESSION["Panier_item"]);
             break;
-
         }
+            if($_GET['action']=='moin'){
+             $_SESSION['Panier_item'][$_GET['id']]['quantity']-=1; 
+             if($_SESSION['Panier_item'][$_GET['id']]['quantity']<1){
+                unset($_SESSION["Panier_item"][$_GET["id"]]);
+                if(empty($_SESSION['Panier_item'])){
+                  unset($_SESSION["Panier_item"]);
+                }
+            }
+         }
+         if($_GET['action']=='plus'){
+             $_SESSION['Panier_item'][$_GET['id']]['quantity']+=1;
+         }
     }
 ?>
 <?php include ('base/head.php') ?>
@@ -24,21 +35,7 @@ if(!empty($_GET["action"])) {
             $PrxTotal = 0;
             foreach($_SESSION["Panier_item"]as $item){
 
-                if(isset($_GET['action'])){ 
-                    if($_GET['action']=='moin'){
-                     $_SESSION['Panier_item'][$item['id']]['quantity']-=1;
-                     $item["quantity"]--;  
 
-                 }
-                 if($_GET['action']=='plus'){
-                     $_SESSION['Panier_item'][$item['id']]['quantity']+=1;
-                     $item["quantity"]++;
-                 }
-                 var_dump($_SESSION);
-                //  if($item['quantity']==0){
-                //      unset($_SESSION["Panier_item"][$item["id"]]);
-                //  }
-             }
                 $item_prix = $item["quantity"]*$item["price"];
                 ?>
             <div class="cart__container container grid">
@@ -55,9 +52,9 @@ if(!empty($_GET["action"])) {
                         <li>
                             <span class="cart__preferences-list">Quantité :</span>
                             
-                            <a href="panier.php?action=moin"><i class="uil uil-minus"></i></a>
+                            <a href="panier.php?action=moin&id=<?= $item['id'] ?>"><i class="uil uil-minus"></i></a>
                             <span class="cart__preferences-listName"><?php echo $item["quantity"]; ?></span> <!-- recupere la quantité choicie qui a pour nom quantity -->
-                            <a href="panier.php?action=plus"><i class="uil uil-plus"></i></a>
+                            <a href="panier.php?action=plus&id=<?= $item['id'] ?>"><i class="uil uil-plus"></i></a>
                            
                         </li>
                     </ul>
@@ -87,7 +84,7 @@ if(!empty($_GET["action"])) {
                 </div>
             <div class="cart__button">
                 <a href="menu.php" class="cart__button-option button">Retour au menu</a>
-                <a href="panier.php?action=vider" class="cart__button-trash button">Vider le panier</a>
+                <a href="panier.php?action=vider" class="cart__button-trash">Vider le panier</a>
                 <a href="#" class="cart__button-option button">Valider mon panier</a>
             </div>
             <?php
