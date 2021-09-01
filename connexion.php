@@ -1,3 +1,5 @@
+<?php include ('panierController.php') ?>
+
 <?php include ('base/head.php') ?>
 
 <?php include ('base/header.php')?>
