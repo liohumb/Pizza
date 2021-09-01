@@ -71,7 +71,9 @@ select.addEventListener('change', function(evt){
     let goodPrice=newprice[0];
      let price = goodPrice.price;
     price;
-    document.querySelector('.products__data-price').innerHTML = price+' €';
+    document.querySelector('.products__data-price').innerHTML = price+" €";
+   let val= document.querySelector('[name="price"]').value = price;
+   
 })
 console.log(prices);
 
