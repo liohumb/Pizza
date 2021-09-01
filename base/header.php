@@ -25,8 +25,25 @@
             <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
 
+        <?php
+        if(isset($_SESSION["Panier_item"])){
+            $quantityTotal = 0;
+            $PrxTotal = 0;
 
-        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i></a>
+            foreach($_SESSION["Panier_item"]as $item){
+                $item_prix = $item["quantity"]*$item["price"];
+                $quantityTotal += $item["quantity"];
+                $PrxTotal += ($item["price"]*$item["quantity"]);
+
+            }
+
+            $quantityTotal += $item["quantity"];
+            $PrxTotal += ($item["price"]*$item["quantity"]);
+
+        }
+        ?>
+
+        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i><span class="nav__cart-number"><?php echo $item["quantity"]; ?></span></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>
