@@ -25,7 +25,9 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         </div>
         <form method="post" action="">
             <div class="products__data">
+            <input type="hidden" name="name" value="<?= $product[0]['name'] ?>">
             <h1 class="products__data-name"><?= $product[0]['name'] ?></h1>
+            <input type="hidden" name="price"value="<?= $price[0]['price']?>"></input>
             <h2 class="products__data-price"><?= $price[0]['price'] ." €"?></h2>
             <h3 class="products__data-description"><?= $product[0]['details'] ?></h3>
             <ul class="products__data-preferences">
