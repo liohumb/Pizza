@@ -19,13 +19,13 @@ $password=$_POST['password'];
 
 $sql ="INSERT INTO `user`(`Prenom`, `Nom`, `Adresse`, `Cpt-adress`, `cp`, `ville`, `Telephone`, `email`, `password`) 
 VALUES (?,?,?,?,?,?,?,?,?)";
-$stmt= $conn->prepare($sql);
+$stmt= $pdo->connectDB()->prepare($sql);
 $stmt->execute([$Prenom, $Nom, $Adresse, $Cpt_adresse, $cp, $ville, $Telephone, $email, $password]);
 
 ?>
 
 <section class="form__subscribe section">
-    <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['prenom']?> !</h1>
+    <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['Prenom']?> !</h1>
     <div class="form__subscribe-container container grid">
         <div class="form__subscribe-data">
             <h2 class="section__title">Vous voilà devenu <br> notre client préféré !</h2>
