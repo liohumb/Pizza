@@ -26,20 +26,11 @@
         </div>
 
         <?php
+        $quantityTotal = 0;
         if(isset($_SESSION["Panier_item"])){
-            $quantityTotal = 0;
-            $PrxTotal = 0;
-
             foreach($_SESSION["Panier_item"]as $item){
-                $item_prix = $item["quantity"]*$item["price"];
                 $quantityTotal += $item["quantity"];
-                $PrxTotal += ($item["price"]*$item["quantity"]);
-
             }
-
-            $quantityTotal += $item["quantity"];
-            $PrxTotal += ($item["price"]*$item["quantity"]);
-
         }
         ?>
 
