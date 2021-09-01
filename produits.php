@@ -94,13 +94,9 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         </form>
         </div>
     </section>
-
-    <script>
         
        var prices = <?php echo json_encode($price); ?>
-        
-    </script>
-    <script src="assets/js/PriceOptSelect.js"></script>
+
 
 <?php include ('base/footer.php') ?>
 
