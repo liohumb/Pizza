@@ -92,3 +92,43 @@ select.addEventListener('change', function(evt){
     let bp = 0;
 })
 console.log(prices);
+
+
+/* POPUP PANIER */
+
+
+const openPopupButtons = document.querySelectorAll('[data-modal-target]');
+const closePopupButtons = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('products__popup-overlay');
+
+openPopupButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget);
+        openModal(modal);
+    })
+})
+
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.products__popup.active');
+    modals.forEach(modal);
+    closeModal(modal)
+})
+
+closePopupButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.products__popup')
+        closeModal(products__popup);
+    })
+})
+
+function openModal(products__popup) {
+    if (products__popup == null) return;
+    products__popup.classList.add('active');
+    overlay.classList.add('active');
+}
+
+function closeModal(products__popup) {
+    if (products__popup == null) return;
+    products__popup.classList.remove('active');
+    overlay.classList.remove('active');
+}

@@ -88,14 +88,30 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         </div>
         <div class="products__button">
              <input type="hidden" name="id" value ="<?=$id?>">
-            <input type ="submit" name="ajoute" class="products__button-option button" value="Ajouter au panier">
+            <input type ="submit" name="ajoute" data-modal-target="#products__popup" class="products__button-option button" value="Ajouter au panier">
             
             <a href="menu.php" class="products__button-optionA button">Retour au menu</a>
         </form>
+
+        <div class="products__popup" id="products__popup">
+            <div class="products__popup-data">
+                <h1 class="products__popup-dataTitle">Pizza Time !</h1>
+                <button data-close-button class="products__popup-closeButton">&times;</button>
+            </div>
+            <div class="products__popup-content">
+                <div class="products__popup-contentTitle">
+                    <h2 class="section__title">Qu'est ce qu'on fait ?</h2>
+                </div>
+                <div class="products__button">
+                    <a href="menu.php" class="products__button-optionA button">Retour au menu</a>
+                    <a href="panier.php" class="products__button-option button">Acceder au panier</a>
+                </div>
+            </div>
         </div>
+        <div class="active" id="products__popup-overlay"></div>
+
+    </div>
     </section>
-        
-       var prices = <?php echo json_encode($price); ?>
 
 
 <?php include ('base/footer.php') ?>

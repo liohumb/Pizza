@@ -42,6 +42,7 @@
     --mb-2: 2rem;
     --mb-2-5: 2.5rem;
 
+    --z-index: 10;
     --z-fixed: 100;
 
     --img-transition: .3s;
@@ -69,6 +70,12 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
 
 html {
@@ -871,6 +878,68 @@ td {
 
 .products__button-optionA {
     margin-top: 3rem;
+}
+
+.products__popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid var(--first-color);
+    border-radius: 10px;
+    z-index: var(--z-index);
+    background-color: var(--white-color);
+    width: 500px;
+    max-width: 80%;
+}
+
+.products__popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.products__popup-data {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1px solid var(--first-color);
+}
+
+.products__popup-data,
+.products__popup-dataTitle {
+    font-size: var(--h2-font-size);
+    font-weight: bold;
+}
+
+.products__popup-data,
+.products__popup-closeButton {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: var(--h2-font-size);
+    font-weight: bold;
+}
+
+.products__popup-content {
+    padding: 10px 15px;
+}
+
+#products__popup-overlay {
+    position: fixed;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#products__popup-overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }
 
 @media screen and (min-width: 768px) {
