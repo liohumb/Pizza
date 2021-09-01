@@ -875,48 +875,6 @@ td {
     margin-top: 3rem;
 }
 
-.button__popup {
-    cursor: pointer;
-}
-
-.products__popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    backdrop-filter: blur(1rem);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1rem;
-    z-index: var(--z-popup);
-    opacity: 0;
-    visibility: hidden;
-    transition: .8s;
-}
-
-.products__popup-content {
-    position: relative;
-    background-color: var(--white-color);
-    padding: 1.5rem;
-    border-radius: .5rem;
-}
-
-.products__popup-buttonCloseIcon {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    color: var(--first-color);
-    cursor: pointer;
-}
-
-.products__popup-active {
-    opacity: 1;
-    visibility: visible;
-}
-
 @media screen and (min-width: 768px) {
     .products__container {
         grid-template-columns: repeat(2, 1fr);

@@ -3,5 +3,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="assets/js/vicopo.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/mail.js"></script>
+<script src="assets/js/password.js"></script>
+<script src="assets/js/quantity.js"></script>
 </body>
 </html>
