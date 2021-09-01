@@ -75,7 +75,6 @@ select.addEventListener('change', function(evt){
    let val= document.querySelector('[name="price"]').value = price;
    
 })
-console.log(prices);
 
 
 /* CONFIRMATION MOT DE PASSE */
@@ -99,8 +98,6 @@ confirm_password.onkeyup = validatePassword;
 
 document.querySelector('.products__data-price').innerHTML = "10.50€";
 let bp = 0;
-
-console.log(prices);
 
 
 /* POPUP PANIER */
