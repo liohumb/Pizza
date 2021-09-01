@@ -110,20 +110,20 @@ const popupView = document.querySelectorAll('.products__popup'),
     popupBTNS = document.querySelectorAll('.button__popup'),
     popupCloses = document.querySelectorAll('.products__popup-dataCloseIcon')
 
-let cv = function (cvClick) {
-    popupView[cvClick].classList.add('products__popup-active')
+let popup = function (popupClick) {
+    popupView[popupClick].classList.add('products__popup-active')
 }
 
-popupBTNS.forEach((cvBtn, i) => {
-    cvBtn.addEventListener('click', () =>{
-        cv(i)
+popupBTNS.forEach((popupBtn, i) => {
+    popupBtn.addEventListener('click', () =>{
+        popup(i)
     })
 })
 
-popupCloses.forEach((cvClose) => {
-    cvClose.addEventListener('click', () =>{
-        popupView.forEach((cvView) =>{
-            cvView.classList.remove('products__popup-active')
+popupCloses.forEach((popupClose) => {
+    popupClose.addEventListener('click', () =>{
+        popupView.forEach((popupView) =>{
+            popupView.classList.remove('products__popup-active')
         })
     })
 })

@@ -89,8 +89,8 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
             </ul>
     </div>
         <div class="products__button">
-             <input type="hidden" class=" button__popup" name="id" value ="<?=$id?>">
-            <input type ="submit" name="ajoute" class="products__button-option button" value="Ajouter au panier">
+             <input type="hidden" name="id" value ="<?=$id?>">
+            <input type ="submit" name="ajoute" class="products__button-option button button__popup" value="Ajouter au panier">
             
             <a href="menu.php" class="products__button-optionA button">Retour au menu</a>
         </form>
