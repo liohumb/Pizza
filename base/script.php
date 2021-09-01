@@ -4,5 +4,8 @@
 <script src="assets/js/vicopo.min.js"></script>
 <script src="assets/js/calculPrix.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/mail.js"></script>
+<script src="assets/js/password.js"></script>
+<script src="assets/js/quantity.js"></script>
 </body>
 </html>

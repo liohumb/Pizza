@@ -1,8 +1,4 @@
-<?php
-
-    $bdd = new PDO('mysql:host=localhost;dbname=lorenzzobdd', 'root', '');
-
-?>
+<?php include ('panierController.php') ?>
 
 <?php include ('base/head.php') ?>
 
