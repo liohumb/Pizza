@@ -44,6 +44,7 @@
 
     --z-index: 10;
     --z-fixed: 100;
+    --z-popup: 1000;
 
     --img-transition: .3s;
     --img-hidden: hidden;
@@ -878,6 +879,10 @@ td {
     margin-top: 3rem;
 }
 
+.button__popup {
+    cursor: pointer;
+}
+
 .products__popup {
     position: fixed;
     top: 0;
@@ -890,7 +895,7 @@ td {
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
-    z-index: var(--z-cv);
+    z-index: var(--z-popup);
     opacity: 0;
     visibility: hidden;
     transition: .8s;
@@ -898,7 +903,7 @@ td {
 
 .products__popup-content {
     position: relative;
-    background-color: var(--container-color);
+    background-color: var(--white-color);
     padding: 1.5rem;
     border-radius: .5rem;
 }
