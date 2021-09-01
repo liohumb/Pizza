@@ -61,22 +61,6 @@ function confirmEmail() {
         alert('Attention ! \nVotre confirmation d\'email doit être identique de votre email.');
     }
 }
-/* CALCUL PRIX SELON QUANTITE */
-
-
-let select = document.querySelector('[name="optionSelect"]')
-select.addEventListener('change', function(evt){
-    let id = evt.target.value;
-    let newprice = prices.filter(price=>price.option_id == id);
-    let goodPrice=newprice[0];
-     let price = goodPrice.price;
-    price;
-    document.querySelector('.products__data-price').innerHTML = price+" €";
-   let val= document.querySelector('[name="price"]').value = price;
-   
-})
-console.log(prices);
-
 
 /* CONFIRMATION MOT DE PASSE */
 
@@ -95,12 +79,6 @@ function validatePassword(){
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
 
-
-
-document.querySelector('.products__data-price').innerHTML = "10.50€";
-let bp = 0;
-
-console.log(prices);
 
 
 /* POPUP PANIER */
