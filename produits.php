@@ -90,27 +90,28 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
     </div>
         <div class="products__button">
              <input type="hidden" name="id" value ="<?=$id?>">
-            <input type ="submit" name="ajoute" class="products__button-option button button__popup" value="Ajouter au panier">
+            <input type ="submit" name="ajoute" class="products__button-option button services_button" value="Ajouter au panier">
             
             <a href="menu.php" class="products__button-optionA button">Retour au menu</a>
         </form>
         </div>
 
-        <div class="products__popup">
-            <div class="products__popup-content">
-                <div class="products__popup-data">
-                    <div class="products__popup-dataText">
-                        <h1 class="products__popup-dataTitle"></h1>
-                        <h2 class="products__popup-dataSubtitle"></h2>
-                    </div>
-                    <div class="products__popup-dataClose">
-                        <i class="uil uil-times products__popup-dataCloseIcon"></i>
-                    </div>
-                </div>
-                <div class="products__popup-button">
-                    <a href="menu.php" class="products__popup-buttonOption">retour au menu</a>
-                    <a href="panier.php" class="products__popup-buttonOption">accéder au panier</a>
-                </div>
+        <div class="cv_detail">
+            <div class="cv_detail-content">
+                <h4 class="cv_detail-title">MS Développement Application</h4>
+                <i class="uil uil-times cv_detail-close"></i>
+    
+                <ul class="cv_detail-services grid">
+                    <li class="cv_detail-service">
+                        <p>• Définition de l'architecture d'une application pour mobile (Android ou IOS).</p>
+                    </li>
+                    <li class="cv_detail-service">
+                        <p>• Compréhension des spécificités d'HTML, CSS et JavaScript propre au développement mobiles.</p>
+                    </li>
+                    <li class="cv_detail-service">
+                        <p>• Habilité à stocker des informations dans une base de données afin de faire interagir les fonctions de base.</p>
+                    </li>
+                </ul>
             </div>
         </div>
     
