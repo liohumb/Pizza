@@ -114,7 +114,9 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         <div id="overlay"></div>
     
     </section>
-
+<script>
+    let prices = <?php echo json_encode($price); ?>// ne pas enlever sinon les option ne fonctionneron plus
+</script>
 
 <?php include ('base/footer.php') ?>
 
