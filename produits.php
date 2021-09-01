@@ -85,14 +85,14 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
                     </select>
                 </li>
             </ul>
-        </div>
+    </div>
         <div class="products__button">
              <input type="hidden" name="id" value ="<?=$id?>">
             <input type ="submit" name="ajoute" data-modal-target="#modal" class="products__button-option button" value="Ajouter au panier">
             
             <a href="menu.php" class="products__button-optionA button">Retour au menu</a>
         </form>
-
+        </div>
         <div class="modal" id="modal">
             <div class="modal-header">
                 <h1 class="title">Pizza Time !</h1>
@@ -110,7 +110,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
         </div>
         <div id="overlay"></div>
 
-    </div>
+    
     </section>
 
 
