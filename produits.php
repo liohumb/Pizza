@@ -93,6 +93,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
             <a href="menu.php" class="products__button-optionA button">Retour au menu</a>
         </form>
         </div>
+
         <div class="modal" id="modal">
             <div class="modal-header">
                 <h1 class="title">Pizza Time !</h1>
@@ -109,7 +110,6 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
             </div>
         </div>
         <div id="overlay"></div>
-
     
     </section>
 
