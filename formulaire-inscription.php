@@ -16,12 +16,15 @@
     $city = $_POST['city'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $pass = $_POST['pass'];
 
-    $sql ="INSERT INTO `user`(`first_name`, `last_name`, `address`, `cpt_adress`, `post_code`, `city`, `phone`, `email`, `password`) VALUES (?,?,?,?,?,?,?,?,?)";
+    $sql ="INSERT INTO `user`(`first_name`, `last_name`, `address`, `cpt_address`, `post_code`, `city`, `phone`, `email`, `pass`) VALUES (?,?,?,?,?,?,?,?,?)";
     $stmt = $pdo->connectDB()->prepare($sql);
-    $stmt -> execute([$first_name, $last_name, $address, $cpt_address, $post_code, $city, $phone, $email, $password]);
+    $stmt -> execute([$first_name, $last_name, $address, $cpt_address, $post_code, $city, $phone, $email, $pass]);
 ?>
+0
+
+( ! ) NOTICE: UNDEFINED INDEX: CPT_ADDRESS IN C:\WAMP64\WWW\PIZZA\FORMULAIRE-INSCRIPTION.PHP ON LINE 14
 
 <section class="form__subscribe section">
 
