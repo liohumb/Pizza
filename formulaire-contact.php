@@ -1,10 +1,23 @@
-<?php include ('panierController.php') ?>
-
-<?php include ('dbcontroller.php') ?>
+<?php
+    require_once ('dbcontroller.php');
+    $pdo = new DBController();
+?>
 
 <?php include ('base/head.php') ?>
 
 <?php include ('base/header.php')?>
+
+<?php
+    $Prenom = $_POST['first_name'];
+    $Email = $_POST['email'];
+    $Telephone = $_POST['telephone'];
+    $Sujet = $_POST['subject'];
+    $Message = $_POST['message'];
+
+    $sql = "INSERT INTO `message`(`Prenom`, `Mail`, `Telephone`, `Sujet`, `Message`) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $pdo -> connectDB() -> prepare($sql);
+    $stmt -> execute([$Prenom, $Email, $Telephone, $Sujet, $Message]);
+?>
 
 <section class="form__response section" id="about">
 

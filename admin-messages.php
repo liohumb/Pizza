@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    require_once 'models/message.model.php';
+    require_once ('dbcontroller.php');
+
+    $db_handle = new DBController();
+    $messages = $db_handle -> runQuery('SELECT * FROM `message`');
+?>
+
 <?php include('base/head.php') ?>
 
 <?php include ('base/header-admin.php') ?>
@@ -32,12 +41,20 @@
 
     <div class="container grid">
 
+    <?php
+        foreach($messages as $message) {
+            if ($item['message_id'] == $message['id']) {
+                return $item;
+            }
+        }
+    ?>
+
         <div class="message__table-header">
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
                 <tr>
-                    <th>Nom</th>
                     <th>Prenom</th>
+                    <th>Telephone</th>
                     <th>Email</th>
                     <th>Message</th>
                 </tr>
@@ -49,12 +66,10 @@
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
                 <tr>
-                    <td>Doe</td>
-                    <td>John</td>
-                    <td>john@doe.fr</td>
-                    <td>
-                        Bonjour, je voulais vous dire bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.
-                    </td>
+                    <td><?php $message['Prenom'] ?></td>
+                    <td><?php $message['Telephone'] ?></td>
+                    <td><?php $message['Mail'] ?></td>
+                    <td><?php $message['Message'] ?></td>
                 </tr>
                 <tr>
                     <td>Stark</td>
