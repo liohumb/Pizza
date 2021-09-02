@@ -3,6 +3,8 @@ class DBController {
     private $host = "localhost";
     private $user = "root";
     private $password = "";
+    //private $password = "root";
+    //private $port = "8889";
     private $database = "lorenzzobd_dieug";
     private $conn;
 
@@ -13,6 +15,7 @@ class DBController {
 
     function connectDB() {
         $conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->database, $this->user, $this->password);
+        // $conn = new PDO("mysql:host=" . $this->host . ";port=". $this->port .";dbname=" . $this->database, $this->user, $this->password);
         return $conn;
     }
 
