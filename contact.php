@@ -26,7 +26,7 @@
 
             <div class="form__contact-phone">
                 <label for="phone">
-                    <input type="text" placeholder="Votre numéro de téléphone" name="telephone" required>
+                    <input type="text" placeholder="Votre numéro de téléphone" name="phone" required>
                 </label>
             </div>
 
