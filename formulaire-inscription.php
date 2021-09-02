@@ -8,24 +8,24 @@
 <?php include ('base/header.php')?>
 
 <?php 
-    $Prenom = $_POST['Prenom'];
-    $Nom = $_POST['Nom'];
-    $Adresse = $_POST['Adresse'];
-    $Cpt_adresse = $_POST['Cpt-adresse'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $adresse = $_POST['adresse'];
+    $cpt_adresse = $_POST['cpt_adresse'];
     $cp = $_POST['cp'];
-    $ville = $_POST['ville'];
-    $Telephone = $_POST['Telephone'];
+    $city = $_POST['city'];
+    $telephone = $_POST['telephone'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql ="INSERT INTO `user`(`Prenom`, `Nom`, `Adresse`, `Cpt-adress`, `cp`, `ville`, `Telephone`, `email`, `password`) VALUES (?,?,?,?,?,?,?,?,?)";
+    $sql ="INSERT INTO `user`(`first_name`, `last_name`, `adresse`, `cpt_adress`, `cp`, `city`, `telephone`, `email`, `password`) VALUES (?,?,?,?,?,?,?,?,?)";
     $stmt = $pdo->connectDB()->prepare($sql);
-    $stmt -> execute([$Prenom, $Nom, $Adresse, $Cpt_adresse, $cp, $ville, $Telephone, $email, $password]);
+    $stmt -> execute([$first_name, $last_name, $adresse, $cpt_adresse, $cp, $city, $telephone, $email, $password]);
 ?>
 
 <section class="form__subscribe section">
 
-    <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['prenom']?> !</h1>
+    <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['first_name']?> !</h1>
 
     <div class="form__subscribe-container container grid">
 

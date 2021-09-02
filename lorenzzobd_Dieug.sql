@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 30 août 2021 à 14:23
--- Version du serveur :  5.7.31
--- Version de PHP : 7.3.21
+-- Généré le : jeu. 02 sep. 2021 à 08:59
+-- Version du serveur :  8.0.21
+-- Version de PHP : 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `lorenzzobd`
+-- Base de données : `lorenzzobd_dieug`
 --
 
 -- --------------------------------------------------------
@@ -29,11 +29,13 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Email` varchar(255) NOT NULL,
-  `Mdp` varchar(255) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `last_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -43,10 +45,10 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `category`
@@ -66,11 +68,11 @@ INSERT INTO `category` (`id`, `name`) VALUES
 
 DROP TABLE IF EXISTS `commande`;
 CREATE TABLE IF NOT EXISTS `commande` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` varchar(255) NOT NULL,
-  `statut_id` varchar(255) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `statut_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -80,13 +82,14 @@ CREATE TABLE IF NOT EXISTS `commande` (
 
 DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Prenom` varchar(255) NOT NULL,
-  `Mail` varchar(255) NOT NULL,
-  `Numéro Téléphone` varchar(255) NOT NULL,
-  `Message` text NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `telephone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `sujet` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -96,10 +99,10 @@ CREATE TABLE IF NOT EXISTS `message` (
 
 DROP TABLE IF EXISTS `option_product`;
 CREATE TABLE IF NOT EXISTS `option_product` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `opt` varchar(255) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `opt` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `option_product`
@@ -127,13 +130,13 @@ INSERT INTO `option_product` (`id`, `opt`) VALUES
 
 DROP TABLE IF EXISTS `panier`;
 CREATE TABLE IF NOT EXISTS `panier` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_User` varchar(255) NOT NULL,
-  `id_Produit` varchar(255) NOT NULL,
-  `Quantité` float NOT NULL,
-  `Prix` float NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `produit_id` int NOT NULL,
+  `quantity` float NOT NULL,
+  `price` float NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -143,14 +146,14 @@ CREATE TABLE IF NOT EXISTS `panier` (
 
 DROP TABLE IF EXISTS `price`;
 CREATE TABLE IF NOT EXISTS `price` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `price` float NOT NULL,
-  `option_id` int(11) DEFAULT NULL,
-  `produit_id` int(11) NOT NULL,
+  `option_id` int DEFAULT NULL,
+  `produit_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_product_size` (`option_id`),
   KEY `fk_product_price` (`produit_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `price`
@@ -201,14 +204,14 @@ INSERT INTO `price` (`id`, `price`, `option_id`, `produit_id`) VALUES
 
 DROP TABLE IF EXISTS `produit`;
 CREATE TABLE IF NOT EXISTS `produit` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `details` text NOT NULL,
-  `img_path` varchar(255) NOT NULL,
-  `category_id` int(11) DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `details` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `img_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `category_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_product_category` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `produit`
@@ -235,15 +238,15 @@ INSERT INTO `produit` (`id`, `name`, `details`, `img_path`, `category_id`) VALUE
 -- --------------------------------------------------------
 
 --
--- Structure de la table `quantit`
+-- Structure de la table `quantiter`
 --
 
-DROP TABLE IF EXISTS `quantit`;
-CREATE TABLE IF NOT EXISTS `quantit` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Valeur` double NOT NULL,
+DROP TABLE IF EXISTS `quantiter`;
+CREATE TABLE IF NOT EXISTS `quantiter` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `value` float NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -253,10 +256,10 @@ CREATE TABLE IF NOT EXISTS `quantit` (
 
 DROP TABLE IF EXISTS `statut`;
 CREATE TABLE IF NOT EXISTS `statut` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Statut` text NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `statut` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -266,15 +269,18 @@ CREATE TABLE IF NOT EXISTS `statut` (
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Email` varchar(255) NOT NULL,
-  `Mdp` varchar(255) NOT NULL,
-  `Nom` varchar(255) NOT NULL,
-  `Prenom` varchar(255) NOT NULL,
-  `Adresse` varchar(255) NOT NULL,
-  `Numéro Téléphone` varchar(255) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `last_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `adresse` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `cpt_adress` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `cp` int NOT NULL,
+  `city` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `telephone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` text COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Contraintes pour les tables déchargées
