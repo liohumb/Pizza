@@ -2,9 +2,11 @@
 class DBController {
     private $host = "localhost";
     private $user = "root";
-    private $password = "";
-    private $database = "lorenzzobd_dieug";
+    private $password = "root";
+    private $database = "lorenzobd_dieug";
+    private $port = "8889";
     private $conn;
+
 
 
     function __construct() {
@@ -12,7 +14,14 @@ class DBController {
     }
 
     function connectDB() {
-        $conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->database, $this->user, $this->password);
+        try{
+            $conn = new PDO("mysql:host=" . $this->host . ";port=" . $this->port . ";dbname=" . $this->database, $this->user, $this->password);
+        }catch(PDOException $e){
+            var_dump($e);
+        }
+        
+        
+        
         return $conn;
     }
 
