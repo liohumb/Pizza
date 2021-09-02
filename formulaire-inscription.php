@@ -18,11 +18,9 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql ="INSERT INTO `user`(`Prenom`, `Nom`, `Adresse`, `Cpt-adress`, `cp`, `ville`, `Telephone`, `email`, `password`) 
-    VALUES (?,?,?,?,?,?,?,?,?)";
-    $stmt= $pdo->connectDB()->prepare($sql);
-    $stmt->execute([$Prenom, $Nom, $Adresse, $Cpt_adresse, $cp, $ville, $Telephone, $email, $password]);
-
+    $sql ="INSERT INTO `user`(`Prenom`, `Nom`, `Adresse`, `Cpt-adress`, `cp`, `ville`, `Telephone`, `email`, `password`) VALUES (?,?,?,?,?,?,?,?,?)";
+    $stmt = $pdo->connectDB()->prepare($sql);
+    $stmt -> execute([$Prenom, $Nom, $Adresse, $Cpt_adresse, $cp, $ville, $Telephone, $email, $password]);
 ?>
 
 <section class="form__subscribe section">
