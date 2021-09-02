@@ -22,3 +22,4 @@ if(!empty($_GET["action"])) {
         $_SESSION['Panier_item'][$_GET['id']]['quantity']+=1;
     }
 }
+?>

@@ -33,9 +33,9 @@
                     <ul class="cart__preferences">
                         <li>
                             <span class="cart__preferences-list">Quantité :</span>
-                            <a href="panier.php?action=moin&id=<?= $item['id'] ?>"><i class="uil uil-minus"></i></a>
+                            <a href="panier.php?action=moin&id=<?= $item['id'].$item['optionSelect'] ?>"><i class="uil uil-minus"></i></a>
                             <span class="cart__preferences-listName"><?php echo $item["quantity"]; ?></span> <!-- recupere la quantité choicie qui a pour nom quantity -->
-                            <a href="panier.php?action=plus&id=<?= $item['id'] ?>"><i class="uil uil-plus"></i></a>
+                            <a href="panier.php?action=plus&id=<?= $item['id'].$item['optionSelect'] ?>"><i class="uil uil-plus"></i></a>
                            
                         </li>
                     </ul>
