@@ -26,19 +26,19 @@
 
             <div class="subscribe__form-address">
                 <label for="address">
-                <input type="text" placeholder="Votre adresse de livraison" name="adresse" required>
+                <input type="text" placeholder="Votre adresse de livraison" name="address" required>
                 </label>
             </div>
 
             <div class="subscribe__form-cptAddress">
                 <label for="cpt_address">
-                <input type="text" placeholder="Complément adresse" name="cpt_adresse">
+                <input type="text" placeholder="Complément adresse" name="cpt_address">
                 </label>
             </div>
 
             <div class="subscribe__form-postCode">
                 <label for="post_code">
-                <input type="text" id="post_code" placeholder="Votre code postal" name="cp" required>
+                <input type="text" id="post_code" placeholder="Votre code postal" name="post_code" required>
                 </label>
             </div>
 
@@ -57,7 +57,7 @@
 
             <div class="subscribe__form-phone">
                 <label for="phone">
-                <input type="tel" placeholder="Votre numéro de téléphone" name="telephone" required>
+                <input type="tel" placeholder="Votre numéro de téléphone" name="phone" required>
                 </label>
             </div>
 
@@ -75,7 +75,7 @@
 
             <div class="subscribe__form-password">
                 <label for="password">
-                <input type="password" id="password" placeholder="Votre mot de passe" name="password" required>
+                <input type="password" id="password" placeholder="Votre mot de passe" name="pass" required>
                 </label>
             </div>
 

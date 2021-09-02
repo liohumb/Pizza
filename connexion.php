@@ -1,9 +1,21 @@
+<?php
+?>
+
 <?php include ('panierController.php') ?>
+<?php require_once ('dbcontroller.php')?>
+
 
 <?php include ('base/head.php') ?>
 
 <?php include ('base/header.php')?>
+<?php 
+$db_handle=new DBcontroller();
+if(isset($_POST['email'])){
+$user =$db_handle->runQuery("SELECT id, email, pass FROM user WHERE email='" . $_POST['email'] . "'");
+}
 
+
+?>
 <section class="connexion__section section">
 
     <div class="connexion__container container grid">
@@ -23,7 +35,7 @@
             <div class="connexion__form-password">
 
                 <label for="password">
-                <input type="password" placeholder="Votre mot de passe" name="password" id="mdp_input" required>
+                <input type="password" placeholder="Votre mot de passe" name="pass" id="mdp_input" required>
                 </label>
 
             </div>
@@ -33,10 +45,27 @@
             </div>
 
         </form>
-
+    
     </div>
 
 </section>
+<?php
+    if(isset($_POST['email'])){
+        if(count($user) == 1){
+            $user = $user[0];
+            if ($user['pass']==$_POST['pass']){
+                $_SESSION['user']=$user;
+            }
+            else{
+                echo 'invalid password';
+            }
+
+        }
+        else{
+            echo 'invalid email';
+        }
+    }
+?>
 
 <?php include ('base/footer.php') ?>
 
