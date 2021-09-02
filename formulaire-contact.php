@@ -8,15 +8,15 @@
 <?php include ('base/header.php')?>
 
 <?php
-    $Prenom = $_POST['first_name'];
-    $Email = $_POST['email'];
-    $Telephone = $_POST['telephone'];
-    $Sujet = $_POST['subject'];
-    $Message = $_POST['message'];
+    $first_name = $_POST['first_name'];
+    $email = $_POST['email'];
+    $telephone = $_POST['telephone'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
 
-    $sql = "INSERT INTO `message`(`Prenom`, `Mail`, `Telephone`, `Sujet`, `Message`) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO `message`(`first_name`, `email`, `telephone`, `subject`, `message`) VALUES (?, ?, ?, ?, ?)";
     $stmt = $pdo -> connectDB() -> prepare($sql);
-    $stmt -> execute([$Prenom, $Email, $Telephone, $Sujet, $Message]);
+    $stmt -> execute([$first_name, $email, $telephone, $subject, $message]);
 ?>
 
 <section class="form__response section" id="about">

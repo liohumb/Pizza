@@ -14,13 +14,13 @@
 
             <div class="subscribe__form-firstName">
                 <label for="first_name">
-                    <input type="text" placeholder="Votre prénom" name="prenom" required>
+                    <input type="text" placeholder="Votre prénom" name="first_name" required>
                 </label>
             </div>
 
             <div class="subscribe__form-lastName">
                 <label for="last_name">
-                <input type="text" placeholder="Votre nom" name="nom" required>
+                <input type="text" placeholder="Votre nom" name="last_name" required>
                 </label>
             </div>
 
@@ -32,7 +32,7 @@
 
             <div class="subscribe__form-cptAddress">
                 <label for="cpt_address">
-                <input type="text" placeholder="Complément adresse" name="cpt-adresse">
+                <input type="text" placeholder="Complément adresse" name="cpt_adresse">
                 </label>
             </div>
 
@@ -44,7 +44,7 @@
 
             <div class="subscribe__form-city">
                 <label for="city">
-                <input type="text" id="city" placeholder="Votre ville" name="ville" required>
+                <input type="text" id="city" placeholder="Votre ville" name="city" required>
                 </label>
             </div>
 
@@ -81,7 +81,7 @@
 
             <div class="subscribe__form-confPassword">
                 <label for="conf_password">
-                <input type="password" id="confirm_password" placeholder="Confirmez votre mot de passe" name="conf-mdp" required>
+                <input type="password" id="confirm_password" placeholder="Confirmez votre mot de passe" name="conf_mdp" required>
                 </label>
             </div>
 
