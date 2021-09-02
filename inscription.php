@@ -14,25 +14,25 @@
 
             <div class="subscribe__form-firstName">
                 <label for="first_name">
-                    <input type="text" placeholder="Votre prénom" name="Prenom" required>
+                    <input type="text" placeholder="Votre prénom" name="prenom" required>
                 </label>
             </div>
 
             <div class="subscribe__form-lastName">
                 <label for="last_name">
-                <input type="text" placeholder="Votre nom" name="Nom" required>
+                <input type="text" placeholder="Votre nom" name="nom" required>
                 </label>
             </div>
 
             <div class="subscribe__form-address">
                 <label for="address">
-                <input type="text" placeholder="Votre adresse de livraison" name="Adresse" required>
+                <input type="text" placeholder="Votre adresse de livraison" name="adresse" required>
                 </label>
             </div>
 
             <div class="subscribe__form-cptAddress">
                 <label for="cpt_address">
-                <input type="text" placeholder="Complément adresse" name="Cpt-adresse">
+                <input type="text" placeholder="Complément adresse" name="cpt-adresse">
                 </label>
             </div>
 
@@ -57,7 +57,7 @@
 
             <div class="subscribe__form-phone">
                 <label for="phone">
-                <input type="tel" placeholder="Votre numéro de téléphone" name="Telephone" required>
+                <input type="tel" placeholder="Votre numéro de téléphone" name="telephone" required>
                 </label>
             </div>
 

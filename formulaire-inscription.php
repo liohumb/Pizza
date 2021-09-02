@@ -25,7 +25,7 @@
 
 <section class="form__subscribe section">
 
-    <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['Prenom']?> !</h1>
+    <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['prenom']?> !</h1>
 
     <div class="form__subscribe-container container grid">
 
@@ -45,7 +45,7 @@
             </div>
 
             <div class="form__subscribe-imgOverlay">
-                <img src="assets/img/about2.jpg" alt="" class=form__subscribe-imgTwo">
+                <img src="assets/img/about2.jpg" alt="" class="form__subscribe-imgTwo">
             </div>
 
         </div>

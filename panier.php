@@ -27,7 +27,7 @@
 
                 <div class="cart__data">
 
-                    <h1 class="cart__product-name"><?php echo $item["name"]?></h1>
+                    <h1 class="cart__product-name"><?php echo $item["name"]." ".$item['optionSelect']?></h1>
                     <h2 class="cart__product-price"><?php echo $item_prix . " €"; ?></h2>
 
                     <ul class="cart__preferences">
