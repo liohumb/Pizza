@@ -6,27 +6,27 @@
 <?php include ('base/head.php') ?>
 
 <?php include ('base/header.php')?>
-<?php var_dump($_POST);
-$Prenom=$_POST['Prenom'];
-$Nom=$_POST['Nom'];
-$Adresse=$_POST['Adresse'];
-$Cpt_adresse=$_POST['Cpt-adresse'];
+<?php
+$prenom=$_POST['prenom'];
+$nom=$_POST['nom'];
+$adresse=$_POST['adresse'];
+$cpt_adresse=$_POST['cpt-adresse'];
 $cp=$_POST['cp'];
 $ville=$_POST['ville'];
-$Telephone=$_POST['Telephone'];
+$telephone=$_POST['telephone'];
 $email=$_POST['email'];
 $password=$_POST['password'];
 
-$sql ="INSERT INTO `user`(`Prenom`, `Nom`, `Adresse`, `Cpt-adress`, `cp`, `ville`, `Telephone`, `email`, `password`) 
+$sql ="INSERT INTO `user`(`prenom`, `nom`, `adresse`, `cpt-adress`, `cp`, `ville`, `telephone`, `email`, `password`) 
 VALUES (?,?,?,?,?,?,?,?,?)";
 $stmt= $pdo->connectDB()->prepare($sql);
-$stmt->execute([$Prenom, $Nom, $Adresse, $Cpt_adresse, $cp, $ville, $Telephone, $email, $password]);
+$stmt->execute([$prenom, $nom, $adresse, $cpt_adresse, $cp, $ville, $telephone, $email, $password]);
 
 ?>
 
 <section class="form__subscribe section">
 
-    <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['Prenom']?> !</h1>
+    <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['prenom']?> !</h1>
 
     <div class="form__subscribe-container container grid">
 
@@ -46,7 +46,7 @@ $stmt->execute([$Prenom, $Nom, $Adresse, $Cpt_adresse, $cp, $ville, $Telephone, 
             </div>
 
             <div class="form__subscribe-imgOverlay">
-                <img src="assets/img/about2.jpg" alt="" class=form__subscribe-imgTwo">
+                <img src="assets/img/about2.jpg" alt="" class="form__subscribe-imgTwo">
             </div>
 
         </div>
