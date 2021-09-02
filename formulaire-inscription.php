@@ -10,17 +10,17 @@
 <?php 
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
-    $adresse = $_POST['adresse'];
-    $cpt_adresse = $_POST['cpt_adresse'];
-    $cp = $_POST['cp'];
+    $address = $_POST['address'];
+    $cpt_address = $_POST['cpt_address'];
+    $post_code = $_POST['post_code'];
     $city = $_POST['city'];
-    $telephone = $_POST['telephone'];
+    $phone = $_POST['phone'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql ="INSERT INTO `user`(`first_name`, `last_name`, `adresse`, `cpt_adress`, `cp`, `city`, `telephone`, `email`, `password`) VALUES (?,?,?,?,?,?,?,?,?)";
+    $sql ="INSERT INTO `user`(`first_name`, `last_name`, `address`, `cpt_adress`, `post_code`, `city`, `phone`, `email`, `password`) VALUES (?,?,?,?,?,?,?,?,?)";
     $stmt = $pdo->connectDB()->prepare($sql);
-    $stmt -> execute([$first_name, $last_name, $adresse, $cpt_adresse, $cp, $city, $telephone, $email, $password]);
+    $stmt -> execute([$first_name, $last_name, $address, $cpt_address, $post_code, $city, $phone, $email, $password]);
 ?>
 
 <section class="form__subscribe section">

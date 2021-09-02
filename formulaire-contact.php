@@ -10,13 +10,13 @@
 <?php
     $first_name = $_POST['first_name'];
     $email = $_POST['email'];
-    $telephone = $_POST['telephone'];
+    $phone = $_POST['phone'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
-    $sql = "INSERT INTO `message`(`first_name`, `email`, `telephone`, `subject`, `message`) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO `message`(`first_name`, `email`, `phone`, `subject`, `message`) VALUES (?, ?, ?, ?, ?)";
     $stmt = $pdo -> connectDB() -> prepare($sql);
-    $stmt -> execute([$first_name, $email, $telephone, $subject, $message]);
+    $stmt -> execute([$first_name, $email, $phone, $subject, $message]);
 ?>
 
 <section class="form__response section" id="about">
