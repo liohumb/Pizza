@@ -5,10 +5,13 @@
 <?php include ('base/header.php')?>
 
 <main class="home" id="home">
+
     <section class="home">
+
         <img src="assets/img/home1.jpg" alt="" class="home__img">
 
         <div class="home__container container grid">
+
             <div class="home__data">
                 <span class="home__data-subtitle">Bienvenue</span>
                 <h1 class="home__data-title">Venez <br> manger de <b>délicieuses <br> pizzas</b></h1>
@@ -23,11 +26,15 @@
                     <i class="uil uil-instagram"></i>
                 </a>
             </div>
+
         </div>
+
     </section>
 
     <section class="about section" id="about">
+
         <div class="about__container container grid">
+
             <div class="about__data">
                 <h2 class="section__title">En savoir plus <br> Sur nous et nos pizzas</h2>
                 <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -37,6 +44,7 @@
             </div>
 
             <div class="about__img">
+
                 <div class="about__img-overlay">
                     <img src="assets/img/about1.jpg" alt="" class="about__img-one">
                 </div>
@@ -44,54 +52,77 @@
                 <div class="about__img-overlay">
                     <img src="assets/img/about2.jpg" alt="" class="about__img-two">
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
     <section class="discover section" id="discover">
+
         <h2 class="section__title">A la découverte <br> de nos pizzas</h2>
 
         <div class="discover__container container swiper__container swiper-container">
+
             <div class="swiper-wrapper">
+
                 <div class="discover__card swiper-slide">
                     <a href="menu.php">
+
                         <img src="assets/img/discover1.jpg" alt="" class="discover__img">
+
                         <div class="discover__data">
                             <h2 class="discover__title">La chèvre</h2>
                         </div>
+
                     </a>
                 </div>
 
                 <div class="discover__card swiper-slide">
                     <a href="menu.php">
+
                         <img src="assets/img/discover2.jpg" alt="" class="discover__img">
+
                         <div class="discover__data">
                             <h2 class="discover__title">La 4 fromages</h2>
                         </div>
+
                     </a>
                 </div>
 
                 <div class="discover__card swiper-slide">
                     <a href="menu.php">
+
                         <img src="assets/img/discover3.jpg" alt="" class="discover__img">
+
                         <div class="discover__data">
                             <h2 class="discover__title">La Mozza</h2>
                         </div>
+
                     </a>
                 </div>
 
                 <div class="discover__card swiper-slide">
                     <a href="menu.php">
+
                         <img src="assets/img/discover4.jpg" alt="" class="discover__img">
+
                         <div class="discover__data">
                             <h2 class="discover__title">La pepperoni </h2>
                         </div>
+
                     </a>
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
     <section class="contact section">
+
         <div class="contact__container container grid">
 
             <div class="contact__img">
@@ -102,26 +133,39 @@
             </div>
 
             <div class="contact__data">
+
                 <h2 class="section__title">On reste en contact ?</h2>
                 <p class="contact__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <a href="contact.php" class="button">Contactez nous</a>
+
             </div>
+
         </div>
+
     </section>
+
     <section class="card section">
+
         <div class="card__container container">
+
             <div class="card__row card__justify">
+
                 <div class="card__col-12">
+
                     <div class="card__wrapper">
+
                         <div class="card__row no-gutters">
+
                             <div class="card__col-6">
+
                                 <div class="card__infos card__width card__padding card__padding-bg">
 
                                     <h3>On s'appelle, <br>on s'fait une bouffe ?</h3>
 
                                     <div class="card__row">
+
                                         <div class="card__col-4">
                                             <div class="card__box card__width card__flex card__items">
                                                 <div class="card__text">
@@ -153,6 +197,7 @@
                                 <div class="card__infos card__width card__padding card__padding-bg">
 
                                     <div class="card__row card__margin">
+
                                         <div class="card__col-3">
                                             <div class="card__box card__width card__flex card__items">
                                                 <div class="card__text">
@@ -188,6 +233,7 @@
                                     </div>
 
                                     <div class="card__row card__margin">
+
                                         <div class="card__col-3">
                                             <div class="card__box card__width card__flex card__items">
                                                 <div class="card__text">
@@ -215,6 +261,7 @@
                                     </div>
 
                                 </div>
+
                             </div>
 
                             <div class="card__col-6 card__flex align-items-stretch">
@@ -224,11 +271,17 @@
                             </div>
 
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
 </main>
 
 <?php include ('base/footer.php') ?>

@@ -3,7 +3,9 @@
 <?php include ('base/header-admin.php') ?>
 
 <section class="user section">
+
     <div class="container grid">
+
         <div class="user__container container grid">
 
             <div class="user__info">
@@ -15,14 +17,21 @@
                 <h3 class="user__data-title">Nombre de commande : ##</h3>
                 <h3 class="user__data-title">Nombre de message (non-lu) : ##</h3>
             </div>
+
         </div>
+
         <div class="user__button">
             <a href="admin.php" class="user__button-option button">Retour Acceuil</a>
         </div>
+
     </div>
+
 </section>
+
 <section>
+
     <div class="container grid">
+
         <div class="user__table-header">
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
@@ -37,6 +46,7 @@
                 </thead>
             </table>
         </div>
+
         <div class="user__table-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
@@ -123,7 +133,9 @@
                 </tbody>
             </table>
         </div>
+
     </div>
+
 </section>
 
 <?php include('base/footer.php') ?>

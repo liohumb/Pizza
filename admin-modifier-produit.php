@@ -2,8 +2,10 @@
 
 <?php include ('base/header-admin.php') ?>
 
-<section class="product section">
+<div class="product section">
+
     <div class="container grid">
+
         <div class="product__container container grid">
 
             <div class="product__info">
@@ -15,24 +17,34 @@
                 <h3 class="product__data-title">Nombre de commande : ##</h3>
                 <h3 class="product__data-title">Nombre de message (non-lu) : ##</h3>
             </div>
+
         </div>
+
         <div class="product__menu">
+
             <div>
                 <span>Accés rapide</span>
             </div>
+
             <div class="product__menu-button">
                 <span>• › <a href="#suggestions">Les Suggestions</a></span> <br>
                 <span>• › <a href="#pizzas">Les Pizzas</a></span> <br>
                 <span>• › <a href="#boissons">Les Boissons</a></span> <br>
                 <span>• › <a href="#desserts">Les Desserts</a></span></div>
+            </div>
+
+            <div class="product__button">
+                <a href="admin.php" class="product__button-option button">Retour Acceuil</a>
+            </div>
+
         </div>
-        <div class="product__button">
-            <a href="admin.php" class="product__button-option button">Retour Acceuil</a>
-        </div>
+
     </div>
-</section>
+
 <section>
+
     <div class="container grid" id="suggestions">
+
         <h2 class="product__title section__title">Les Suggestions</h2>
         <a href="ajouter.php" class="product__table-button button">ajouter</a>
 
@@ -50,6 +62,7 @@
                 </thead>
             </table>
         </div>
+
         <div class="product__table-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
@@ -89,9 +102,11 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
     <div class="container grid" id="pizzas">
+
         <h2 class="product__title section__title">Les Pizzas</h2>
         <a href="ajouter.php" class="product__table-button button">ajouter</a>
 
@@ -109,6 +124,7 @@
                 </thead>
             </table>
         </div>
+
         <div class="product__table-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
@@ -159,9 +175,11 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
     <div class="container grid" id="boissons">
+
         <h2 class="product__title section__title">Les Boissons</h2>
         <a href="ajouter.php" class="product__table-button button">ajouter</a>
 
@@ -179,6 +197,7 @@
                 </thead>
             </table>
         </div>
+
         <div class="product__table-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
@@ -229,9 +248,11 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
     <div class="container grid" id="desserts">
+
         <h2 class="product__titlesection__title">Les Desserts</h2>
         <a href="ajouter.php" class="product__table-button button">ajouter</a>
 
@@ -249,6 +270,7 @@
                 </thead>
             </table>
         </div>
+
         <div class="product__table-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
@@ -299,7 +321,9 @@
                 </tbody>
             </table>
         </div>
+
     </div>
+
 </section>
 
 <?php include('base/footer.php') ?>

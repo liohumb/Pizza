@@ -3,7 +3,9 @@
 <?php include ('base/header-admin.php') ?>
 
 <section class="order section">
+
     <div class="container grid">
+
         <div class="order__container container grid">
 
             <div class="order__info">
@@ -15,14 +17,21 @@
                 <h3 class="order__data-title">Nombre de commande : ##</h3>
                 <h3 class="order__data-title">Nombre de message (non-lu) : ##</h3>
             </div>
+
         </div>
+
         <div class="order__button">
             <a href="admin.php" class="order__button-option button">Retour Acceuil</a>
         </div>
+
     </div>
+
 </section>
+
 <section>
+
     <div class="container grid" id="suggestions">
+
         <h2 class="order__title section__title">Les commandes en préparations / livraisons</h2>
 
         <div class="order__table-header">
@@ -39,6 +48,7 @@
                 </thead>
             </table>
         </div>
+
         <div class="order__table-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
@@ -79,9 +89,11 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
     <div class="container grid" id="suggestions">
+
         <h2 class="order__title section__title">Les commandes terminées</h2>
 
         <div class="order__table-header">
@@ -98,7 +110,9 @@
                 </thead>
             </table>
         </div>
+
         <div class="order__table-content">
+
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
                 <tr>
@@ -137,8 +151,11 @@
                 </tr>
                 </tbody>
             </table>
+
         </div>
+
     </div>
+
 </section>
 
 <?php include('base/footer.php') ?>

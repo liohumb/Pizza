@@ -15,48 +15,60 @@ require_once "models/category.model.php";
 <main class="menu" id="menu">
 
     <section class="menu_section section">
+
         <h1 class="menu__data-title">Vous avez faim ?</h1>
+
         <p class="menu__data-subtitle">Faites votre choix</p>
+
             <?php
                 foreach($categories as $category){ // parcour chaque element dans category pour éxecuter ce qui suit pour chacune d'elle
                         $filteredProducts = array_filter($products, function($item) use($category){
+
                             if($item['category_id'] == $category['id']){
                                 return $item; // item filtre les produit qui ont pour catégory_id l'ID de la category
                             }
-                        });
-                        ?>
+
+                });
+            ?>
+
                     <h2 class="section__title menu__category"><?=$category['name'] ?></h2> <!-- place le 'name' présent dans category -->
+
                     <div class="menu__container container swiper__container swiper-container">
 
                             <div class="swiper-wrapper">
-                            <?php foreach($filteredProducts as $produit){ // parcour pour chaque Produit filtrer précedament
-                            ?>
+
+                            <?php foreach($filteredProducts as $produit){ // parcour pour chaque Produit filtrer précedament ?>
+
                                 <div class="menu__card swiper-slide">
 
-
                                     <div onclick = "window.location='produits.php?id=<?= $produit['id'] ?>'">
+
                                         <img src="<?= $produit['img_path'] ?>" alt="" class="menu__img"> <!-- recupere la colone ,img_path, dans la table produit present dans la BA qui contient la source de l'image ,le chemin -->
+
                                         <div class="menu__data">
                                             <h2 class="menu__data-titleProduct"><?= $produit['name'] ?></h2><!-- recupere la colone ,name, de la table produit -->
                                         </div>
+
                                     </div>
+
                                 </div>
 
-
-
                     <?php
-
-                                 } // une fois ici on a parcouru chaque category ,récuperer le nom de la category ,pour ensuite intégret chaque produit qui avais pour category_id l'id de la category, affin d'avoir le menu .
+                            } // une fois ici on a parcouru chaque category ,récuperer le nom de la category ,pour ensuite intégret chaque produit qui avais pour category_id l'id de la category, affin d'avoir le menu .
                     ?>
+
+                            </div>
+
                     </div>
-                        </div>
-                    <?php
 
-                 }
-                    ?>
+            <?php
+                }
+            ?>
 
         <h2 class="section__title menu__recap">Récapitulatif</h2>
+
     </section>
+
 </main>
 
 <?php include ('base/footer.php') ?>

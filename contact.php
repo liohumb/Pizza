@@ -5,24 +5,31 @@
 <?php include ('base/header.php')?>
 
 <section class="form__contact section">
+
     <div class="form__container container grid">
+
         <h1 class="form__contact-title">Dites nous tout !</h1>
+
         <form action="formulaire-contact.php" method="POST">
+
             <div class="form__contact-name">
                 <label for="first_name">
                     <input type="text" placeholder="Votre prénom" name="first_name" required>
                 </label>
             </div>
+
             <div class="form__contact-email">
                 <label for="email">
                     <input type="email" placeholder="Votre email" name="email" required>
                 </label>
             </div>
+
             <div class="form__contact-phone">
                 <label for="phone">
                     <input type="text" placeholder="Votre numéro de téléphone" name="telephone" required>
                 </label>
             </div>
+
             <div class="form__contact-subject">
                 <label for="subject">
                     <select name="subject" id="subject_input">
@@ -34,24 +41,37 @@
                     </select>
                 </label>
             </div>
+
             <div class="form__contact-message">
                 <label for="message">
                     <textarea name="message" placeholder="Je suis toute ouïe" id="message_input" cols="30" rows="5" required></textarea>
                 </label>
             </div>
+
             <div>
                 <input type="submit" value="Envoyer" class="button" />
             </div>
+
         </form>
+
     </div>
+
 </section>
+
 <section class="card section">
+
         <div class="card__container container">
+
             <div class="card__row card__justify">
+
                 <div class="card__col-12">
+
                     <div class="card__wrapper">
+
                         <div class="card__row no-gutters">
+
                             <div class="card__col-6">
+
                                 <div class="card__infos card__width card__padding card__padding-bg">
 
                                     <h3>On s'appelle, <br>on s'fait une bouffe ?</h3>
@@ -150,6 +170,7 @@
                                     </div>
 
                                 </div>
+
                             </div>
 
                             <div class="card__col-6 card__flex align-items-stretch">
@@ -159,11 +180,16 @@
                             </div>
 
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
-    </section>
+
+</section>
 
 <?php include ('base/footer.php') ?>
 
