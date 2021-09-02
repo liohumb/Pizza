@@ -1,10 +1,9 @@
 <?php
-    session_start();
-    require_once 'models/message.model.php';
-    require_once ('dbcontroller.php');
+    $bdd = new PDO('mysql:host=localhost;dbname=lorenzzobd_dieug;charset=utf8', 'root', '');
+    
+    $reponse = $bdd -> query('SELECT * FROM `message`');
 
-    $db_handle = new DBController();
-    $messages = $db_handle -> runQuery('SELECT * FROM `message`');
+    while ($donnees = $reponse -> fetch()) {
 ?>
 
 <?php include('base/head.php') ?>
@@ -41,14 +40,6 @@
 
     <div class="container grid">
 
-    <?php
-        foreach($messages as $message) {
-            if ($item['message_id'] == $message['id']) {
-                return $item;
-            }
-        }
-    ?>
-
         <div class="message__table-header">
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
@@ -62,34 +53,26 @@
             </table>
         </div>
 
+        <?php
+            while ($messages = $message -> fetch()) {
+        ?>
+
         <div class="message__table-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
                 <tr>
-                    <td><?php $message['Prenom'] ?></td>
-                    <td><?php $message['Telephone'] ?></td>
-                    <td><?php $message['Mail'] ?></td>
-                    <td><?php $message['Message'] ?></td>
-                </tr>
-                <tr>
-                    <td>Stark</td>
-                    <td>Tony</td>
-                    <td>tony@ironman.com</td>
-                    <td>
-                        Bonjour, je voulais vous dire bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.
-                    </td>
-                </tr>
-                <tr>
-                    <td>Gates</td>
-                    <td>Bill</td>
-                    <td>bill@microsoft.com</td>
-                    <td>
-                        Bonjour, je voulais vous dire bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla.
-                    </td>
+                    <td><?php echo $donnees['Prenom']; ?></td>
+                    <td><?php echo $donnees['Telephone']; ?></td>
+                    <td><?php echo $donnees['Mail']; ?></td>
+                    <td><?php echo $donnees['Message']; ?></td>
                 </tr>
                 </tbody>
             </table>
         </div>
+
+        <?php
+        }
+        ?>
 
     </div>
 
