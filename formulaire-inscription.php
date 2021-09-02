@@ -6,22 +6,21 @@
 <?php include ('base/head.php') ?>
 
 <?php include ('base/header.php')?>
-<?php
-$prenom=$_POST['prenom'];
-$nom=$_POST['nom'];
-$adresse=$_POST['adresse'];
-$cpt_adresse=$_POST['cpt-adresse'];
-$cp=$_POST['cp'];
-$ville=$_POST['ville'];
-$telephone=$_POST['telephone'];
-$email=$_POST['email'];
-$password=$_POST['password'];
 
-$sql ="INSERT INTO `user`(`prenom`, `nom`, `adresse`, `cpt-adress`, `cp`, `ville`, `telephone`, `email`, `password`) 
-VALUES (?,?,?,?,?,?,?,?,?)";
-$stmt= $pdo->connectDB()->prepare($sql);
-$stmt->execute([$prenom, $nom, $adresse, $cpt_adresse, $cp, $ville, $telephone, $email, $password]);
+<?php 
+    $Prenom = $_POST['Prenom'];
+    $Nom = $_POST['Nom'];
+    $Adresse = $_POST['Adresse'];
+    $Cpt_adresse = $_POST['Cpt-adresse'];
+    $cp = $_POST['cp'];
+    $ville = $_POST['ville'];
+    $Telephone = $_POST['Telephone'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
+    $sql ="INSERT INTO `user`(`Prenom`, `Nom`, `Adresse`, `Cpt-adress`, `cp`, `ville`, `Telephone`, `email`, `password`) VALUES (?,?,?,?,?,?,?,?,?)";
+    $stmt = $pdo->connectDB()->prepare($sql);
+    $stmt -> execute([$Prenom, $Nom, $Adresse, $Cpt_adresse, $cp, $ville, $Telephone, $email, $password]);
 ?>
 
 <section class="form__subscribe section">
