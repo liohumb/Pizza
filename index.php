@@ -1,4 +1,4 @@
-<?php include ('panierController.php') ?>
+<?php include ('dbcontroller.php') ?>
 
 <?php include ('base/head.php') ?>
 
