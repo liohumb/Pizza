@@ -6,21 +6,22 @@
 <?php include ('base/head.php') ?>
 
 <?php include ('base/header.php')?>
-<?php var_dump($_POST);
-$Prenom=$_POST['Prenom'];
-$Nom=$_POST['Nom'];
-$Adresse=$_POST['Adresse'];
-$Cpt_adresse=$_POST['Cpt-adresse'];
-$cp=$_POST['cp'];
-$ville=$_POST['ville'];
-$Telephone=$_POST['Telephone'];
-$email=$_POST['email'];
-$password=$_POST['password'];
 
-$sql ="INSERT INTO `user`(`Prenom`, `Nom`, `Adresse`, `Cpt-adress`, `cp`, `ville`, `Telephone`, `email`, `password`) 
-VALUES (?,?,?,?,?,?,?,?,?)";
-$stmt= $pdo->connectDB()->prepare($sql);
-$stmt->execute([$Prenom, $Nom, $Adresse, $Cpt_adresse, $cp, $ville, $Telephone, $email, $password]);
+<?php 
+    $Prenom = $_POST['Prenom'];
+    $Nom = $_POST['Nom'];
+    $Adresse = $_POST['Adresse'];
+    $Cpt_adresse = $_POST['Cpt-adresse'];
+    $cp = $_POST['cp'];
+    $ville = $_POST['ville'];
+    $Telephone = $_POST['Telephone'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $sql ="INSERT INTO `user`(`Prenom`, `Nom`, `Adresse`, `Cpt-adress`, `cp`, `ville`, `Telephone`, `email`, `password`) 
+    VALUES (?,?,?,?,?,?,?,?,?)";
+    $stmt= $pdo->connectDB()->prepare($sql);
+    $stmt->execute([$Prenom, $Nom, $Adresse, $Cpt_adresse, $cp, $ville, $Telephone, $email, $password]);
 
 ?>
 

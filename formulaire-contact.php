@@ -8,8 +8,6 @@
 <?php include ('base/header.php')?>
 
 <?php
-    var_dump($_POST);
-
     $Prenom = $_POST['first_name'];
     $Email = $_POST['email'];
     $Telephone = $_POST['telephone'];
