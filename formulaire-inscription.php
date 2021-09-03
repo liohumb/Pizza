@@ -22,12 +22,13 @@
     $city = $_POST['city'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
-    $pass = $_POST['pass'];
+    $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
     $sql ="INSERT INTO `user`(`first_name`, `last_name`, `address`, `cpt_address`, `post_code`, `city`, `phone`, `email`, `pass`) VALUES (?,?,?,?,?,?,?,?,?)";
     $stmt = $pdo->connectDB()->prepare($sql);
     $stmt -> execute([$first_name, $last_name, $address, $cpt_address, $post_code, $city, $phone, $email, $pass]);
 ?>
+
 <section class="form__subscribe section">
 
     <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['first_name']?> !</h1>
