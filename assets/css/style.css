@@ -446,6 +446,10 @@ td {
     margin-bottom: var(--mb-2-5);
 }
 
+.home__data-button {
+    margin-top: 3rem;
+}
+
 .home__social {
     display: flex;
     flex-direction: column;
@@ -1992,7 +1996,7 @@ td {
     body {
         margin: 0;
     }
-    .home__container, .home__img {
+    /*.home__container, .home__img {
         height: 640px;
-    }
+    }*/
 }

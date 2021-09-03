@@ -15,17 +15,11 @@
             <div class="home__data">
                 <span class="home__data-subtitle">Bienvenue</span>
                 <h1 class="home__data-title">Venez <br> manger de <b>délicieuses <br> pizzas</b></h1>
-                <a href="menu.php" class="button">Le Menu</a>
+                <a href="menu.php" class="home__data-button button">Découvrir le menu</a>
             </div>
 
-            <div class="home__social">
-                <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
-                    <i class="uil uil-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
-                    <i class="uil uil-instagram"></i>
-                </a>
-            </div>
+            <!--<div class="home__social">
+            </div>-->
 
         </div>
 
@@ -37,20 +31,22 @@
 
             <div class="about__data">
                 <h2 class="section__title">En savoir plus <br> Sur nous et nos pizzas</h2>
-                <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <p class="about__description">Venez nous suivre sur les réseaux et partagé vos meilleurs moments pizza avec le #lorenzzopizza !
                 </p>
-                <a href="#" class="button" >Découvrir le menu</a>
             </div>
 
             <div class="about__img">
 
                 <div class="about__img-overlay">
-                    <img src="assets/img/about1.jpg" alt="" class="about__img-one">
+                    <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                        <img src="assets/img/social1.jpg" alt="" class="about__img-one">
+                    </a>
                 </div>
 
                 <div class="about__img-overlay">
-                    <img src="assets/img/about2.jpg" alt="" class="about__img-two">
+                    <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                        <img src="assets/img/social2.jpg" alt="" class="about__img-two">
+                    </a>
                 </div>
 
             </div>
