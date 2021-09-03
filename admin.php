@@ -1,6 +1,16 @@
+<?php include ('panierController.php') ?>
+<?php
+    require_once ('dbcontroller.php');
+    $db_handle = new DBcontroller();
+?>
+
 <?php include('base/head.php') ?>
 
 <?php include ('base/header-admin.php') ?>
+
+<?php
+    $admin = $db_handle->runQuery("SELECT * FROM admin WHERE id='" . $_SESSION['admin']['id'] . "'");
+?>
 
 <section class="hero">
 
@@ -13,7 +23,7 @@
     <div class="admin__container container grid">
 
         <div class="admin__info">
-            <h1 class="admin__info-title">Bonjour, John Doe !</h1>
+            <h1 class="admin__info-title">Bonjour, <?= $admin[0]['first_name'] ?> !</h1>
         </div>
 
         <div class="admin__data">

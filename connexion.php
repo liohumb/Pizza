@@ -5,23 +5,32 @@
 <?php 
 $db_handle=new DBcontroller();
 if(isset($_POST['email'])){
-$user =$db_handle->runQuery("SELECT id, email, pass FROM user WHERE email='" . $_POST['email'] . "'");
+$user = $db_handle->runQuery("SELECT id, email, pass FROM user WHERE email='" . $_POST['email'] . "'");
+$admin = $db_handle->runQuery("SELECT id, email, pass FROM admin WHERE email='" . $_POST['email'] . "'");
 }
 if(isset($_POST['email'])){
-    if(count($user) == 1){
+    if (count($admin) == 1) {
+        $admin = $admin[0];
+        if ($admin['pass'] == password_verify($_POST['pass'], $admin['pass'])) {
+            $_SESSION['admin'] = $admin;
+            header("Location:admin.php");
+            exit;
+        }
+    }
+    elseif(count($user) == 1){
          $user = $user[0];
-        if ($user['pass']==$_POST['pass']){
+        if ($user['pass'] == password_verify($_POST['pass'], $user['pass'])){
             $_SESSION['user']=$user;
-                header("Location: mon-compte.php");
+                header("Location:mon-compte.php");
                 exit;
         }
         else{
-            echo 'invalid password';
+            echo "Ceci n'est pas le bon mot de passe !";
             }
 
         }
         else{
-            echo 'invalid email';
+            echo "Je ne connais pas cette email..";
         }
     }
 
