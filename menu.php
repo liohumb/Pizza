@@ -14,6 +14,12 @@ require_once "models/category.model.php";
 
 <main class="menu" id="menu">
 
+<section class="hero">
+
+    <img src="assets/img/home1.jpg" alt="" class="hero__img">
+
+</section>
+
     <section class="menu_section section">
 
         <h1 class="menu__data-title">Vous avez faim ?</h1>

@@ -4,6 +4,12 @@
 
 <?php include ('base/header.php')?>
 
+<section class="hero">
+
+    <img src="assets/img/home1.jpg" alt="" class="hero__img">
+
+</section>
+
 <section class="editAccount section">
 
     <div class="editAccount__container container grid">

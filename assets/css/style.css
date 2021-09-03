@@ -318,7 +318,6 @@ td {
         background-color: var(--body-color);
         top: 0;
         right: -100%;
-        width: 70%;
         height: 100%;
         box-shadow: -1px 0 4px rgba(14, 55, 63, 0.15);
         padding: 3rem;
@@ -456,6 +455,28 @@ td {
 .home__social-link {
     font-size: var(--biggest-font-size);
     width: max-content;
+}
+
+.hero__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    object-position: 83%;
+    filter: brightness(83%);
+}
+
+@media screen and (max-width: 767px) {
+    .hero__img {
+        height: 48px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .hero__img {
+        height: 72px;
+    }
 }
 
 
