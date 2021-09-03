@@ -1,19 +1,29 @@
-<?php
-?>
-
 <?php include ('panierController.php') ?>
 <?php require_once ('dbcontroller.php')?>
-
-
 <?php include ('base/head.php') ?>
-
 <?php include ('base/header.php')?>
 <?php 
 $db_handle=new DBcontroller();
 if(isset($_POST['email'])){
 $user =$db_handle->runQuery("SELECT id, email, pass FROM user WHERE email='" . $_POST['email'] . "'");
 }
+if(isset($_POST['email'])){
+    if(count($user) == 1){
+         $user = $user[0];
+        if ($user['pass']==$_POST['pass']){
+            $_SESSION['user']=$user;
+                header("Location: mon-compte.php");
+                exit;
+        }
+        else{
+            echo 'invalid password';
+            }
 
+        }
+        else{
+            echo 'invalid email';
+        }
+    }
 
 ?>
 <section class="connexion__section section">
@@ -22,7 +32,7 @@ $user =$db_handle->runQuery("SELECT id, email, pass FROM user WHERE email='" . $
 
         <h1 class="connexion__form-title">Bienvenue !</h1>
 
-        <form action="#" method="post" id="connexion_form">
+        <form action="" method="post" id="connexion_form">
 
             <div class="connexion__form-email">
 
@@ -49,23 +59,7 @@ $user =$db_handle->runQuery("SELECT id, email, pass FROM user WHERE email='" . $
     </div>
 
 </section>
-<?php
-    if(isset($_POST['email'])){
-        if(count($user) == 1){
-            $user = $user[0];
-            if ($user['pass']==$_POST['pass']){
-                $_SESSION['user']=$user;
-            }
-            else{
-                echo 'invalid password';
-            }
 
-        }
-        else{
-            echo 'invalid email';
-        }
-    }
-?>
 
 <?php include ('base/footer.php') ?>
 
