@@ -5,8 +5,11 @@ $db_handle = new DBcontroller(); ?>
 
 <?php include ('base/header.php')?>
 <?php
-$user = $db_handle->runQuery("SELECT * FROM user WHERE id='" . $_SESSION['user']['id'] . "'");
-
+$userInfo = $db_handle->runQuery("SELECT * FROM user WHERE id='" . $_SESSION['user']['id'] . "'");
+if(!empty($userInfo)){
+    $userInfo=$userInfo[0];
+    $_SESSION['userInfo']=$userInfo;
+}
 ?>
 <main class="account" id="account">
 
@@ -21,14 +24,14 @@ $user = $db_handle->runQuery("SELECT * FROM user WHERE id='" . $_SESSION['user']
         <div class="account__container container grid">
 
             <div class="account__info">
-                <h1 class="account__info-title"><?= $user[0]['first_name']?></h1>
-                <h1 class="account__info-title"><?= $user[0]['last_name']?></h1>
+                <h1 class="account__info-title"><?= $userInfo['first_name']?></h1>
+                <h1 class="account__info-title"><?= $userInfo['last_name']?></h1>
             </div>
 
             <div class="account__data">
-                <h3 class="account__data-title"><?= $user[0]['phone']?></h3>
-                <h3 class="account__data-title"><?=$user[0]['address']?> <br> <?= $user[0]['post_code']?></h3>
-                <h3 class="account__data-title"><?= $user[0]['email']?></h3>
+                <h3 class="account__data-title"><?= $userInfo['phone']?></h3>
+                <h3 class="account__data-title"><?=$userInfo['address']?> <br> <?= $userInfo['post_code']?></h3>
+                <h3 class="account__data-title"><?= $userInfo['email']?></h3>
             </div>
 
         </div>
@@ -40,7 +43,7 @@ $user = $db_handle->runQuery("SELECT * FROM user WHERE id='" . $_SESSION['user']
         </div>
 
     </section>
-
+<?php var_dump($_SESSION['userInfo']) ;?>
 </main>
 
 <?php include ('base/footer.php') ?>

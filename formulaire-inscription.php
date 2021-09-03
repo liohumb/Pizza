@@ -28,10 +28,6 @@
     $stmt = $pdo->connectDB()->prepare($sql);
     $stmt -> execute([$first_name, $last_name, $address, $cpt_address, $post_code, $city, $phone, $email, $pass]);
 ?>
-0
-
-( ! ) NOTICE: UNDEFINED INDEX: CPT_ADDRESS IN C:\WAMP64\WWW\PIZZA\FORMULAIRE-INSCRIPTION.PHP ON LINE 14
-
 <section class="form__subscribe section">
 
     <h1 class="form__subscribe-title">Bien le bonjour <?php echo $_POST['first_name']?> !</h1>
