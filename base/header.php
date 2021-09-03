@@ -11,13 +11,13 @@
                     <a href="contact.php" class="nav__link">Nous contacter</a>
                 </li>
                 <li>
-                    <a href="inscription.php" class="btn-conn">Inscription</a>
+                    <a href="inscription.php" class="nav__link">Inscription</a>
                     |
-                    <a href="connexion.php" class="btn-conn">Connexion</a>
+                    <a href="connexion.php" class="nav__link">Connexion</a>
                     <!--
-                    <a href="" class="btn-conn">Mon compte</a>
+                    <a href="" class="nav__link">Mon compte</a>
                     |
-                    <a href="" class="btn-conn">Déconnexion</a>
+                    <a href="" class="nav__link">Déconnexion</a>
                     -->
                 </li>
             </ul>
@@ -34,7 +34,7 @@
         }
         ?>
 
-        <a href="panier.php" class="nav__link"><i class="uil uil-pizza-slice nav__logo-cart"></i><span class="nav__cart-number"><?php echo $quantityTotal; ?></span></a>
+        <a href="panier.php" class="nav__cart"><i class="uil uil-pizza-slice nav__logo-cart"></i><span class="nav__cart-number"><?php echo $quantityTotal; ?></span></a>
 
         <div class="nav__toggle" id="nav-toggle">
             <i class="uil uil-bars"></i>

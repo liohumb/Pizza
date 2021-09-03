@@ -2,6 +2,12 @@
 
 <?php include ('base/header-admin.php') ?>
 
+<section class="hero">
+
+    <img src="assets/img/home1.jpg" alt="" class="hero__img">
+
+</section>
+
 <section class="admin section">
 
     <div class="admin__container container grid">

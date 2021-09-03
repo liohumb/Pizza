@@ -6,6 +6,12 @@
 
 <main class="account" id="account">
 
+    <section class="hero">
+
+        <img src="assets/img/home1.jpg" alt="" class="hero__img">
+
+    </section>
+
     <section class="account__section section">
 
         <div class="account__container container grid">

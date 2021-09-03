@@ -16,6 +16,13 @@ $user =$db_handle->runQuery("SELECT id, email, pass FROM user WHERE email='" . $
 
 
 ?>
+
+<section class="hero">
+
+    <img src="assets/img/home1.jpg" alt="" class="hero__img">
+
+</section>
+
 <section class="connexion__section section">
 
     <div class="connexion__container container grid">

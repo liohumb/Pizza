@@ -6,6 +6,12 @@
 
 <main class="home" id="home">
 
+    <section class="hero">
+
+        <img src="assets/img/home1.jpg" alt="" class="hero__img">
+
+    </section>
+
     <section class="cart section">
 
         <?php
