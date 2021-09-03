@@ -17,9 +17,9 @@
                     <a href="admin-clients.php" class="nav__link">Utilisateurs</a>
                 </li>
                 <li>
-                    <a href="admin-modifier-informations.php" class="btn-conn"><i class="uil uil-user-circle"></i></a>
+                    <a href="admin-modifier-informations.php" class="nav__link btn-conn"><i class="uil uil-user-circle"></i></a>
                     |
-                    <a href="index.php" class="btn-conn"><i class="uil uil-times"></i></a>
+                    <a href="index.php" class="nav__link btn-conn"><i class="uil uil-times"></i></a>
                 </li>
             </ul>
 

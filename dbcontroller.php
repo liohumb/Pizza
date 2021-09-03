@@ -16,7 +16,7 @@ class DBController {
 
     function connectDB() {
         $conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->database, $this->user, $this->password);
-        // $conn = new PDO("mysql:host=" . $this->host . ";port=". $this->port .";dbname=" . $this->database, $this->user, $this->password);
+        //$conn = new PDO("mysql:host=" . $this->host . ";port=". $this->port .";dbname=" . $this->database, $this->user, $this->password);
         return $conn;
     }
 

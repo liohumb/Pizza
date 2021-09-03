@@ -4,6 +4,12 @@
 
 <?php include ('base/header.php')?>
 
+<section class="hero">
+
+    <img src="assets/img/home1.jpg" alt="" class="hero__img">
+
+</section>
+
 <section class="form__contact section">
 
     <div class="form__container container grid">
@@ -26,7 +32,7 @@
 
             <div class="form__contact-phone">
                 <label for="phone">
-                    <input type="text" placeholder="Votre numéro de téléphone" name="telephone" required>
+                    <input type="text" placeholder="Votre numéro de téléphone" name="phone" required>
                 </label>
             </div>
 

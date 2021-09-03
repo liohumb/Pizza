@@ -15,6 +15,12 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
 <?php include ('base/header.php')?>
 
+<section class="hero">
+
+    <img src="assets/img/home1.jpg" alt="" class="hero__img">
+
+</section>
+
 <section class="products section">
 
     <div class="products__container container grid">
