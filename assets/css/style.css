@@ -283,10 +283,6 @@ td {
     align-items: center;
 }
 
-/*.nav__menu-page {*/
-/*    background-color: var(--white-color);*/
-/*}*/
-
 .nav__logo, .nav__toggle, .nav__cart {
     color: var(--white-color);
 }
