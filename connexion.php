@@ -9,7 +9,7 @@ $user = $db_handle->runQuery("SELECT id, email, pass FROM user WHERE email='" . 
 $admin = $db_handle->runQuery("SELECT id, email, pass FROM admin WHERE email='" . $_POST['email'] . "'");
 }
 if(isset($_POST['email'])){
-    if (count($admin) == 1) {
+    if (count($admin) == 1 && $admin != null) {
         $admin = $admin[0];
         if ($admin['pass'] == password_verify($_POST['pass'], $admin['pass'])) {
             $_SESSION['admin'] = $admin;
@@ -35,7 +35,6 @@ if(isset($_POST['email'])){
     }
 
 ?>
-
 <section class="hero">
 
     <img src="assets/img/home1.jpg" alt="" class="hero__img">

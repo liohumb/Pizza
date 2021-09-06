@@ -6,24 +6,16 @@ $db_handle = new DBcontroller(); ?>
 <?php include ('base/header.php')?>
 <?php
     if(isset($_POST['old_pass'])){
-        if($_POST['old_pass'] != $_SESSION['userInfo']['pass']){
+        if($_POST['old_pass'] != password_verify($_POST['old_pass'], $_SESSION['userInfo']['pass'])){
             echo 'invalide password';
         }
         else{
             $id=$_SESSION['userInfo']['id'];
-            // $first_name = $_SESSION['userInfo']['first_name'];
-            // $last_name = $_SESSION['userInfo']['last_name'];
-            // $address = $_SESSION['userInfo']['address'];
-            // $cpt_address = $_SESSION['userInfo']['cpt_address'];
-            // $post_code =$_SESSION['userInfo']['post_code'];
-            // $city = $_SESSION['userInfo']['city'];
-            // $phone = $_SESSION['userInfo']['phone'];
-            // $email = $_SESSION['userInfo']['email'];
-            $pass = $_POST['new_pass'];
-        
-            $sql ="UPDATE `user` SET `pass`=$pass WHERE id =$id";
+            $pass = password_hash($_POST['new_pass'], PASSWORD_DEFAULT);
+            $sql ="UPDATE user SET pass='$pass' WHERE id =$id";
              $stmt = $db_handle->connectDB()->prepare($sql);
              $stmt -> execute();
+             
         }
     }
 ?>
@@ -67,9 +59,6 @@ $db_handle = new DBcontroller(); ?>
         </form>
 
     </div>
-<?php
-    var_dump($_SESSION);
-?>
 </section>
 
 <?php include ('base/footer.php') ?>
