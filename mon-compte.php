@@ -43,7 +43,7 @@ if(!empty($userInfo)){
         </div>
 
     </section>
-<?php var_dump($_SESSION['userInfo']) ;?>
+    
 </main>
 
 <?php include ('base/footer.php') ?>
