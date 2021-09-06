@@ -7,6 +7,7 @@ $db_handle=new DBcontroller();
 if(isset($_POST['email'])){
 $user = $db_handle->runQuery("SELECT id, email, pass FROM user WHERE email='" . $_POST['email'] . "'");
 $admin = $db_handle->runQuery("SELECT id, email, pass FROM admin WHERE email='" . $_POST['email'] . "'");
+$worker = $db_handle->runQuery("SELECT id, email, pass FROM worker WHERE email='".$_POST['email']."'");
 }
 if(isset($_POST['email'])){
     if (count($admin) == 1 && $admin != null) {
