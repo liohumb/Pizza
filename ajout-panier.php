@@ -43,6 +43,7 @@ if(!empty($_POST["ajoute"])){
             $bp = 0;
         }
     }
+    header("Location: menu.php");
 }
 
 ?>
