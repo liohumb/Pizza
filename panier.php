@@ -72,7 +72,7 @@
                         <h2 class="section__title">Sous-total : <b><?php echo  number_format($PrxTotal,2) . " €"; ?></b></h2>
                         <h2 class="section__title">Livraison : <b><?php echo number_format($livraison,2) . " €"; ?></b></h2>
                         <br>
-                        <h2 class="section__title">Total : <b><?php echo (number_format($PrxTotal,2) + $livraison) . " €"; ?></b></h2>
+                        <h2 class="section__title">Total : <b><?php echo number_format(($PrxTotal +$livraison),2) . " €"; ?></b></h2>
                     </div>
              </div>
 
