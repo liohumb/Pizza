@@ -68,7 +68,7 @@ if(isset($_POST['adminEmail'])){
 
                 <div class="admin__subscribe-formAdminEmail">
                     <label for="adminEmail">
-                        <input name="adminEmail" type="text" id="adminEmail" placeholder="Email administrateur" required>
+                        <input name="adminEmail" type="text" id="adminEmail" placeholder="Email du boss" required>
                     </label>
                 </div>
 
@@ -114,8 +114,19 @@ if(isset($_POST['adminEmail'])){
                     </label>
                 </div>
 
+                <div class="admin__subscribe">
+                    <label for="job">
+                        <select name="job" id="job_input" required>
+                            <option disabled hidden selected>Choisissez un poste</option>
+                            <option value="">Employé(e) de cuisine</option>
+                            <option value="">Employé(e) de salle</option>
+                            <option value="">Livreur</option>
+                        </select>
+                    </label>
+                </div>
+
                 <div class="button">
-                    <input type="submit" class="button__title button__slide-effect" value="Générer nouvel admin"/>
+                    <input type="submit" class="button__title button__slide-effect" value="Générer un nouvel employé(e)"/>
                 </div>
 
             </form>
