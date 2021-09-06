@@ -9,7 +9,8 @@
 <?php include ('base/header-admin.php') ?>
 
 <?php
-    $admin = $db_handle->runQuery("SELECT * FROM admin WHERE id='" . $_SESSION['admin']['id'] . "'");
+    $admin = $db_handle->runQuery("SELECT * FROM admin ");
+    $_SESSION['admin']=$admin[0];
 ?>
 
 <section class="hero">

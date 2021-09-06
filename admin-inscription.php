@@ -1,8 +1,32 @@
 <?php include ('panierController.php') ?>
+<?php
+    require_once ('dbcontroller.php');
+    $db_handle = new DBcontroller();
+?>
 
 <?php include ('base/head.php') ?>
 
 <?php include ('base/header.php')?>
+
+<?php
+$worker = $db_handle->runQuery("SELECT * FROM worker");
+if(isset($_POST['adminEmail'])){
+    if($_POST['adminEmail'] == $_SESSION['admin']['email']){
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $email = $_POST['email'];
+        $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+        $phone = $_POST['phone'];
+        $poste = $_POST['poste'];
+
+        $sql ="INSERT INTO `worker`(`first_name`, `last_name`, `email`, `pass`, `phone`, `poste`) VALUES (?,?,?,?,?,?)";
+        $stmt = $db_handle->connectDB()->prepare($sql);
+        $stmt -> execute([$first_name, $last_name, $email, $pass, $phone, $poste]);
+        header('Location: admin.php');
+    }
+
+}
+?>
 
     <section class="hero">
 
@@ -27,7 +51,9 @@
                 </div>
 
             </div>
-
+<?php
+    var_dump($_SESSION["admin"]);
+?>
             <div class="message__button">
                 <div class="button">
                     <a href="admin.php" class="button__title button__slide-effect">Retour Acceuil</a>
@@ -38,7 +64,7 @@
 
         <div class="admin__subscribe-container container grid">
 
-            <form action="formulaire-inscription.php" method="post" id="contact_form">
+            <form action="admin-inscription.php" method="post" id="contact_form">
 
                 <div class="admin__subscribe-formAdminEmail">
                     <label for="adminEmail">
