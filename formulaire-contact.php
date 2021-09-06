@@ -38,7 +38,9 @@
                 <br>En attendant pourquoi pas commander une bonne pizza ?
                 <br><br>À bientôt <?php echo $_POST['first_name']?> !
             </p>
-            <a href="menu.php" class="button" >Découvrir le menu</a>
+            <div class="button">
+                <a href="menu.php" class="button__title button__slide-effect" >Découvrir le menu</a>
+            </div>
 
         </div>
 

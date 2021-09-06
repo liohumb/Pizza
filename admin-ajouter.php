@@ -27,7 +27,9 @@
         </div>
 
         <div class="add__button">
-            <a href="admin.php" class="add__button-option button">Retour Acceuil</a>
+            <div class="button">
+                <a href="admin.php" class="button__title button__slide-effect">Retour Acceuil</a>
+            </div>
         </div>
 
     </div>
@@ -95,13 +97,15 @@
                 <input type="file" name="photo" class="add__form-uploadPicture">
             </div>
 
-            <div>
-                <input type="submit" class="user__form-button button" value="Ajouter"/>
-            </div>
+    </div>
+
+    <div class="add__form-button">
+        <div class="button">
+            <input type="submit" class="button__title button__slide-effect" value="Ajouter"/>
+        </div>
+    </div>
 
         </form>
-
-    </div>
 
 </section>
 

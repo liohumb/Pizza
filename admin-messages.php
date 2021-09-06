@@ -1,5 +1,5 @@
 <?php
-    $bdd = new PDO('mysql:host=localhost;dbname=lorenzzobd_dieug;charset=utf8', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=lorenzzobd_dieug;charset=utf8', 'root', 'root');
     
     $reponse = $bdd -> query('SELECT * FROM `message`');
 
@@ -35,7 +35,9 @@
         </div>
 
         <div class="message__button">
-            <a href="admin.php" class="message__button-option button">Retour Acceuil</a>
+            <div class="button">
+                <a href="admin.php" class="button__title button__slide-effect">Retour Acceuil</a>
+            </div>
         </div>
 
     </div>
@@ -78,6 +80,7 @@
 
         <?php
         }
+    }
         ?>
 
     </div>

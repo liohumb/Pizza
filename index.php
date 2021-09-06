@@ -15,7 +15,9 @@
             <div class="home__data">
                 <span class="home__data-subtitle">Bienvenue</span>
                 <h1 class="home__data-title">Venez <br> manger de <b>délicieuses <br> pizzas</b></h1>
-                <a href="menu.php" class="home__data-button button">Découvrir le menu</a>
+                <div class="home__button">
+                    <a href="menu.php" class="home__button-title home__button-slideEffect">Voir le menu <i class="uil uil-arrow-right"></i></a>
+                </div>
             </div>
 
         </div>
@@ -131,7 +133,10 @@
                 <p class="contact__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a href="contact.php" class="button">Contactez nous</a>
+<!--                <a href="contact.php" class="button">Contactez nous</a>-->
+                <div class="contact__button">
+                    <a href="menu.php" class="contact__button-title contact__button-slideEffect">Contactez nous <i class="uil uil-phone"></i></a>
+                </div>
 
             </div>
 

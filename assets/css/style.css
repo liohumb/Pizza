@@ -173,6 +173,10 @@ input[type='text'], [type='email'], [type='tel'], [type='password'], select, tex
     transition: all 0.3s;
 }
 
+input[type='submit'] {
+    background: none;
+}
+
 input[type='text']:focus, [type='email']:focus, [type='tel']:focus, [type='password']:focus, textarea:focus {
     outline: none;
     padding: 0 0 0.875em 0;
@@ -233,19 +237,74 @@ td {
 }
 
 .button {
-    display: inline-block;
-    background-color: var(--first-color);
-    color: var(--white-color);
-    padding: .5rem 1rem;
-    border-radius: 5px;
-    box-shadow: 0 10px 15px 0 var(--first-color-alt);
-    font-weight: var(--font-semi-bold);
-    transition: .3s;
-    margin-top: 2rem;
+    display: table-cell;
+    padding: 1em;
+    text-align: center;
+    vertical-align: middle;
 }
 
-.button:hover {
-    background-color: var(--first-color-alt);
+.button__title {
+    color: var(--text-color);
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 360px;
+    margin: 0 auto 2em;
+    position: relative;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .button__title:nth-of-type(even) {
+        margin-right: 2.5em;
+    }
+    .button__title:nth-of-type(5) {
+        margin-right: 0;
+    }
+}
+
+.button__slide-effect {
+    letter-spacing: 5px;
+}
+
+.button__slide-effect:hover,
+.button__slide-effect:active {
+    letter-spacing: 5px;
+}
+
+.button__slide-effect:after,
+.button__slide-effect:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid rgba(255, 255, 255, 0);
+    bottom: 0;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transition: all 280ms ease-in-out;
+    transition: all 1s ease-in-out;
+    width: 0;
+}
+
+.button__slide-effect:hover:after,
+.button__slide-effect:hover:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-color: var(--text-color);
+    -webkit-transition: width 350ms ease-in-out;
+    transition: width 1s ease-in-out;
+    width: 100%;
+}
+
+.button__slide-effect:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 100%;
 }
 
 .button--flex {
@@ -442,19 +501,83 @@ td {
     margin-bottom: var(--mb-2-5);
 }
 
-.home__data-button {
-    margin-top: 3rem;
+.home__button {
+    display: table-cell;
+    padding: 1em;
+    text-align: center;
+    vertical-align: middle;
 }
 
-.home__social {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.5rem;
+.home__button-title {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 320px;
+    margin: 0 auto 2em;
+    position: relative;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 100%;
+}
+@media (min-width: 400px) {
+    .home__button-title {
+        display: inline-block;
+        margin-right: 2.5em;
+    }
+    .home__button-title:nth-of-type(even) {
+        margin-right: 0;
+    }
+}
+@media (min-width: 600px) {
+    .home__button-title:nth-of-type(even) {
+        margin-right: 2.5em;
+    }
+    .home__button-title:nth-of-type(5) {
+        margin-right: 0;
+    }
 }
 
-.home__social-link {
-    font-size: var(--biggest-font-size);
-    width: max-content;
+.home__button-slideEffect {
+    letter-spacing: 5px;
+}
+
+.home__button-slideEffect:hover,
+.home__button-slideEffect:active {
+    letter-spacing: 5px;
+}
+
+.home__button-slideEffect:after,
+.home__button-slideEffect:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid rgba(255, 255, 255, 0);
+    bottom: 0;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transition: all 280ms ease-in-out;
+    transition: all 1s ease-in-out;
+    width: 0;
+}
+
+.home__button-slideEffect:hover:after,
+.home__button-slideEffect:hover:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-color: #fff;
+    -webkit-transition: width 350ms ease-in-out;
+    transition: width 1s ease-in-out;
+    width: 100%;
+}
+
+.home__button-slideEffect:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 100%;
 }
 
 .hero__img {
@@ -579,7 +702,84 @@ td {
 }
 
 .contact__data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.contact__description {
     text-align: end;
+}
+
+.contact__button {
+    display: table-cell;
+    padding: 1em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.contact__button-title {
+    color: var(--text-color);
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 320px;
+    margin: 0 auto 2em;
+    position: relative;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .contact__button-title:nth-of-type(even) {
+        margin-right: 2.5em;
+    }
+    .contact__button-title:nth-of-type(5) {
+        margin-right: 0;
+    }
+}
+
+.contact__button-slideEffect {
+    letter-spacing: 5px;
+}
+
+.contact__button-slideEffect:hover,
+.contact__button-slideEffect:active {
+    letter-spacing: 5px;
+}
+
+.contact__button-slideEffect:after,
+.contact__button-slideEffect:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid rgba(255, 255, 255, 0);
+    bottom: 0;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transition: all 280ms ease-in-out;
+    transition: all 1s ease-in-out;
+    width: 0;
+}
+
+.contact__button-slideEffect:hover:after,
+.contact__button-slideEffect:hover:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-color: var(--text-color);
+    -webkit-transition: width 350ms ease-in-out;
+    transition: width 1s ease-in-out;
+    width: 100%;
+}
+
+.contact__button-slideEffect:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 100%;
 }
 
 
@@ -1184,6 +1384,11 @@ td {
     text-transform: uppercase;
 }
 
+.form__password-button {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* PAGE PANIER */
 
@@ -1252,16 +1457,49 @@ td {
 
 .cart__button {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
 }
 
-.cart__button-option,
-.cart__button-trash {
-    margin-top: 2rem;
+.cart__button-slideEffect {
+    letter-spacing: 5px;
 }
 
-.cart__button-trash:hover {
-    background-color: var(--hover-red);
+.cart__button-slideEffect:hover,
+.cart__button-slideEffect:active {
+    letter-spacing: 5px;
+    color: var(--hover-red);
+}
+
+.cart__button-slideEffect:after,
+.cart__button-slideEffect:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid rgba(255, 255, 255, 0);
+    bottom: 0;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transition: all 280ms ease-in-out;
+    transition: all 1s ease-in-out;
+    width: 0;
+}
+
+.cart__button-slideEffect:hover:after,
+.cart__button-slideEffect:hover:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-color: var(--hover-red);
+    -webkit-transition: width 350ms ease-in-out;
+    transition: width 1s ease-in-out;
+    width: 100%;
+}
+
+.cart__button-slideEffect:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 100%;
 }
 
 .cart__data-empty {
@@ -1337,6 +1575,7 @@ td {
 
 .account__button {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -1383,6 +1622,11 @@ td {
 .editAccount__form-city {
     float: right;
     width: 69%;
+}
+
+.editAccount__form-button {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -1759,9 +2003,9 @@ td {
     z-index: -1;
 }
 
-.user__form-button {
-    margin-top: 5rem;
-    text-align: center;
+.add__form-button {
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (min-width: 768px) {

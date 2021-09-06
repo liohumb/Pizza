@@ -37,9 +37,15 @@ if(!empty($userInfo)){
         </div>
 
         <div class="account__button">
-            <a href="index.php" class="account__button-option button">Retour à l'acceuil</a>
-            <a href="modifier-mon-compte.php" class="account__button-option button">Modifier informations</a>
-            <a href="modifier-mdp.php" class="account__button-option button">Modifier mot de passe</a>
+            <div class="button">
+                <a href="modifier-mon-compte.php" class="button__title button__slide-effect">Modifier informations</a>
+            </div>
+            <div class="button">
+                <a href="modifier-mdp.php" class="button__title button__slide-effect">Modifier mot de passe</a>
+            </div>
+            <div class="button">
+                <a href="index.php" class="button__title button__slide-effect">Retour à l'acceuil</a>
+            </div>
         </div>
 
     </section>

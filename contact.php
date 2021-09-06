@@ -54,8 +54,8 @@
                 </label>
             </div>
 
-            <div>
-                <input type="submit" value="Envoyer" class="button" />
+            <div class="button">
+                <input type="submit" value="Envoyer" class="button__title button__slide-effect" />
             </div>
 
         </form>

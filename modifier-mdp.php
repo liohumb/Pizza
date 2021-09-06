@@ -51,14 +51,18 @@ $db_handle = new DBcontroller(); ?>
                 </label>
             </div>
 
-            <div>
-                <input type="submit" value="Modifier mon mot de passe" class="button"/>
-                <a href="mon-compte.php" class="button">Retour à mon compte</a>
-            </div>
+    </div>
+
+    <div class="form__password-button">
+        <div class="button">
+            <input type="submit" value="Modifier mon mot de passe" class="button__title button__slide-effect"/>
+        </div>
+        <div class="button">
+            <a href="mon-compte.php" class="button__title button__slide-effect">Retour à mon compte</a>
+        </div>
+    </div>
 
         </form>
-
-    </div>
 </section>
 
 <?php include ('base/footer.php') ?>

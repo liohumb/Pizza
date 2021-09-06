@@ -40,7 +40,9 @@
             </div>
 
             <div class="product__button">
-                <a href="admin.php" class="product__button-option button">Retour Acceuil</a>
+                <div class="button">
+                    <a href="admin.php" class="button__title button__slide-effect">Retour Acceuil</a>
+                </div>
             </div>
 
         </div>
@@ -52,7 +54,9 @@
     <div class="container grid" id="suggestions">
 
         <h2 class="product__title section__title">Les Suggestions</h2>
-        <a href="ajouter.php" class="product__table-button button">ajouter</a>
+        <div class="button">
+            <a href="admin-ajouter.php" class="button__title button__slide-effect">ajouter</a>
+        </div>
 
         <div class="product__table-header">
             <table cellpadding="0" cellspacing="0" border="0">
@@ -114,7 +118,9 @@
     <div class="container grid" id="pizzas">
 
         <h2 class="product__title section__title">Les Pizzas</h2>
-        <a href="ajouter.php" class="product__table-button button">ajouter</a>
+        <div class="button">
+            <a href="admin-ajouter.php" class="button__title button__slide-effect">ajouter</a>
+        </div>
 
         <div class="product__table-header">
             <table cellpadding="0" cellspacing="0" border="0">
@@ -187,7 +193,9 @@
     <div class="container grid" id="boissons">
 
         <h2 class="product__title section__title">Les Boissons</h2>
-        <a href="ajouter.php" class="product__table-button button">ajouter</a>
+        <div class="button">
+            <a href="admin-ajouter.php" class="button__title button__slide-effect">ajouter</a>
+        </div>
 
         <div class="product__table-header">
             <table cellpadding="0" cellspacing="0" border="0">
@@ -259,8 +267,10 @@
 
     <div class="container grid" id="desserts">
 
-        <h2 class="product__titlesection__title">Les Desserts</h2>
-        <a href="ajouter.php" class="product__table-button button">ajouter</a>
+        <h2 class="product__title section__title">Les Desserts</h2>
+        <div class="button">
+            <a href="admin-ajouter.php" class="button__title button__slide-effect">ajouter</a>
+        </div>
 
         <div class="product__table-header">
             <table cellpadding="0" cellspacing="0" border="0">
