@@ -54,14 +54,18 @@
                 </label>
             </div>
 
-            <div class="submit">
-                <input type="submit" value="Modifier mes informations" class="button">
-                <a href="mon-compte.php" class="button">Retour à mon compte</a>
-            </div>
+    </div>
+
+    <div class="editAccount__form-button">
+        <div class="button">
+            <input type="submit" value="Modifier mes informations" class="button__title button__slide-effect">
+        </div>
+        <div class="button">
+            <a href="mon-compte.php" class="button__title button__slide-effect">Retour à mon compte</a>
+        </div>
+    </div>
 
         </form>
-
-    </div>
 
 </section>
 

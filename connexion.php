@@ -66,8 +66,8 @@ if(isset($_POST['email'])){
 
             </div>
 
-            <div>
-                <input type="submit" value="Connexion" class="button" />
+            <div class="button">
+                <input type="submit" value="Connexion" class="button__title button__slide-effect" />
             </div>
 
         </form>

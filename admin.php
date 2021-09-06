@@ -35,13 +35,21 @@
     </div>
 
     <div class="admin__button">
-        <a href="admin-modifier-produit.php" class="admin__button-option button">Modifier les produits</a>
-        <a href="admin-commandes.php" class="admin__button-option button">Acceder aux commandes</a>
+        <div class="button">
+            <a href="admin-modifier-produit.php" class="button__title button__slide-effect">Modifier les produits</a>
+        </div>
+        <div class="button">
+            <a href="admin-commandes.php" class="button__title button__slide-effect">Acceder aux commandes</a>
+        </div>
     </div>
 
     <div class="admin__button">
-        <a href="admin-messages.php" class="admin__button-option button">Lire les messages</a>
-        <a href="admin-modifier-informations.php" class="admin__button-option button">Modifier informations</a>
+        <div class="button">
+            <a href="admin-messages.php" class="button__title button__slide-effect">Lire les messages</a>
+        </div>
+        <div class="button">
+            <a href="admin-modifier-informations.php" class="button__title button__slide-effect">Modifier informations</a>
+        </div>
     </div>
 
 </section>

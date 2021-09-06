@@ -73,9 +73,15 @@
              </div>
 
             <div class="cart__button">
-            <a href="menu.php" class="cart__button-option button">Retour au menu</a>
-            <a href="panier.php?action=vider" class="cart__button-trash button">Vider le panier</a>
-            <a href="#" class="cart__button-option button">Valider mon panier</a>
+                <div class="button">
+                    <a href="#" class="button__title button__slide-effect">Valider mon panier</a>
+                </div>
+                <div class="button">
+                    <a href="panier.php?action=vider" class="button__title cart__button-slideEffect">Vider le panier</a>
+                </div>
+                <div class="button">
+                    <a href="menu.php" class="button__title button__slide-effect">Retour au menu</a>
+                </div>
             </div>
 
             <?php
@@ -88,7 +94,9 @@
             </div>
 
             <div class="cart__button">
-                <a href="menu.php" class="cart__button-option button">Retour au menu</a>
+                <div class="button">
+                    <a href="menu.php" class="button__title button__slide-effect">Retour au menu</a>
+                </div>
             </div>
 
             <?php

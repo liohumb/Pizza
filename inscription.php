@@ -91,8 +91,8 @@
                 </label>
             </div>
 
-            <div>
-                <input type="submit" class="button" value="S'inscrire"/>
+            <div class="button">
+                <input type="submit" class="button__title button__slide-effect" value="S'inscrire"/>
             </div>
 
         </form>

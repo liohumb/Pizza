@@ -27,7 +27,9 @@
         </div>
 
         <div class="order__button">
-            <a href="admin.php" class="order__button-option button">Retour Acceuil</a>
+            <div class="button">
+                <a href="admin.php" class="button__title button__slide-effect">Retour Acceuil</a>
+            </div>
         </div>
 
     </div>

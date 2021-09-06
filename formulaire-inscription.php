@@ -59,7 +59,9 @@
     </div>
 
     <div class="form__subscribe-button">
-        <a href="connexion.php" class="button" >Connectez vous</a>
+        <div class="button">
+            <a href="connexion.php" class="button__title button__slide-effect" >Connectez vous</a>
+        </div>
     </div>
 
 </section>
