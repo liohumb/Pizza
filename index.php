@@ -18,9 +18,6 @@
                 <a href="menu.php" class="home__data-button button">Découvrir le menu</a>
             </div>
 
-            <!--<div class="home__social">
-            </div>-->
-
         </div>
 
     </section>
