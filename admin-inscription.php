@@ -9,7 +9,6 @@
 <?php include ('base/header.php')?>
 
 <?php
-$worker = $db_handle->runQuery("SELECT * FROM worker");
 if(isset($_POST['adminEmail'])){
     if($_POST['adminEmail'] == $_SESSION['admin']['email']){
         $first_name = $_POST['first_name'];
