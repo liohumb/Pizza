@@ -2,6 +2,7 @@
 session_start();
 require_once "models/products.models.php";
 require_once "models/category.model.php";
+require_once "panierController.php";
     require_once("dbcontroller.php");// lance la connexion a la base de donnée;
     $db_handle= new DBcontroller();//lance la connexion a la base de donnée;
     $categories = $db_handle->runQuery("SELECT * FROM category"); //va rechercher tout ce que contient category présente dans la base de donnée;
@@ -73,24 +74,69 @@ require_once "models/category.model.php";
     </section>
     
     <section class="recap__section section">
-        
+
         <h1 class="recap__data-title">Du coup ? <br>On mange quoi ?</h1>
 
         <div class="recap__data-container container grid">
 
+        <?php
+            if(isset($_SESSION["Panier_item"])){
+            $quantityTotal = 0;
+            $PrxTotal = 0;
+
+            foreach($_SESSION["Panier_item"]as $item){
+            $item_prix = $item["quantity"]*$item["price"];
+        ?>
+
             <div class="recap__products">
-
                 <div class="recap__products-title">
-
+                    <h1 class="recap__products-title"><?php echo $item["name"]." ".$item['optionSelect']?></h1>
                 </div>
-                <div class="menu__recap-dataQuantity">
-
+                <div class="recap__products-quantity">
+                    <span class="recap__products-quantity">Quantité : <?php echo $item["quantity"]; ?></span>
                 </div>
-                <div class="menu__recap-dataPrice">
-
+                <div class="recap__products-price">
+                    <h2 class="recap__products-price"><?php echo $item_prix . " €"; ?></h2>
                 </div>
-
+                
             </div>
+
+                <?php
+                $quantityTotal += $item["quantity"];
+                $PrxTotal += ($item["price"]*$item["quantity"]);
+                $livraison = 3.50;
+                    if($PrxTotal >20){
+                        $livraison = 0 ;
+                    }
+                }
+                ?>
+
+            <div class="cart__recap">
+                <div class="cart__recap-title">
+                    <h2 class="section__title">Récapitulatif</h2>
+                </div>
+
+                <div class="cart__recap-total">
+                    <h2 class="section__title">Sous-total : <b><?php echo  number_format($PrxTotal,2) . " €"; ?></b></h2>
+                    <h2 class="section__title">Livraison : <b><?php echo number_format($livraison,2) . " €"; ?></b></h2>
+                    <br>
+                    <h2 class="section__title">Total : <b><?php echo number_format(($PrxTotal +$livraison),2) . " €"; ?></b></h2>
+                </div>
+            </div>
+
+            <?php
+                }
+                else {
+            ?>
+
+            <div class="cart__data-empty">
+                <h1 class="cart__product-name">Votre Panier est vide</h1>
+            </div>
+
+            <?php
+                }
+            ?>
+
         </div>
 
     </section>

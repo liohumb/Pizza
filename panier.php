@@ -63,7 +63,6 @@
             ?>
 
              <div class="cart__recap">
-
                     <div class="cart__recap-title">
                         <h2 class="section__title">Récapitulatif</h2>
                     </div>

@@ -1006,9 +1006,30 @@ td {
 .recap__data-title {
     font-size: var(--biggest-font-size);
     font-weight: var(--font-medium);
-    margin-bottom: var(--mb-2-5);
+    margin-bottom: 4rem;
     color: var(--first-color);
     text-align: center;
+}
+
+.recap__products {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.recap__products-title {
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.recap__products-quantity {
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.recap__products-price {
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 @media screen and (min-width: 768px) {
