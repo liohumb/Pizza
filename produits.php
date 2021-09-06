@@ -31,7 +31,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
             </div>
         </div>
 
-        <form method="post" action="">
+        <form method="post" action="" id="products__form">
 
             <div class="products__data">
 
@@ -129,7 +129,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
             <div class="products__button">
                 <div class="button">
                     <input type="hidden" name="id" value ="<?=$id?>">
-                    <input type ="submit" name="ajoute" class="button__title button__slide-effect" value="Ajouter au panier">
+                    <input type ="submit" name="ajoute" class="button__title button__slide-effect" onclick="return productsSubmit();" value="Ajouter au panier">
                 </div>
                 <div class="button">
                     <a href="menu.php" class="button__title button__slide-effect">Retour au menu</a>
