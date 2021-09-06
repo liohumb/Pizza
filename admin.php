@@ -52,6 +52,12 @@
         </div>
     </div>
 
+    <div class="admin__button">
+        <div class="button">
+            <a href="admin-inscription.php" class="button__title button__slide-effect">Créer nouvel admin</a>
+        </div>
+    </div>
+
 </section>
 
 <?php include('base/footer.php') ?>

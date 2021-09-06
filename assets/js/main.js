@@ -49,3 +49,10 @@ let swiper = new Swiper(".swiper__container", {
         rotate: 0,
     },
 })
+
+/* MESSAGE AJOUT AU PANIER */
+
+function productsSubmit() {
+    alert("C'est dans le panier !");
+    return true;
+}

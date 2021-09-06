@@ -1673,6 +1673,33 @@ td {
 }
 
 
+/* PAGE INSCRIPTION -> ADMIN */
+
+
+.admin__subscribe-title {
+    color: var(--text-color);
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.admin__subscribe-formFirstName {
+    float: left;
+    width: 49%;
+}
+
+.admin__subscribe-formLastName {
+    float: right;
+    width: 49%;
+}
+
+.admin__subscribe-formPassword, .admin__subscribe-formConfPassword {
+    width: 100%;
+}
+
+
 /* PAGE GESTION PRODUITS -> ADMIN */
 
 
