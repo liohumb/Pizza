@@ -129,7 +129,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
             <div class="products__button">
                 <div class="button">
                     <input type="hidden" name="id" value ="<?=$id?>">
-                    <input type ="submit" name="ajoute" class="button__title button__slide-effect" onclick="return productsSubmit();" value="Ajouter au panier">
+                    <input type ="submit" name="ajoute" class="button__title button__slide-effect" value="Ajouter au panier">
                 </div>
                 <div class="button">
                     <a href="menu.php" class="button__title button__slide-effect">Retour au menu</a>
@@ -141,9 +141,8 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
 </section>
 <script>
-    let prices = <?php echo json_encode($price); ?>// ne pas enlever sinon les option ne fonctionneron plus
+    let prices = <?php echo json_encode($price); ?>// ne pas enlever sinon les option ne fonctionneront plus
 </script>
-
 
 <?php include ('base/footer.php') ?>
 

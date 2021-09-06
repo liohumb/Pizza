@@ -14,11 +14,11 @@ require_once "models/category.model.php";
 
 <main class="menu" id="menu">
 
-<section class="hero">
-
-    <img src="assets/img/home1.jpg" alt="" class="hero__img">
-
-</section>
+    <section class="hero">
+    
+        <img src="assets/img/home1.jpg" alt="" class="hero__img">
+    
+    </section>
 
     <section class="menu_section section">
 
@@ -70,8 +70,28 @@ require_once "models/category.model.php";
             <?php
                 }
             ?>
+    </section>
+    
+    <section class="recap__section section">
+        
+        <h1 class="recap__data-title">Du coup ? <br>On mange quoi ?</h1>
 
-        <h2 class="section__title menu__recap">Récapitulatif</h2>
+        <div class="recap__data-container container grid">
+
+            <div class="recap__products">
+
+                <div class="recap__products-title">
+
+                </div>
+                <div class="menu__recap-dataQuantity">
+
+                </div>
+                <div class="menu__recap-dataPrice">
+
+                </div>
+
+            </div>
+        </div>
 
     </section>
 
