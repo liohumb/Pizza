@@ -7,13 +7,13 @@ if(!empty($_POST["ajoute"])){
          $produitById = $_POST;
          $priceByProduitId= $_POST['price'];
          $imgProduit =$db_handle->runQuery("SELECT img_path FROM produit WHERE id='" . $_POST['id'] . "'");
-         if(isset($_POST['optionSelect'])){
+    if(isset($_POST['optionSelect'])){
          $optionChose =$db_handle->runQuery("SELECT * FROM option_product WHERE id='" . $_POST['optionSelect'] . "'");
         $itemArray = array($produitById["id"].$optionChose[0]["opt"]=>array('name'=>$produitById["name"], 'id'=>$produitById["id"],'price'=>$priceByProduitId , 'quantity'=>$_POST["quantity"], 'img_path'=>$imgProduit[0]["img_path"], 'optionSelect'=>$optionChose[0]["opt"]));
     }
     else{
-        //$_POST['optionSelect']="";
-        $itemArray = array($produitById["id"]=>array('name'=>$produitById["name"], 'id'=>$produitById["id"],'price'=>$priceByProduitId , 'quantity'=>$_POST["quantity"], 'img_path'=>$imgProduit[0]["img_path"]));
+        $_POST['optionSelect']=null;
+        $itemArray = array($produitById["id"].$_POST['optionSelect']=>array('name'=>$produitById["name"], 'id'=>$produitById["id"],'price'=>$priceByProduitId , 'quantity'=>$_POST["quantity"], 'img_path'=>$imgProduit[0]["img_path"], 'optionSelect'=>$_POST['optionSelect']));
     }
         if(!empty($_SESSION["Panier_item"])){
             //$_POST['id']
