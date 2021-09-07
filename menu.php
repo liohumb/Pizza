@@ -4,7 +4,7 @@ require_once "models/products.models.php";
 require_once "models/category.model.php";
     require_once("dbcontroller.php");// lance la connexion a la base de donnée;
     $db_handle= new DBcontroller();//lance la connexion a la base de donnée;
-    $categories = $db_handle->runQuery("SELECT * FROM category"); //va rechercher tout ce que contient category présente dans la base de donnée;
+    $categories = $db_handle->runQuery("SELECT * FROM category"); //va rechercher tout ce que contient category présente dans la base de donnée
     $products= $db_handle->runQuery("SELECT * FROM produit");//va chercher tout ce que contient présente dans la base de donnée
 ?>
 
@@ -27,11 +27,11 @@ require_once "models/category.model.php";
         <p class="menu__data-subtitle">Faites votre choix</p>
 
             <?php
-                foreach($categories as $category){ // parcour chaque element dans category pour éxecuter ce qui suit pour chacune d'elle
-                        $filteredProducts = array_filter($products, function($item) use($category){
+                foreach($categories as $category){ // parcour chaque element dans category pour exécuter ce qui suit pour chacune d'elle
+                        $filteredProducts = array_filter($products, static function($item) use($category){
 
-                            if($item['category_id'] == $category['id']){
-                                return $item; // item filtre les produit qui ont pour catégory_id l'ID de la category
+                            if($item['category_id'] === $category['id']){
+                                return $item; // item filtre les produits qui ont pour category_id l'ID de la category
                             }
 
                 });
@@ -43,16 +43,16 @@ require_once "models/category.model.php";
 
                             <div class="swiper-wrapper">
 
-                            <?php foreach($filteredProducts as $produit){ // parcour pour chaque Produit filtrer précedament ?>
+                            <?php foreach($filteredProducts as $produit){ // parcour pour chaque Produit filtrer précédemment ?>
 
                                 <div class="menu__card swiper-slide">
 
                                     <div onclick = "window.location='produits.php?id=<?= $produit['id'] ?>'">
 
-                                        <img src="<?= $produit['img_path'] ?>" alt="" class="menu__img"> <!-- recupere la colone ,img_path, dans la table produit present dans la BA qui contient la source de l'image ,le chemin -->
+                                        <img src="<?= $produit['img_path'] ?>" alt="" class="menu__img"> <!-- récupère la colone ,img_path, dans la table produit present dans la BA qui contient la source de l'image ,le chemin -->
 
                                         <div class="menu__data">
-                                            <h2 class="menu__data-titleProduct"><?= $produit['name'] ?></h2><!-- recupere la colone ,name, de la table produit -->
+                                            <h2 class="menu__data-titleProduct"><?= $produit['name'] ?></h2><!-- récupère la colone ,name, de la table produit -->
                                         </div>
 
                                     </div>
@@ -60,7 +60,7 @@ require_once "models/category.model.php";
                                 </div>
 
                     <?php
-                            } // une fois ici on a parcouru chaque category ,récuperer le nom de la category ,pour ensuite intégret chaque produit qui avais pour category_id l'id de la category, affin d'avoir le menu .
+                            } // une fois ici on a parcouru chaque category, récupérer le nom de la category, pour ensuite intégrer chaque produit qui avait pour category_id l'id de la category, affin d'avoir le menu.
                     ?>
 
                             </div>
@@ -110,16 +110,22 @@ require_once "models/category.model.php";
                 }
                 ?>
 
-            <div class="cart__recap">
-                <div class="cart__recap-title">
+            <div class="recap__products-cart">
+                <div class="recap__products-cartTitle">
                     <h2 class="section__title">Récapitulatif</h2>
                 </div>
 
-                <div class="cart__recap-total">
+                <div class="recap__products-cartTotal">
                     <h2 class="section__title">Sous-total : <b><?php echo  number_format($PrxTotal,2) . " €"; ?></b></h2>
                     <h2 class="section__title">Livraison : <b><?php echo number_format($livraison,2) . " €"; ?></b></h2>
                     <br>
                     <h2 class="section__title">Total : <b><?php echo number_format(($PrxTotal +$livraison),2) . " €"; ?></b></h2>
+                </div>
+            </div>
+
+            <div class="recap__products-button">
+                <div class="button">
+                    <a href="panier.php" class="button__title button__slide-effect">Accéder au panier</a>
                 </div>
             </div>
 
@@ -128,8 +134,8 @@ require_once "models/category.model.php";
                 else {
             ?>
 
-            <div class="cart__data-empty">
-                <h1 class="cart__product-name">Car Votre Panier est vide</h1>
+            <div class="recap__products-cartEmpty">
+                <h1 class="recap__products-cartEmptyTitle">Car Votre Panier est vide</h1>
             </div>
 
             <?php
