@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 02 sep. 2021 à 11:03
+-- Généré le : mar. 07 sep. 2021 à 07:01
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.4.9
 
@@ -33,9 +33,18 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `first_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `last_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `password` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pass` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `poste` text COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`id`, `first_name`, `last_name`, `email`, `pass`, `phone`, `poste`) VALUES
+(1, 'LeNain', 'Guihelm', 'lenain@gmail.com', '$2y$10$mrd/tKNsb6WGNy6F9EzX/ug3i22Eoi4vhWZ2NUragAAtdqOlCLeaW', '0666666666', 'Admin\r\n');
 
 -- --------------------------------------------------------
 
@@ -75,7 +84,15 @@ CREATE TABLE IF NOT EXISTS `message` (
   `subject` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `message`
+--
+
+INSERT INTO `message` (`id`, `first_name`, `email`, `phone`, `subject`, `message`) VALUES
+(1, 'guillaume', 'guihelm.lenain@gmail.com', '0786804323', 'J\'ai un soucis avec ma commande', 'c\'est de la merde\r\n'),
+(2, 'guillaume', 'guihelm.lenain@gmail.com', '0786804323', 'J\'ai un soucis avec ma commande', 'c\'est de la merte');
 
 -- --------------------------------------------------------
 
@@ -278,9 +295,41 @@ CREATE TABLE IF NOT EXISTS `user` (
   `city` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `password` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pass` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `first_name`, `last_name`, `address`, `cpt_address`, `post_code`, `city`, `phone`, `email`, `pass`) VALUES
+(12, 'guillaume', 'lari', '62 rue de la pizza', '', 59000, 'LILLE', '0786804323', 'guihelm.lenain5@gmail.com', '$2y$10$mrd/tKNsb6WGNy6F9EzX/ug3i22Eoi4vhWZ2NUragAAtdqOlCLeaW');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `worker`
+--
+
+DROP TABLE IF EXISTS `worker`;
+CREATE TABLE IF NOT EXISTS `worker` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `pass` text COLLATE utf8mb4_general_ci NOT NULL,
+  `phone` int NOT NULL,
+  `poste` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `worker`
+--
+
+INSERT INTO `worker` (`id`, `first_name`, `last_name`, `email`, `pass`, `phone`, `poste`) VALUES
+(3, 'gui', 'lar', 'gui@gmail.com', '$2y$10$u2AdAWytR4bqYZII/HeSXekLeznoYA9iz5txA8YwaPXGggLw3Ch26', 232659845, 'Employé(e) de cuisine');
 
 --
 -- Contraintes pour les tables déchargées
