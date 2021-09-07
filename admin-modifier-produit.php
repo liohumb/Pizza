@@ -1,6 +1,15 @@
 <?php include('base/head.php') ?>
-
+<?php
+    require_once ('dbcontroller.php');
+    $db_handle = new DBcontroller();
+?>
 <?php include ('base/header-admin.php') ?>
+<?php
+    $admins = $db_handle->runQuery("SELECT * FROM admin");
+    $admin=$admins[0];
+    $categories = $db_handle->runQuery("SELECT * FROM category");
+    $products = $db_handle->runQuery("SELECT * FROM produit");
+?>
 
 <section class="hero">
 
@@ -19,7 +28,7 @@
             </div>
 
             <div class="product__data">
-                <h3 class="product__data-title">statut : admin</h3>
+                <h3 class="product__data-title">statut : <?= $admin['poste'] ?></h3>
                 <h3 class="product__data-title">Nombre de commande : ##</h3>
                 <h3 class="product__data-title">Nombre de message (non-lu) : ##</h3>
             </div>
@@ -33,10 +42,12 @@
             </div>
 
             <div class="product__menu-button">
-                <span>• › <a href="#suggestions">Les Suggestions</a></span> <br>
-                <span>• › <a href="#pizzas">Les Pizzas</a></span> <br>
-                <span>• › <a href="#boissons">Les Boissons</a></span> <br>
-                <span>• › <a href="#desserts">Les Desserts</a></span></div>
+             <?php   foreach($categories as $category){
+                 $category['name']=str_replace("Nos", "Les", $category['name']);
+                 ?><span>• › <a href="#<?= $category['name'] ?>"><?= $category['name'] ?></a></span> <br>
+            <?php
+             }
+            ?>
             </div>
 
             <div class="product__button">
@@ -51,9 +62,18 @@
 
 <section>
 
-    <div class="container grid" id="suggestions">
-
-        <h2 class="product__title section__title">Les Suggestions</h2>
+    
+    <?php
+        foreach($categories as $category){
+            $category['name']=str_replace("Nos", "Les", $category['name']);
+            $filteredProducts = array_filter($products, static function($product) use($category){
+                if($product['category_id'] === $category['id']){
+                    return $product;
+                }
+            });
+    ?>
+    <div class="container grid" id="<?= $category['name'] ?>">
+        <h2 class="product__title section__title"><?= $category['name'] ?></h2>
         <div class="button">
             <a href="admin-ajouter.php" class="button__title button__slide-effect">ajouter</a>
         </div>
@@ -72,37 +92,20 @@
                 </thead>
             </table>
         </div>
-
         <div class="product__table-content">
+        <?php
+            foreach($filteredProducts as $product){
+                $id = $product["id"];
+                $price = $db_handle->runQuery("SELECT price FROM price WHERE produit_id =$id")
+        ?>
+        
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
                 <tr>
-                    <td>12</td>
-                    <td>La chêvre</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                    <td>12.00</td>
-                    <td>
-                        <label for="upload-photo">Importer photo</label>
-                        <input type="file" name="photo" class="product__table-upload">
-                    </td>
-                    <td><i class="uil uil-trash-alt"></td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td>La 4 fromages</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                    <td>11.00</td>
-                    <td>
-                        <label for="upload-photo">Importer photo</label>
-                        <input type="file" name="photo" class="product__table-upload">
-                    </td>
-                    <td><i class="uil uil-trash-alt"></td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td>La pepperoni</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                    <td>8.00</td>
+                    <td><?= $product['id'] ?></td>
+                    <td><?= $product['name'] ?></td>
+                    <td><?= $product['details'] ?></td>
+                    <td><?= $price[0]['price'] ?> | <?= $price[1]['price'] ?> | <?= $price[2]['price'] ?> </td>
                     <td>
                         <label for="upload-photo">Importer photo</label>
                         <input type="file" name="photo" class="product__table-upload">
@@ -111,235 +114,17 @@
                 </tr>
                 </tbody>
             </table>
+        
+
+    
+            <?php
+        };
+        ?>
         </div>
-
-    </div>
-
-    <div class="container grid" id="pizzas">
-
-        <h2 class="product__title section__title">Les Pizzas</h2>
-        <div class="button">
-            <a href="admin-ajouter.php" class="button__title button__slide-effect">ajouter</a>
-        </div>
-
-        <div class="product__table-header">
-            <table cellpadding="0" cellspacing="0" border="0">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nom</th>
-                    <th>Description</th>
-                    <th>Prix</th>
-                    <th>Image</th>
-                    <th><i class="uil uil-trash-alt"></i></th>
-                </tr>
-                </thead>
-            </table>
-        </div>
-
-        <div class="product__table-content">
-            <table cellpadding="0" cellspacing="0" border="0">
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>La chorizzo</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>10.00</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>La poulette</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>10.00</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>La pizza enfant</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>7.00</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>La mozza</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>10.00</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </div>
-
-    <div class="container grid" id="boissons">
-
-        <h2 class="product__title section__title">Les Boissons</h2>
-        <div class="button">
-            <a href="admin-ajouter.php" class="button__title button__slide-effect">ajouter</a>
-        </div>
-
-        <div class="product__table-header">
-            <table cellpadding="0" cellspacing="0" border="0">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nom</th>
-                    <th>Description</th>
-                    <th>Prix</th>
-                    <th>Image</th>
-                    <th><i class="uil uil-trash-alt"></i></th>
-                </tr>
-                </thead>
-            </table>
-        </div>
-
-        <div class="product__table-content">
-            <table cellpadding="0" cellspacing="0" border="0">
-                <tbody>
-                    <tr>
-                        <td>5</td>
-                        <td>Coca-Cola</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>3.00</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Schweppes</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>3.50</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Vin</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>9.00</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Carlsberg</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>4.00</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </div>
-
-    <div class="container grid" id="desserts">
-
-        <h2 class="product__title section__title">Les Desserts</h2>
-        <div class="button">
-            <a href="admin-ajouter.php" class="button__title button__slide-effect">ajouter</a>
-        </div>
-
-        <div class="product__table-header">
-            <table cellpadding="0" cellspacing="0" border="0">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nom</th>
-                    <th>Description</th>
-                    <th>Prix</th>
-                    <th>Image</th>
-                    <th><i class="uil uil-trash-alt"></i></th>
-                </tr>
-                </thead>
-            </table>
-        </div>
-
-        <div class="product__table-content">
-            <table cellpadding="0" cellspacing="0" border="0">
-                <tbody>
-                    <tr>
-                        <td>9</td>
-                        <td>Tiramisu</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>3.00</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>Glace</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>2.50</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>Muffins</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>4.00</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>Cookies</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper laoreet elit, id convallis dui.</td>
-                        <td>3.50</td>
-                        <td>
-                            <label for="upload-photo">Importer photo</label>
-                            <input type="file" name="photo" class="product__table-upload">
-                        </td>
-                        <td><i class="uil uil-trash-alt"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </div>
-
+        </div>              
+<?php    
+}
+?>  
 </section>
 
 <?php include('base/footer.php') ?>
