@@ -44,7 +44,7 @@
 
         <form action="#" method="post" id="contact_form">
 
-            <div class="add__form-categories">
+            <!-- <div class="add__form-categories">
                 <label for="subject">
                     <select name="subject" id="subject_input" required>
                         <option disabled hidden selected>Choisissez une catégorie</option>
@@ -54,7 +54,7 @@
                         <option>Les desserts</option>
                     </select>
                 </label>
-            </div>
+            </div> -->
 
             <div class="add__form-name">
                 <label for="name">
