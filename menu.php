@@ -2,7 +2,6 @@
 session_start();
 require_once "models/products.models.php";
 require_once "models/category.model.php";
-require_once "panierController.php";
     require_once("dbcontroller.php");// lance la connexion a la base de donnée;
     $db_handle= new DBcontroller();//lance la connexion a la base de donnée;
     $categories = $db_handle->runQuery("SELECT * FROM category"); //va rechercher tout ce que contient category présente dans la base de donnée;
@@ -130,7 +129,7 @@ require_once "panierController.php";
             ?>
 
             <div class="cart__data-empty">
-                <h1 class="cart__product-name">Votre Panier est vide</h1>
+                <h1 class="cart__product-name">Car Votre Panier est vide</h1>
             </div>
 
             <?php
