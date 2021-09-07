@@ -49,3 +49,25 @@ let swiper = new Swiper(".swiper__container", {
         rotate: 0,
     },
 })
+
+
+/* POPUP HORAIRES */
+
+
+var modal = document.getElementById("contact__popup-modal");
+var btn = document.getElementById("contact__popup-button");
+var span = document.getElementsByClassName("contact__data-contentCloseButton")[0];
+
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (envent.target == modal) {
+        modal.style.display = "none";
+    }
+}
