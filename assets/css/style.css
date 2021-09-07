@@ -962,7 +962,7 @@ td {
 .menu__data-title {
     font-size: var(--biggest-font-size);
     font-weight: var(--font-medium);
-    margin-bottom: var(--mb-2-5);
+    margin-bottom: var(--mb-1);
     color: var(--first-color);
     text-align: center;
 }

@@ -6,7 +6,7 @@
 
 <?php include ('base/head.php') ?>
 
-<?php include ('base/header.php')?>
+<?php include ('base/header-admin.php') ?>
 
 <?php
 if(isset($_POST['adminEmail'])){

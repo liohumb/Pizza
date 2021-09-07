@@ -2,7 +2,7 @@
 
 <?php include ('base/head.php') ?>
 
-<?php include ('base/header-admin.php') ?>
+<?php include ('base/header-worker.php') ?>
 
     <section class="hero">
 
@@ -30,7 +30,7 @@
 
             <div class="message__button">
                 <div class="button">
-                    <a href="admin.php" class="button__title button__slide-effect">Retour Acceuil</a>
+                    <a href="worker.php" class="button__title button__slide-effect">Retour Acceuil</a>
                 </div>
             </div>
 
