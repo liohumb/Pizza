@@ -137,7 +137,7 @@
                 <div class="contact__popup-modal" id="contact__popup-modal">
                     <div class="contact__data-content">
                         <div class="contact__data-contentClose">
-                            <span class="contact__data-contentCloseButton">&times;</span>
+                            <span class="contact__data-contentCloseButton"><i class="uil uil-multiply"></i></span>
                         </div>
                         <div class="contact__data-table">
                             <div class="contact__data-days">
@@ -151,21 +151,35 @@
                             </div>
                             <div class="contact__data-morningHours">
                                 <div class="contact__data-dayHour">Fermé</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">Fermé</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">12h | 15h</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">12h | 15h</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">12h | 15h</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">Non-stop</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">Fermé</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                             </div>
                             <div class="contact__data-nightHours">
                                 <div class="contact__data-dayHour">Fermé</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">18h | 21h</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">18h | 21h</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">18h | 22H</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">18h | 22h</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">12h | 23h</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                                 <div class="contact__data-dayHour">17h | 23h</div>
+                                <div class="contact__data-dayHourAlt">Ouvert</div>
                             </div>
                         </div>
                     </div>
@@ -173,6 +187,7 @@
                 
                 <div class="contact__button">
                     <a href="menu.php" class="contact__button-title contact__button-slideEffect">Contactez nous <i class="uil uil-phone"></i></a>
+                    <a href="menu.php" class="contact__button-titleAlt contact__button-slideEffect"><i class="uil uil-phone"></i></a>
                 </div>
 
             </div>
