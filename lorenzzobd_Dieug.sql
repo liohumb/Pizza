@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 07 sep. 2021 à 07:01
+-- Généré le : mar. 07 sep. 2021 à 09:45
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.4.9
 
@@ -64,10 +64,10 @@ CREATE TABLE IF NOT EXISTS `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'Nos Suggestion'),
+(1, 'Nos Suggestions'),
 (2, 'Nos Pizzas'),
 (3, 'Nos Boissons'),
-(4, 'Nos Dessert');
+(4, 'Nos Desserts');
 
 -- --------------------------------------------------------
 
@@ -164,13 +164,13 @@ CREATE TABLE IF NOT EXISTS `panier` (
 DROP TABLE IF EXISTS `price`;
 CREATE TABLE IF NOT EXISTS `price` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `price` float NOT NULL,
+  `price` float DEFAULT NULL,
   `option_id` int DEFAULT NULL,
   `produit_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_product_size` (`option_id`),
   KEY `fk_product_price` (`produit_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `price`
@@ -211,7 +211,18 @@ INSERT INTO `price` (`id`, `price`, `option_id`, `produit_id`) VALUES
 (85, 12.5, 3, 4),
 (86, 12.5, 3, 6),
 (87, 12.5, 3, 7),
-(88, 12.5, 3, 2);
+(88, 12.5, 3, 2),
+(90, NULL, NULL, 3),
+(91, NULL, NULL, 3),
+(92, NULL, NULL, 15),
+(93, NULL, NULL, 15),
+(94, NULL, NULL, 13),
+(95, NULL, NULL, 13),
+(96, NULL, NULL, 12),
+(97, NULL, NULL, 12),
+(98, NULL, NULL, 8),
+(99, NULL, NULL, 9),
+(100, NULL, NULL, 10);
 
 -- --------------------------------------------------------
 
@@ -249,8 +260,7 @@ INSERT INTO `produit` (`id`, `name`, `details`, `img_path`, `category_id`) VALUE
 (12, 'Tiramisu', '', 'assets/img/sweet1.jpg', 4),
 (13, 'Cookie', '', 'assets/img/sweet2.jpg', 4),
 (14, 'Glace', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet3.jpg', 4),
-(15, 'Muffins', '', 'assets/img/sweet4.jpg', 4),
-(18, 'Nos pizza fait maison', '', 'assets/img/pizza1.jpg', 1);
+(15, 'Muffins', '', 'assets/img/sweet4.jpg', 4);
 
 -- --------------------------------------------------------
 

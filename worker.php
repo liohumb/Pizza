@@ -9,8 +9,8 @@ $db_handle = new DBcontroller();
 <?php include ('base/header-worker.php') ?>
 
 <?php
-$admin = $db_handle->runQuery("SELECT * FROM admin ");
-$_SESSION['admin']=$admin[0];
+$worker = $db_handle->runQuery("SELECT * FROM worker ");
+$_SESSION['worker']= $worker[0];
 ?>
 
     <section class="hero">
@@ -24,11 +24,11 @@ $_SESSION['admin']=$admin[0];
         <div class="admin__container container grid">
 
             <div class="admin__info">
-                <h1 class="admin__info-title">Bonjour, <?= $admin[0]['first_name'] ?> !</h1>
+                <h1 class="admin__info-title">Bonjour, <?= $_SESSION['worker']['first_name'] ?> !</h1>
             </div>
 
             <div class="admin__data">
-                <h3 class="admin__data-title">statut : admin</h3>
+                <h3 class="admin__data-title">statut :<?= $_SESSION['worker']['poste'] ?></h3>
                 <h3 class="admin__data-title">Nombre de commande : ##</h3>
                 <h3 class="admin__data-title">Nombre de message (non-lu) : ##</h3>
             </div>
