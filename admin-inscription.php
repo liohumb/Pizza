@@ -9,7 +9,6 @@
 <?php include ('base/header.php')?>
 
 <?php
-$worker = $db_handle->runQuery("SELECT * FROM worker");
 if(isset($_POST['adminEmail'])){
     if($_POST['adminEmail'] == $_SESSION['admin']['email']){
         $first_name = $_POST['first_name'];
@@ -17,7 +16,7 @@ if(isset($_POST['adminEmail'])){
         $email = $_POST['email'];
         $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
         $phone = $_POST['phone'];
-        $poste = $_POST['poste'];
+        $poste = $_POST['job'];
 
         $sql ="INSERT INTO `worker`(`first_name`, `last_name`, `email`, `pass`, `phone`, `poste`) VALUES (?,?,?,?,?,?)";
         $stmt = $db_handle->connectDB()->prepare($sql);
@@ -118,9 +117,9 @@ if(isset($_POST['adminEmail'])){
                     <label for="job">
                         <select name="job" id="job_input" required>
                             <option disabled hidden selected>Choisissez un poste</option>
-                            <option value="">Employé(e) de cuisine</option>
-                            <option value="">Employé(e) de salle</option>
-                            <option value="">Livreur</option>
+                            <option value="Employé(e) de cuisine">Employé(e) de cuisine</option>
+                            <option value="Employé(e) de salle">Employé(e) de salle</option>
+                            <option value="Livreur">Livreur</option>
                         </select>
                     </label>
                 </div>
