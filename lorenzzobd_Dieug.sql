@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 07 sep. 2021 à 09:45
+-- Généré le : mar. 07 sep. 2021 à 14:34
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.4.9
 
@@ -57,17 +57,18 @@ CREATE TABLE IF NOT EXISTS `category` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `category`
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'Nos Suggestions'),
 (2, 'Nos Pizzas'),
 (3, 'Nos Boissons'),
-(4, 'Nos Desserts');
+(4, 'Nos Vins'),
+(5, 'Nos Desserts'),
+(6, 'Nos Glaces');
 
 -- --------------------------------------------------------
 
@@ -104,26 +105,28 @@ DROP TABLE IF EXISTS `option_product`;
 CREATE TABLE IF NOT EXISTS `option_product` (
   `id` int NOT NULL AUTO_INCREMENT,
   `opt` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`id`)
+  `category_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_option_category` (`category_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `option_product`
 --
 
-INSERT INTO `option_product` (`id`, `opt`) VALUES
-(1, '24 cm'),
-(2, '36 cm'),
-(3, '42 cm'),
-(4, 'chocolat'),
-(5, 'vanille'),
-(6, 'fraise'),
-(7, 'pistache'),
-(8, 'blanc'),
-(9, 'rouge'),
-(10, 'rosé'),
-(11, '33cl'),
-(12, '1l');
+INSERT INTO `option_product` (`id`, `opt`, `category_id`) VALUES
+(1, '24 cm', NULL),
+(2, '36 cm', NULL),
+(3, '42 cm', NULL),
+(4, 'chocolat', NULL),
+(5, 'vanille', NULL),
+(6, 'fraise', NULL),
+(7, 'pistache', NULL),
+(8, 'blanc', NULL),
+(9, 'rouge', NULL),
+(10, 'rosé', NULL),
+(11, '33cl', NULL),
+(12, '1l', NULL);
 
 -- --------------------------------------------------------
 
@@ -239,16 +242,16 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `category_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_product_category` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `produit`
 --
 
 INSERT INTO `produit` (`id`, `name`, `details`, `img_path`, `category_id`) VALUES
-(1, 'La chorizzo', 'pizza base tomate et chorizzo', 'assets/img/pizza2.jpg', 1),
-(2, 'La poulette', 'pizza au poulet', 'assets/img/pizza3.jpg', 1),
-(3, 'La pizza enfant ', 'taille unique pizza classique jambon formage', 'assets/img/pizza4.jpg', 1),
+(1, 'La chorizzo', 'pizza base tomate et chorizzo', 'assets/img/pizza2.jpg', 2),
+(2, 'La poulette', 'pizza au poulet', 'assets/img/pizza3.jpg', 2),
+(3, 'La pizza enfant ', 'taille unique pizza classique jambon formage', 'assets/img/pizza4.jpg', 2),
 (4, 'La chèvre', 'pizza au chevre', 'assets/img/discover1.jpg', 2),
 (5, 'La 4 fromages', '', 'assets/img/discover2.jpg', 2),
 (6, 'La Mozza', 'Pizza tomate mozza', 'assets/img/discover3.jpg', 2),
@@ -256,11 +259,15 @@ INSERT INTO `produit` (`id`, `name`, `details`, `img_path`, `category_id`) VALUE
 (8, 'Schweppes', 'Boisson fraiche gazeuse', 'assets/img/drink1.jpg', 3),
 (9, 'Carlsberg', 'La ptite binouze', 'assets/img/drink2.jpg', 3),
 (10, 'Coca-Cola', 'Coca-Cola rouge', 'assets/img/drink3.jpg', 3),
-(11, 'Vin ', 'vin blanc , rouge ou rosé', 'assets/img/drink4.jpg', 3),
-(12, 'Tiramisu', '', 'assets/img/sweet1.jpg', 4),
-(13, 'Cookie', '', 'assets/img/sweet2.jpg', 4),
-(14, 'Glace', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet3.jpg', 4),
-(15, 'Muffins', '', 'assets/img/sweet4.jpg', 4);
+(11, 'Jacob\'s Creek', 'réserve shiraz vintage 2017', 'assets/img/drink4.jpg', 4),
+(12, 'Tiramisu', '', 'assets/img/sweet1.jpg', 5),
+(13, 'Cookie', '', 'assets/img/sweet2.jpg', 5),
+(14, 'Magnum', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet6.jpg', 6),
+(15, 'Muffins', '', 'assets/img/sweet4.jpg', 5),
+(19, 'monbazillac', '', 'assets/img/drink6.jpg', 4),
+(20, 'chateauneuf du pape', '', 'assets/img/drink5.jpg', 4),
+(21, 'Corneto', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet5.jpg', 6),
+(22, 'Glace a L\'italienne', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet7.jpg', 6);
 
 -- --------------------------------------------------------
 
@@ -287,6 +294,29 @@ CREATE TABLE IF NOT EXISTS `statut` (
   `statut` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `suggestion`
+--
+
+DROP TABLE IF EXISTS `suggestion`;
+CREATE TABLE IF NOT EXISTS `suggestion` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `produit_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_product_suggestion` (`produit_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `suggestion`
+--
+
+INSERT INTO `suggestion` (`id`, `produit_id`) VALUES
+(1, 1),
+(3, 2),
+(2, 3);
 
 -- --------------------------------------------------------
 
@@ -346,6 +376,12 @@ INSERT INTO `worker` (`id`, `first_name`, `last_name`, `email`, `pass`, `phone`,
 --
 
 --
+-- Contraintes pour la table `option_product`
+--
+ALTER TABLE `option_product`
+  ADD CONSTRAINT `fk_option_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
 -- Contraintes pour la table `price`
 --
 ALTER TABLE `price`
@@ -357,6 +393,12 @@ ALTER TABLE `price`
 --
 ALTER TABLE `produit`
   ADD CONSTRAINT `fk_product_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
+
+--
+-- Contraintes pour la table `suggestion`
+--
+ALTER TABLE `suggestion`
+  ADD CONSTRAINT `fk_product_suggestion` FOREIGN KEY (`produit_id`) REFERENCES `produit` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
