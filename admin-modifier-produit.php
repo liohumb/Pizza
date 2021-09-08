@@ -61,8 +61,6 @@
     </div>
 
 <section>
-
-    
     <?php
         foreach($categories as $category){
             $category['name']=str_replace("Nos", "Les", $category['name']);
@@ -98,7 +96,6 @@
                 $id = $product["id"];
                 $price = $db_handle->runQuery("SELECT price FROM price WHERE produit_id =$id")
         ?>
-        
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
                 <tr>
@@ -114,16 +111,13 @@
                 </tr>
                 </tbody>
             </table>
-        
-
-    
             <?php
         };
         ?>
         </div>
         </div>              
 <?php    
-}
+    }
 ?>  
 </section>
 
