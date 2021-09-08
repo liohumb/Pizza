@@ -1,7 +1,15 @@
 <?php include('base/head.php') ?>
-
+<?php include ('panierController.php') ?>
+<?php
+    require_once ('dbcontroller.php');
+    $db_handle = new DBcontroller();
+?>
 <?php include ('base/header-admin.php') ?>
-
+<?php
+    $admin = $_SESSION['admin'];
+    $id = $_GET['id'];
+    $sizes = $db_handle->runQuery("SELECT * FROM option_product WHERE category_id = $id");
+?>
 <section class="hero">
 
     <img src="assets/img/home1.jpg" alt="" class="hero__img">
@@ -19,7 +27,7 @@
             </div>
 
             <div class="add__data">
-                <h3 class="add__data-title">statut : admin</h3>
+                <h3 class="add__data-title">statut : <?= $admin['poste'] ?></h3>
                 <h3 class="add__data-title">Nombre de commande : ##</h3>
                 <h3 class="add__data-title">Nombre de message (non-lu) : ##</h3>
             </div>
@@ -62,7 +70,7 @@
                 </label>
             </div>
 
-            <div class="add__form-option">
+            <!-- <div class="add__form-option">
                 <label for="subject">
                 <select name="subject" id="subject_input" required>
                     <option disabled hidden selected>Choisissez une option</option>
@@ -78,7 +86,7 @@
                     <option>Parfum : pistache</option>
                 </select>
                 </label>
-            </div>
+            </div> -->
 
             <div class="add__form-description">
                 <label for="name">
@@ -87,10 +95,18 @@
             </div>
 
             <div class="add__form-price">
+                <?php
+                    foreach($sizes as $size){
+                     ?>
+                    
                 <label for="name">
-                <input type="text" placeholder="Prix" name="name" id="name_input" required>
+               <?= $size['opt'] ?><input type="text" placeholder="Prix" name="<?= $size['id'] ?>" id="name_input" required>
                 </label>
-            </div>
+               
+                     <?php   
+                    }
+                ?>
+           </div>
 
             <div class="add__form-upload">
                 <label class="label-ajout" for="upload-photo">Importer photo</label>

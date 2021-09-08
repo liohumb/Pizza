@@ -73,7 +73,7 @@
     <div class="container grid" id="<?= $category['name'] ?>">
         <h2 class="product__title section__title"><?= $category['name'] ?></h2>
         <div class="button">
-            <a href="admin-ajouter.php?action=id=<?= $category['id'] ?>" class="button__title button__slide-effect">ajouter</a>
+            <a href="admin-ajouter.php?id=<?= $category['id'] ?>" class="button__title button__slide-effect">ajouter</a>
         </div>
 
         <div class="product__table-header">
