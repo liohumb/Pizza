@@ -6,8 +6,10 @@ $db_handle= new DBcontroller();
 include_once 'ajout-panier.php';
 
 $id=$_GET['id'] ?? 1;
-$product = $db_handle->runQuery("SELECT * FROM produit WHERE id=$id");
-$price = $db_handle->runQuery("SELECT * FROM price WHERE produit_id=$id");
+$products = $db_handle->runQuery("SELECT * FROM produit WHERE id=$id");
+$product = $products[0];
+$prices = $db_handle->runQuery("SELECT * FROM price WHERE produit_id=$id");
+$price = $prices[0];
 $size =$db_handle->runQuery("SELECT * FROM option_product");
 ?>
 
@@ -27,7 +29,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
         <div class="products__info">
             <div class="products__info-title">
-                <img src="<?= $product[0]['img_path'] ?>" class="products__info-img">
+                <img src="<?= $product['img_path'] ?>" class="products__info-img">
             </div>
         </div>
 
@@ -35,72 +37,86 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
             <div class="products__data">
 
-                <input type="hidden" name="name" value="<?= $product[0]['name'] ?>">
+                <input type="hidden" name="name" value="<?= $product['name'] ?>">
 
-                <h1 class="products__data-name"><?= $product[0]['name'] ?></h1>
+                <h1 class="products__data-name"><?= $product['name'] ?></h1>
 
-                <input type="hidden" name="price"value="<?= $price[0]['price']?>">
+                <input type="hidden" name="price"value="<?= $price['price']?>">
 
-                <h2 class="products__data-price"><?= $price[0]['price'] ." €"?></h2>
-                <h3 class="products__data-description"><?= $product[0]['details'] ?></h3>
+                <h2 class="products__data-price"><?php echo  number_format($price['price'],2) ." €"?></h2>
+                <h3 class="products__data-description"><?= $product['details'] ?></h3>
 
                 <ul class="products__data-preferences">
                     <li>
-
+                        
                     <?php
-                        if ($product[0]['category_id']== 1 ||$product[0]['category_id']== 2){
+                        if ($product['category_id']== 2){
                     ?>
-
                         <span class="products__data-preferencesTaille">Taille (en cm) :</span>
                             <label>
                                 <select name="optionSelect" class="products__data-preferencesTailleOption" >
-
-                                        <option value="<?= $size[0]['id'] ?>"><?= $size[0]['opt'] ?></option>
-                                        <option value="<?= $size[1]['id'] ?>"><?= $size[1]['opt'] ?></option>
-                                        <option value="<?= $size[2]['id'] ?>"><?= $size[2]['opt'] ?></option>
-
+                                    <?php
+                                        foreach($size as $sizes ){
+                                            if($sizes['category_id'] == 2){         
+                                    ?>
+                                    <option value="<?= $sizes['id'] ?>"><?= $sizes['opt'] ?></option>
+                                    <?php
+                                     }
+                                    }
+                                    ?>
                                 </select>
                             </label>
-
                             <?php
-                            } elseif($product[0]['category_id']== 3 && ($product[0]['name'] !='Vin ')){
+                            } elseif($product['category_id']== 3){
                             ?>
-
                           <span class="products__data-preferencesTaille">Taille (en cl) :</span>
                             <label>
                                 <select name="optionSelect" class="products__data-preferencesTailleOption">
-                                <option value="<?= $size[10]['id'] ?>"><?= $size[10]['opt'] ?></option>
-                                <option value="<?= $size[11]['id'] ?>"><?= $size[11]['opt'] ?></option>
+                                <?php
+                                        foreach($size as $sizes ){
+                                            if($sizes['category_id'] == 3){         
+                                    ?>
+                                    <option value="<?= $sizes['id'] ?>"><?= $sizes['opt'] ?></option> 
+                                    <?php
+                                     }
+                                    }
+                                    ?>
                             </select>
                             </label>
-
                             <?php
-                                } elseif($product[0]['name'] == 'Vin '){
+                                } elseif($product['category_id'] == 4){
                             ?>
-
                             <span class="products__data-preferencesColor">Robe :</span>
                             <label>
                                 <select name="optionSelect" class="products__data-preferencesColorOption">
-                                    <option value="<?= $size[7]['id'] ?>"><?= $size[7]['opt'] ?></option>
-                                    <option value="<?= $size[8]['id'] ?>"><?= $size[8]['opt'] ?></option>
-                                    <option value="<?= $size[9]['id'] ?>"><?= $size[9]['opt'] ?></option>
+                                <?php
+                                        foreach($size as $sizes ){
+                                            if($sizes['category_id'] == 4){       
+                                    ?>
+                                    <option value="<?= $sizes['id'] ?>"><?= $sizes['opt'] ?></option>
+                                    <?php
+                                     }
+                                    }
+                                    ?>
                                 </select>
                             </label>
-
                             <?php
-                            } elseif($product[0]['name'] == 'Glace'){
+                            } elseif($product['category_id'] == 6){
                             ?>
-
                             <span class="products__data-preferencesParfum">Parfum :</span>
                             <label>
                                 <select name="optionSelect" class="products__data-preferencesParfumOption">
-                                    <option value="<?= $size[3]['id'] ?>"><?= $size[3]['opt'] ?></option>
-                                    <option value="<?= $size[4]['id'] ?>"><?= $size[4]['opt'] ?></option>
-                                    <option value="<?= $size[5]['id'] ?>"><?= $size[5]['opt'] ?></option>
-                                    <option value="<?= $size[6]['id'] ?>"><?= $size[6]['opt'] ?></option>
+                                <?php
+                                        foreach($size as $sizes ){
+                                            if($sizes['category_id'] == 6){       
+                                    ?>
+                                    <option value="<?= $sizes['id'] ?>"><?= $sizes['opt'] ?></option>
+                                    <?php
+                                     }
+                                    }
+                                    ?>
                                 </select>
                             </label>
-
                             <?php
                             }
                             ?>
