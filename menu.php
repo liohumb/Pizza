@@ -6,6 +6,8 @@ require_once "models/category.model.php";
     $db_handle= new DBcontroller();//lance la connexion a la base de donnée;
     $categories = $db_handle->runQuery("SELECT * FROM category"); //va rechercher tout ce que contient category présente dans la base de donnée
     $products= $db_handle->runQuery("SELECT * FROM produit");//va chercher tout ce que contient présente dans la base de donnée
+    $suggestion = $db_handle->runQuery("SELECT * FROM suggestion");
+    
 ?>
 
 <?php include ('base/head.php') ?>
@@ -26,6 +28,7 @@ require_once "models/category.model.php";
 
         <p class="menu__data-subtitle">Faites votre choix</p>
 
+        <h2 class="section__title menu__category">Nos Suggestions</h2>
             <?php
                 foreach($categories as $category){ // parcour chaque element dans category pour exécuter ce qui suit pour chacune d'elle
                         $filteredProducts = array_filter($products, static function($item) use($category){

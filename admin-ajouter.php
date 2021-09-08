@@ -50,7 +50,7 @@
 
         <h1 class="add__title">Quoi de neuf ?</h1>
 
-        <form action="#" method="post" id="contact_form">
+        <form action="#" method="post" id="contact_form" enctype="multipart/form-data">
 
             <!-- <div class="add__form-categories">
                 <label for="subject">
@@ -109,12 +109,13 @@
            </div>
 
             <div class="add__form-upload">
-                <label class="label-ajout" for="upload-photo">Importer photo</label>
-                <input type="file" name="photo" class="add__form-uploadPicture">
+                <label class="label-ajout" for="upload-photo">Importer photo </label>
+                <input type="file" name="photo" class="add__form-uploadPicture"/>
+               
             </div>
 
     </div>
-
+                    <?php var_dump($_POST) ?>
     <div class="add__form-button">
         <div class="button">
             <input type="submit" class="button__title button__slide-effect" value="Ajouter"/>
