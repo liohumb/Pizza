@@ -34,7 +34,7 @@
                 <div class="cart__data">
 
                     <h1 class="cart__product-name"><?php echo $item["name"]." ".$item['optionSelect']?></h1>
-                    <h2 class="cart__product-price"><?php echo $item_prix . " €"; ?></h2>
+                    <h2 class="cart__product-price"><?php echo number_format($item_prix,2) . " €"; ?></h2>
 
                     <ul class="cart__preferences">
                         <li>
@@ -46,7 +46,7 @@
                         </li>
                     </ul>
 
-                    <span class="cart__product-priceUnit">Prix unitaire :<?php echo $item["price"] . " €"; ?></b></span>
+                    <span class="cart__product-priceUnit">Prix unitaire :<?php echo  number_format($item['price'],2) . " €"; ?></b></span>
 
                 </div>
 

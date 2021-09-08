@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 07 sep. 2021 à 14:34
+-- Généré le : mer. 08 sep. 2021 à 12:47
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.4.9
 
@@ -115,18 +115,18 @@ CREATE TABLE IF NOT EXISTS `option_product` (
 --
 
 INSERT INTO `option_product` (`id`, `opt`, `category_id`) VALUES
-(1, '24 cm', NULL),
-(2, '36 cm', NULL),
-(3, '42 cm', NULL),
-(4, 'chocolat', NULL),
-(5, 'vanille', NULL),
-(6, 'fraise', NULL),
-(7, 'pistache', NULL),
-(8, 'blanc', NULL),
-(9, 'rouge', NULL),
-(10, 'rosé', NULL),
-(11, '33cl', NULL),
-(12, '1l', NULL);
+(1, '24 cm', 2),
+(2, '36 cm', 2),
+(3, '42 cm', 2),
+(4, 'chocolat', 6),
+(5, 'vanille', 6),
+(6, 'fraise', 6),
+(7, 'pistache', 6),
+(8, 'blanc', 4),
+(9, 'rouge', 4),
+(10, 'rosé', 4),
+(11, '33cl', 3),
+(12, '1l', 3);
 
 -- --------------------------------------------------------
 
@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `price` (
   PRIMARY KEY (`id`),
   KEY `fk_product_size` (`option_id`),
   KEY `fk_product_price` (`produit_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `price`
@@ -225,7 +225,21 @@ INSERT INTO `price` (`id`, `price`, `option_id`, `produit_id`) VALUES
 (97, NULL, NULL, 12),
 (98, NULL, NULL, 8),
 (99, NULL, NULL, 9),
-(100, NULL, NULL, 10);
+(100, NULL, NULL, 10),
+(101, 3.9, 4, 21),
+(102, 3.9, 6, 21),
+(103, 3.9, 7, 21),
+(104, 3.9, 5, 21),
+(105, 3.9, 4, 22),
+(106, 3.9, 7, 22),
+(107, 3.9, 6, 22),
+(108, 3.9, 5, 22),
+(109, 9.9, 8, 19),
+(110, 0, 10, 19),
+(111, 9.9, 9, 19),
+(112, 9.9, 8, 20),
+(113, 9.9, 9, 20),
+(114, 9.9, 10, 20);
 
 -- --------------------------------------------------------
 
@@ -250,22 +264,22 @@ CREATE TABLE IF NOT EXISTS `produit` (
 
 INSERT INTO `produit` (`id`, `name`, `details`, `img_path`, `category_id`) VALUES
 (1, 'La chorizzo', 'pizza base tomate et chorizzo', 'assets/img/pizza2.jpg', 2),
-(2, 'La poulette', 'pizza au poulet', 'assets/img/pizza3.jpg', 2),
+(2, 'La poulette', 'composition : \r\n- pate fine\r\n- base crème fraiche\r\n- émincer de poulet\r\n- olive noir\r\n- câpre\r\n- roquette\r\n', 'assets/img/pizza3.jpg', 2),
 (3, 'La pizza enfant ', 'taille unique pizza classique jambon formage', 'assets/img/pizza4.jpg', 2),
 (4, 'La chèvre', 'pizza au chevre', 'assets/img/discover1.jpg', 2),
-(5, 'La 4 fromages', '', 'assets/img/discover2.jpg', 2),
+(5, 'La 4 fromages', 'La 4 fromages', 'assets/img/discover2.jpg', 2),
 (6, 'La Mozza', 'Pizza tomate mozza', 'assets/img/discover3.jpg', 2),
 (7, 'La pepperoni', 'pizza tomate pepperoni', 'assets/img/discover4.jpg', 2),
 (8, 'Schweppes', 'Boisson fraiche gazeuse', 'assets/img/drink1.jpg', 3),
 (9, 'Carlsberg', 'La ptite binouze', 'assets/img/drink2.jpg', 3),
 (10, 'Coca-Cola', 'Coca-Cola rouge', 'assets/img/drink3.jpg', 3),
 (11, 'Jacob\'s Creek', 'réserve shiraz vintage 2017', 'assets/img/drink4.jpg', 4),
-(12, 'Tiramisu', '', 'assets/img/sweet1.jpg', 5),
-(13, 'Cookie', '', 'assets/img/sweet2.jpg', 5),
+(12, 'Tiramisu', 'Tiramisu', 'assets/img/sweet1.jpg', 5),
+(13, 'Cookie', 'Cookie', 'assets/img/sweet2.jpg', 5),
 (14, 'Magnum', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet6.jpg', 6),
-(15, 'Muffins', '', 'assets/img/sweet4.jpg', 5),
-(19, 'monbazillac', '', 'assets/img/drink6.jpg', 4),
-(20, 'chateauneuf du pape', '', 'assets/img/drink5.jpg', 4),
+(15, 'Muffins', 'Muffins', 'assets/img/sweet4.jpg', 5),
+(19, 'monbazillac', 'monbazillac', 'assets/img/drink6.jpg', 4),
+(20, 'chateauneuf du pape', 'chateauneuf du pape', 'assets/img/drink5.jpg', 4),
 (21, 'Corneto', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet5.jpg', 6),
 (22, 'Glace a L\'italienne', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet7.jpg', 6);
 

@@ -61,8 +61,6 @@
     </div>
 
 <section>
-
-    
     <?php
         foreach($categories as $category){
             $category['name']=str_replace("Nos", "Les", $category['name']);
@@ -75,7 +73,7 @@
     <div class="container grid" id="<?= $category['name'] ?>">
         <h2 class="product__title section__title"><?= $category['name'] ?></h2>
         <div class="button">
-            <a href="admin-ajouter.php?action=id=<?= $category['id'] ?>" class="button__title button__slide-effect">ajouter</a>
+            <a href="admin-ajouter.php?id=<?= $category['id'] ?>" class="button__title button__slide-effect">ajouter</a>
         </div>
 
         <div class="product__table-header">
@@ -98,7 +96,6 @@
                 $id = $product["id"];
                 $price = $db_handle->runQuery("SELECT price FROM price WHERE produit_id =$id")
         ?>
-        
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
                 <tr>
@@ -114,16 +111,13 @@
                 </tr>
                 </tbody>
             </table>
-        
-
-    
             <?php
         };
         ?>
         </div>
         </div>              
 <?php    
-}
+    }
 ?>  
 </section>
 
