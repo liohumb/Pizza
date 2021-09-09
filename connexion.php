@@ -8,8 +8,7 @@ if(isset($_POST['email'])){
 $user = $db_handle->runQuery("SELECT id, email, pass FROM user WHERE email='" . $_POST['email'] . "'");
 $admin = $db_handle->runQuery("SELECT id, email, pass FROM admin WHERE email='" . $_POST['email'] . "'");
 $worker = $db_handle->runQuery("SELECT id, email, pass FROM worker WHERE email='".$_POST['email']."'");
-}
-if(isset($_POST['email'])){
+
     if (count($admin) == 1 && $admin != null) {
         $admin = $admin[0];
         if ($admin['pass'] == password_verify($_POST['pass'], $admin['pass'])) {
@@ -18,7 +17,15 @@ if(isset($_POST['email'])){
             exit;
         }
     }
-    elseif(count($user) == 1){
+    elseif(count($worker) == 1 && $worker != null){
+        $worker = $worker[0];
+        if ($worker['pass'] == password_verify($_POST['pass'], $worker['pass'])) {
+            $_SESSION['worker'] = $worker;
+            header("Location:worker.php");
+            exit;
+        }
+    }
+    elseif(count($user) == 1 && $user != null){
          $user = $user[0];
         if ($user['pass'] == password_verify($_POST['pass'], $user['pass'])){
             $_SESSION['user']=$user;
@@ -33,7 +40,7 @@ if(isset($_POST['email'])){
         else{
             echo "Je ne connais pas cette email..";
         }
-    }
+}
 
 ?>
 <section class="hero">
