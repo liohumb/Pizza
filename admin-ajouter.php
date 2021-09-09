@@ -12,57 +12,50 @@ $db_handle = new DBcontroller();
 
 ?>
 <?php
-                    if(isset($_POST['Ajouter'])){
-                        if (isset($_FILES['upload']) && $_FILES['upload']['error']== 0){
-                            $infoImg = pathinfo($_FILES['upload']['name']);
-                            $ext = $infoImg['extension'];
-                            $ext_auto = array("jpg", "jpeg", "gif", "png");
-                            $imgName = "produit" . (microtime(true) * 10000)."." . $ext;
-                            if(in_array($ext,$ext_auto)){
-                                move_uploaded_file($_FILES['upload']['tmp_name'], 'assets/upload/'.$imgName);
-                                
-                            }
-                             $_POST['img_path'] ="assets/upload/$imgName";
-                        }
-                        
-                    }
-                 ?>
+    if(isset($_POST['Ajouter'])){
+        if (isset($_FILES['upload']) && $_FILES['upload']['error']== 0){
+            $infoImg = pathinfo($_FILES['upload']['name']);
+            $ext = $infoImg['extension'];
+            $ext_auto = array("jpg", "jpeg", "gif", "png");
+            $imgName = "produit" . (microtime(true) * 10000)."." . $ext;
+                if(in_array($ext,$ext_auto)){
+                    move_uploaded_file($_FILES['upload']['tmp_name'], 'assets/upload/'.$imgName);
+                }
+                $_POST['img_path'] ="assets/upload/$imgName";
+        } 
+    }
+?>
 <?php
-                            if(!empty($_POST)){
-                                // if (array_key_exists($sizes[0]['id'], $_POST) || array_key_exists($sizes[0]['id'], $_POST) || array_key_exists($sizes[0]['id'], $_POST)){
-                                //     var_dump($size);
-                                // }
-                                $forPrices = [];
-                                $forProducts = [];
-                                foreach($_POST as $k => $v){
-
-                                    if(is_int($k)){
-                                        $forPrices[$k] = $v;
-                                    }
-                                    elseif(!is_int($k) && $k != 'Ajouter'){
-                                        $forProducts[$k] = $v;
-                                    }
-                                }
-                              $name = $forProducts["productName"];
-                              $details = $forProducts["name"];
-                             $img_path = $forProducts["img_path"];
-                             $sql ="INSERT INTO produit (`name`, `details`, `img_path`, `category_id`) VALUE (?,?,?,?) ";
-                             $db = $db_handle->connectDB();
-                             $stmt= $db->prepare($sql);
-                             $stmt->execute([$name, $details, $img_path, $id]);
-                             foreach($forPrices as $k => $v){
-                                 $optionId = $k;
-                                 $price = $v;
-                                $productId = $db->lastInsertId();
-                                $sql ="INSERT INTO price (`price`, `option_id`, `produit_id`) VALUE (?,?,?) ";
-                                $stmt= $db_handle->connectDB()->prepare($sql);
-                                $stmt->execute([$price, $optionId, $productId]);
-
-                             }
-                             $_SESSION['newProduct']= $_POST;
-                             header("Location: admin-ajouter.php?id=$id");
-                            }
-                     ?>
+    if(!empty($_POST)){
+        $forPrices = [];
+        $forProducts = [];
+        foreach($_POST as $k => $v){
+            if(is_int($k)){
+                $forPrices[$k] = $v;
+            }
+            elseif(!is_int($k) && $k != 'Ajouter'){
+                $forProducts[$k] = $v;
+            }
+        }
+        $name = $forProducts["productName"];
+        $details = $forProducts["name"];
+        $img_path = $forProducts["img_path"];
+        $sql ="INSERT INTO produit (`name`, `details`, `img_path`, `category_id`) VALUE (?,?,?,?) ";
+        $db = $db_handle->connectDB();
+        $stmt= $db->prepare($sql);
+        $stmt->execute([$name, $details, $img_path, $id]);
+        foreach($forPrices as $k => $v){
+            $optionId = $k;
+            $price = $v;
+            $productId = $db->lastInsertId();
+            $sql ="INSERT INTO price (`price`, `option_id`, `produit_id`) VALUE (?,?,?) ";
+            $stmt= $db_handle->connectDB()->prepare($sql);
+            $stmt->execute([$price, $optionId, $productId]);
+        }
+        $_SESSION['newProduct']= $_POST;
+        header("Location: admin-ajouter.php?id=$id");
+    }
+?>
 <section class="hero">
 
     <img src="assets/img/home1.jpg" alt="" class="hero__img">
