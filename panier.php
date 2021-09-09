@@ -18,6 +18,9 @@
             if(isset($_SESSION["Panier_item"])){
                 $quantityTotal = 0;
                 $PrxTotal = 0;
+                $Prht = 0;
+                $ht = 0;
+                $prttc = 0;
 
                 foreach($_SESSION["Panier_item"]as $item){
                     $item_prix = $item["quantity"]*$item["price"];
@@ -59,7 +62,12 @@
                 if($PrxTotal >20){
                     $livraison = 0 ;
                 }
-                }
+                ?>
+ 
+         
+            <?php
+                
+             }
             ?>
 
              <div class="cart__recap">
@@ -68,10 +76,13 @@
                     </div>
 
                     <div class="cart__recap-total">
-                        <h2 class="section__title">Sous-total : <b><?php echo  number_format($PrxTotal,2) . " €"; ?></b></h2>
+                        <h2 class="section__title">Total (hors taxes) : <b><?php echo  number_format(($PrxTotal  /1.200),2) . " €"; ?></b></h2>
+                        <h2 class="section__title">Sous-total : <b><?php echo  number_format(($PrxTotal),2) . " €"; ?></b></h2>
                         <h2 class="section__title">Livraison : <b><?php echo number_format($livraison,2) . " €"; ?></b></h2>
+                        <h2 class="section__title">A regler: <b><?php echo number_format(($PrxTotal +$livraison),2) . " €"; ?></b></h2>
+                        <!-- <h2 class="section__title">TVA : <b><?php echo number_format($prixttc,2) . " €"; ?></b></h2> -->
                         <br>
-                        <h2 class="section__title">Total : <b><?php echo number_format(($PrxTotal +$livraison),2) . " €"; ?></b></h2>
+                       
                     </div>
              </div>
 

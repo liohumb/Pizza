@@ -42,6 +42,8 @@ if(!empty($_POST["ajoute"])){
             $_SESSION["Panier_item"] = $itemArray;
             $bp = 0;
         }
+
+        
     }
     header("Location: menu.php");
 }
