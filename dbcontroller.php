@@ -5,9 +5,9 @@ class DBController {
     private $password = "";
     //private $password = "root";
     //private $port = "8889";
+    //private $port = "3308";
     private $database = "lorenzzobd_dieug";
     private $conn;
-
 
 
     function __construct() {
