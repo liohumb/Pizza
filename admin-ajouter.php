@@ -108,18 +108,15 @@
                 ?>
            </div>
 
-            <div class="add__form-upload">
-                <label class="label-ajout" for="upload-photo">Importer photo </label>
-                <input type="file" name="photo" class="add__form-uploadPicture"/>
-               
+            <div class="add__form-upload button">
+                <span class="add__form-uploadLabel button__slide-effect">Importer une image</span>
+                <input type="file" name="upload" class="add__form-uploadInput" placeholder="Upload File">
             </div>
 
     </div>
-                    <?php var_dump($_POST) ?>
-    <div class="add__form-button">
-        <div class="button">
+                    <?php //var_dump($_POST) ?>
+    <div class="add__form-button button">
             <input type="submit" class="button__title button__slide-effect" value="Ajouter"/>
-        </div>
     </div>
 
         </form>
