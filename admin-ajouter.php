@@ -91,8 +91,9 @@
                             $infoImg = pathinfo($_FILES['photo']['name']);
                             $ext = $infoImg['extension'];
                             $ext_auto = array("jpg", "jpeg", "gif", "png");
+                            $imgName = "produit" . (microtime(true) * 10000) . $ext;
                             if(in_array($ext,$ext_auto)){
-                                move_uploaded_file($_FILES['photo']['tmp_name'], 'assets/upload/'. basename($_FILES['photo']['name']));
+                                move_uploaded_file($_FILES['photo']['tmp_name'], 'assets/upload/'.$imgName);
                             }
                             
                             var_dump($infoImg);
