@@ -103,7 +103,7 @@
                     }
                  ?>
                     <?php var_dump($_POST) ;
-                            if(isset($_POST)){
+                            if(!empty($_POST)){
                                 // if (array_key_exists($sizes[0]['id'], $_POST) || array_key_exists($sizes[0]['id'], $_POST) || array_key_exists($sizes[0]['id'], $_POST)){
                                 //     var_dump($size);
                                 // }

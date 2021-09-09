@@ -9,7 +9,6 @@ $id=$_GET['id'] ?? 1;
 $products = $db_handle->runQuery("SELECT * FROM produit WHERE id=$id");
 $product = $products[0];
 $prices = $db_handle->runQuery("SELECT * FROM price WHERE produit_id=$id");
-$price = $prices[0];
 $size =$db_handle->runQuery("SELECT * FROM option_product");
 ?>
 
@@ -41,9 +40,9 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
                 <h1 class="products__data-name"><?= $product['name'] ?></h1>
 
-                <input type="hidden" name="price"value="<?= $price['price']?>">
+                <input type="hidden" name="price"value="<?= $prices[0]['price']?>">
 
-                <h2 class="products__data-price"><?php echo  number_format($price['price'],2) ." €"?></h2>
+                <h2 class="products__data-price"><?php echo  number_format($prices[0]['price'],2) ." €"?></h2>
                 <h3 class="products__data-description"><?= $product['details'] ?></h3>
 
                 <ul class="products__data-preferences">
@@ -157,7 +156,7 @@ $size =$db_handle->runQuery("SELECT * FROM option_product");
 
 </section>
 <script>
-    let prices = <?php echo json_encode($price); ?>// ne pas enlever sinon les option ne fonctionneront plus
+    let prices = <?php echo json_encode($prices); ?>// ne pas enlever sinon les option ne fonctionneront plus
 </script>
 
 <?php include ('base/footer.php') ?>
