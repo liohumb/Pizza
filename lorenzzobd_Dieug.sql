@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 08 sep. 2021 à 12:47
+-- Généré le : jeu. 09 sep. 2021 à 12:48
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.4.9
 
@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `price` (
   PRIMARY KEY (`id`),
   KEY `fk_product_size` (`option_id`),
   KEY `fk_product_price` (`produit_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `price`
@@ -239,7 +239,14 @@ INSERT INTO `price` (`id`, `price`, `option_id`, `produit_id`) VALUES
 (111, 9.9, 9, 19),
 (112, 9.9, 8, 20),
 (113, 9.9, 9, 20),
-(114, 9.9, 10, 20);
+(114, 9.9, 10, 20),
+(121, 8, 1, 29),
+(122, 10, 2, 29),
+(123, 12.5, 3, 29),
+(124, 3.9, 4, 30),
+(125, 3.9, 5, 30),
+(126, 3.9, 6, 30),
+(127, 3.9, 7, 30);
 
 -- --------------------------------------------------------
 
@@ -256,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `category_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_product_category` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `produit`
@@ -281,7 +288,9 @@ INSERT INTO `produit` (`id`, `name`, `details`, `img_path`, `category_id`) VALUE
 (19, 'monbazillac', 'monbazillac', 'assets/img/drink6.jpg', 4),
 (20, 'chateauneuf du pape', 'chateauneuf du pape', 'assets/img/drink5.jpg', 4),
 (21, 'Corneto', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet5.jpg', 6),
-(22, 'Glace a L\'italienne', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet7.jpg', 6);
+(22, 'Glace a L\'italienne', 'Parfum au choix :\r\nchocolat, fraise , vanille ,pistache', 'assets/img/sweet7.jpg', 6),
+(29, 'La chti', 'pizza du chnord', 'assets/upload/produit16311883592997.jpg', 2),
+(30, 'Coupe de Glace', 'glace 3 boules', 'assets/upload/produit16311892820676.jpg', 6);
 
 -- --------------------------------------------------------
 

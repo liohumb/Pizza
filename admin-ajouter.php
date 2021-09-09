@@ -1,14 +1,60 @@
 <?php include('base/head.php') ?>
 <?php include ('panierController.php') ?>
 <?php
-    require_once ('dbcontroller.php');
-    $db_handle = new DBcontroller();
+require_once ('dbcontroller.php');
+$db_handle = new DBcontroller();
 ?>
 <?php include ('base/header-admin.php') ?>
 <?php
     $admin = $_SESSION['admin'];
     $id = $_GET['id'];
     $sizes = $db_handle->runQuery("SELECT * FROM option_product WHERE category_id = $id");
+
+?>
+<?php
+    if(isset($_POST['Ajouter'])){
+        if (isset($_FILES['upload']) && $_FILES['upload']['error']== 0){
+            $infoImg = pathinfo($_FILES['upload']['name']);
+            $ext = $infoImg['extension'];
+            $ext_auto = array("jpg", "jpeg", "gif", "png");
+            $imgName = "produit" . (microtime(true) * 10000)."." . $ext;
+                if(in_array($ext,$ext_auto)){
+                    move_uploaded_file($_FILES['upload']['tmp_name'], 'assets/upload/'.$imgName);
+                }
+                $_POST['img_path'] ="assets/upload/$imgName";
+        } 
+    }
+?>
+<?php
+    if(!empty($_POST)){
+        $forPrices = [];
+        $forProducts = [];
+        foreach($_POST as $k => $v){
+            if(is_int($k)){
+                $forPrices[$k] = $v;
+            }
+            elseif(!is_int($k) && $k != 'Ajouter'){
+                $forProducts[$k] = $v;
+            }
+        }
+        $name = $forProducts["productName"];
+        $details = $forProducts["name"];
+        $img_path = $forProducts["img_path"];
+        $sql ="INSERT INTO produit (`name`, `details`, `img_path`, `category_id`) VALUE (?,?,?,?) ";
+        $db = $db_handle->connectDB();
+        $stmt= $db->prepare($sql);
+        $stmt->execute([$name, $details, $img_path, $id]);
+        foreach($forPrices as $k => $v){
+            $optionId = $k;
+            $price = $v;
+            $productId = $db->lastInsertId();
+            $sql ="INSERT INTO price (`price`, `option_id`, `produit_id`) VALUE (?,?,?) ";
+            $stmt= $db_handle->connectDB()->prepare($sql);
+            $stmt->execute([$price, $optionId, $productId]);
+        }
+        $_SESSION['newProduct']= $_POST;
+        header("Location: admin-ajouter.php?id=$id");
+    }
 ?>
 <section class="hero">
 
@@ -50,11 +96,11 @@
 
         <h1 class="add__title">Quoi de neuf ?</h1>
 
-        <form action="#" method="post" id="contact_form" enctype="multipart/form-data">
+        <form action="" method="post" id="contact_form" enctype="multipart/form-data">
 
             <div class="add__form-name">
                 <label for="name">
-                <input type="text" placeholder="Nom du produit" name="name" id="name_input" required>
+                <input type="text" placeholder="Nom du produit" name="productName" id="name_input" required>
                 </label>
             </div>
 
@@ -68,12 +114,10 @@
                 <?php
                     foreach($sizes as $size){
                      ?>
-                    
                 <label for="name">
                <?= $size['opt'] ?><input type="text" placeholder="Prix" name="<?= $size['id'] ?>" id="name_input" required>
                 </label>
-               
-                     <?php   
+               <?php
                     }
                 ?>
            </div>
@@ -85,25 +129,8 @@
 
     </div>
 
-                    <?php var_dump($_POST) ;
-                    if(isset($_POST['Ajouter'])){
-                        if (isset($_FILES['photo']) && $_FILES['photo']['error']== 0){
-                            $infoImg = pathinfo($_FILES['photo']['name']);
-                            $ext = $infoImg['extension'];
-                            $ext_auto = array("jpg", "jpeg", "gif", "png");
-                            if(in_array($ext,$ext_auto)){
-                                move_uploaded_file($_FILES['photo']['tmp_name'], 'assets/upload/'. basename($_FILES['photo']['name']));
-                            }
-                            
-                            var_dump($infoImg);
-                            var_dump($ext);
-                        }
-                    }
-                    ?>
-                    <?php ?>
-    
         <div class="add__form-button button">
-            <input type="submit" class="button__title button__slide-effect" value="Ajouter"/>
+            <input type="submit" class="button__title button__slide-effect" value="Ajouter" name="Ajouter"/>
         </div>
 
         </form>

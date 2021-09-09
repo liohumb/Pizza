@@ -6,6 +6,5 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/mail.js"></script>
 <script src="assets/js/password.js"></script>
-<script src="assets/js/quantity.js"></script>
 </body>
 </html>
