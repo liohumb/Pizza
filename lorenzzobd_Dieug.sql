@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 09 sep. 2021 à 12:48
+-- Généré le : ven. 10 sep. 2021 à 09:18
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.4.9
 
@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `price` (
   PRIMARY KEY (`id`),
   KEY `fk_product_size` (`option_id`),
   KEY `fk_product_price` (`produit_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `price`
@@ -235,7 +235,7 @@ INSERT INTO `price` (`id`, `price`, `option_id`, `produit_id`) VALUES
 (107, 3.9, 6, 22),
 (108, 3.9, 5, 22),
 (109, 9.9, 8, 19),
-(110, 0, 10, 19),
+(110, 9.9, 10, 19),
 (111, 9.9, 9, 19),
 (112, 9.9, 8, 20),
 (113, 9.9, 9, 20),
@@ -263,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `category_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_product_category` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `produit`
@@ -327,7 +327,7 @@ CREATE TABLE IF NOT EXISTS `statut` (
 DROP TABLE IF EXISTS `suggestion`;
 CREATE TABLE IF NOT EXISTS `suggestion` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `produit_id` int DEFAULT NULL,
+  `produit_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_product_suggestion` (`produit_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -337,9 +337,9 @@ CREATE TABLE IF NOT EXISTS `suggestion` (
 --
 
 INSERT INTO `suggestion` (`id`, `produit_id`) VALUES
-(1, 1),
-(3, 2),
-(2, 3);
+(3, 1),
+(2, 2),
+(1, 3);
 
 -- --------------------------------------------------------
 
