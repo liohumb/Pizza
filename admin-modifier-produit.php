@@ -65,9 +65,6 @@
 <section>
     <div class="container grid" id="Les Suggestions">
         <h2 class="product__title section__title">Les suggestions</h2>
-            <div class="button">
-                <a href="admin-ajouter.php" class="button__title button__slide-effect">ajouter</a>
-            </div>
 
         <div class="product__table-header">
             <table cellpadding="0" cellspacing="0" border="0">
