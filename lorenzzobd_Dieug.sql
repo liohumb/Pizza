@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 09 sep. 2021 à 12:48
+-- Généré le : ven. 10 sep. 2021 à 08:47
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.4.9
 
@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'Nos Suggestions'),
 (2, 'Nos Pizzas'),
 (3, 'Nos Boissons'),
 (4, 'Nos Vins'),
@@ -173,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `price` (
   PRIMARY KEY (`id`),
   KEY `fk_product_size` (`option_id`),
   KEY `fk_product_price` (`produit_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `price`
@@ -235,7 +236,7 @@ INSERT INTO `price` (`id`, `price`, `option_id`, `produit_id`) VALUES
 (107, 3.9, 6, 22),
 (108, 3.9, 5, 22),
 (109, 9.9, 8, 19),
-(110, 0, 10, 19),
+(110, 9.9, 10, 19),
 (111, 9.9, 9, 19),
 (112, 9.9, 8, 20),
 (113, 9.9, 9, 20),
@@ -263,16 +264,16 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `category_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_product_category` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `produit`
 --
 
 INSERT INTO `produit` (`id`, `name`, `details`, `img_path`, `category_id`) VALUES
-(1, 'La chorizzo', 'pizza base tomate et chorizzo', 'assets/img/pizza2.jpg', 2),
-(2, 'La poulette', 'composition : \r\n- pate fine\r\n- base crème fraiche\r\n- émincer de poulet\r\n- olive noir\r\n- câpre\r\n- roquette\r\n', 'assets/img/pizza3.jpg', 2),
-(3, 'La pizza enfant ', 'taille unique pizza classique jambon formage', 'assets/img/pizza4.jpg', 2),
+(1, 'La chorizzo', 'pizza base tomate et chorizzo', 'assets/img/pizza2.jpg', 1),
+(2, 'La poulette', 'composition : \r\n- pate fine\r\n- base crème fraiche\r\n- émincer de poulet\r\n- olive noir\r\n- câpre\r\n- roquette\r\n', 'assets/img/pizza3.jpg', 1),
+(3, 'La pizza enfant ', 'taille unique pizza classique jambon formage', 'assets/img/pizza4.jpg', 1),
 (4, 'La chèvre', 'pizza au chevre', 'assets/img/discover1.jpg', 2),
 (5, 'La 4 fromages', 'La 4 fromages', 'assets/img/discover2.jpg', 2),
 (6, 'La Mozza', 'Pizza tomate mozza', 'assets/img/discover3.jpg', 2),
@@ -317,29 +318,6 @@ CREATE TABLE IF NOT EXISTS `statut` (
   `statut` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `suggestion`
---
-
-DROP TABLE IF EXISTS `suggestion`;
-CREATE TABLE IF NOT EXISTS `suggestion` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `produit_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_product_suggestion` (`produit_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `suggestion`
---
-
-INSERT INTO `suggestion` (`id`, `produit_id`) VALUES
-(1, 1),
-(3, 2),
-(2, 3);
 
 -- --------------------------------------------------------
 
@@ -416,12 +394,6 @@ ALTER TABLE `price`
 --
 ALTER TABLE `produit`
   ADD CONSTRAINT `fk_product_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
-
---
--- Contraintes pour la table `suggestion`
---
-ALTER TABLE `suggestion`
-  ADD CONSTRAINT `fk_product_suggestion` FOREIGN KEY (`produit_id`) REFERENCES `produit` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
