@@ -43,14 +43,14 @@ require_once "models/category.model.php";
                 }
             });
         
-            foreach($filtered_SuggestProducts as $suggest){
+            foreach($filtered_SuggestProducts as $suggestProd){
     ?>          <div class="menu__card swiper-slide">
-                    <div onclick = "window.location='produits.php?id=<?= $suggest['id'] ?>'">
+                    <div onclick = "window.location='produits.php?id=<?= $suggestProd['id'] ?>'">
 
-                        <img src="<?= $suggest['img_path'] ?>" alt="" class="menu__img"> <!-- récupère la colone ,img_path, dans la table produit present dans la BA qui contient la source de l'image ,le chemin -->
+                        <img src="<?= $suggestProd['img_path'] ?>" alt="" class="menu__img"> <!-- récupère la colone ,img_path, dans la table produit present dans la BA qui contient la source de l'image ,le chemin -->
 
                             <div class="menu__data">
-                                <h2 class="menu__data-titleProduct"><?= $suggest['name'] ?></h2><!-- récupère la colone ,name, de la table produit -->
+                                <h2 class="menu__data-titleProduct"><?= $suggestProd['name'] ?></h2><!-- récupère la colone ,name, de la table produit -->
                             </div>
 
                     </div>
