@@ -52,6 +52,9 @@
 
             <div class="product__button">
                 <div class="button">
+                    <a href="ajouter-categories.php" class="button__title button__slide-effect">Modifier catégories</a>
+                </div>
+                <div class="button">
                     <a href="admin.php" class="button__title button__slide-effect">Retour Acceuil</a>
                 </div>
             </div>
@@ -115,7 +118,7 @@
         };
         ?>
         </div>
-        </div>              
+    </div>              
 <?php    
     }
 ?>  
