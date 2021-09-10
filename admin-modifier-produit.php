@@ -9,6 +9,7 @@
     $admin=$admins[0];
     $categories = $db_handle->runQuery("SELECT * FROM category");
     $products = $db_handle->runQuery("SELECT * FROM produit");
+    $suggestion = $db_handle->runQuery("SELECT * FROM suggestion");
 ?>
 
 <section class="hero">
@@ -42,12 +43,13 @@
             </div>
 
             <div class="product__menu-button">
-             <?php   foreach($categories as $category){
+                <span>• › <a href="#Les Suggestions">Les Suggestions</a></span> <br>
+        <?php foreach($categories as $category){
                  $category['name']=str_replace("Nos", "Les", $category['name']);
-                 ?><span>• › <a href="#<?= $category['name'] ?>"><?= $category['name'] ?></a></span> <br>
-            <?php
-             }
-            ?>
+                ?><span>• › <a href="#<?= $category['name'] ?>"><?= $category['name'] ?></a></span> <br>
+        <?php
+        }
+        ?>
             </div>
 
             <div class="product__button">
@@ -64,6 +66,56 @@
     </div>
 
 <section>
+    <div class="container grid" id="Les Suggestions">
+        <h2 class="product__title section__title">Les suggestions</h2>
+
+        <div class="product__table-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                    <th>Image</th>
+                    <th><i class="uil uil-trash-alt"></i></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="product__table-content">
+        <?php
+        foreach($suggestion as $suggest){
+            $filtered_SuggestProducts = array_filter($products, static function($suggestProduit) use($suggest){
+                if($suggestProduit['id'] === $suggest['produit_id']){
+                    return $suggestProduit;
+                }
+            });
+            foreach($filtered_SuggestProducts as $suggestProd){
+                $id = $suggestProd["id"];
+                $price = $db_handle->runQuery("SELECT price FROM price WHERE produit_id =$id")
+            ?>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                <tr>
+                    <td><?= $suggestProd['id'] ?></td>
+                    <td><?= $suggestProd['name'] ?></td>
+                    <td><?= $suggestProd['details'] ?></td>
+                    <td><?= $price[0]['price'] ?> | <?= $price[1]['price'] ?> | <?= $price[2]['price'] ?> </td>
+                    <td>
+                        <label for="upload-photo">Importer photo</label>
+                        <input type="file" name="photo" class="product__table-upload">
+                    </td>
+                    <td><i class="uil uil-trash-alt"></td>
+                </tr>
+                </tbody>
+            </table>
+            <?php
+            }
+        }
+    ?>  
+        </div>
+        </div>  
     <?php
         foreach($categories as $category){
             $category['name']=str_replace("Nos", "Les", $category['name']);
@@ -97,7 +149,7 @@
         <?php
             foreach($filteredProducts as $product){
                 $id = $product["id"];
-                $price = $db_handle->runQuery("SELECT price FROM price WHERE produit_id =$id")
+                $price = $db_handle->runQuery("SELECT * FROM price WHERE produit_id =$id")
         ?>
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
@@ -105,7 +157,7 @@
                     <td><?= $product['id'] ?></td>
                     <td><?= $product['name'] ?></td>
                     <td><?= $product['details'] ?></td>
-                    <td><?= $price[0]['price'] ?> | <?= $price[1]['price'] ?> | <?= $price[2]['price'] ?> </td>
+                    <td><?= $price[0]['price'] ?> | <?= $price[1]['price'] ?> | <?= $price[2]['price'] ?> | <?= $price[3]['price'] ?? null ?> </td>
                     <td>
                         <label for="upload-photo">Importer photo</label>
                         <input type="file" name="photo" class="product__table-upload">
