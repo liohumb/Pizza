@@ -2084,6 +2084,16 @@ td {
 
 /* VALIDATION PANIER */
 
+.validation__title {
+    color: var(--text-color);
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
 .validation__img {
     display: flex;
     justify-content: center;
@@ -2115,27 +2125,60 @@ td {
     text-transform: uppercase;
 }
 
-.validation__address {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 7rem;
+.validation__address-title {
+    margin-top: 4rem;
 }
 
-.validation__address-total {
+.validation__adresse-information {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.validation__address {
+    display: flex;
+    align-items: center;
+}
+
+.validation__address-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    margin-right: 5rem;
+}
+
+.validation__address-street {
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: var(--mb-1);
+}
+
+.validation__address-city {
+    font-size: var(--normal-font-size);
+    color: var(--title-color);
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: var(--mb-1);
+}
+
+.validation__address-phone {
+    font-size: var(--normal-font-size);
+    color: var(--title-color);
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: var(--mb-2-5);
+}
+
+.validation__form {
+    padding: 0;
+    margin: 0;
 }
 
 .validation__paiement {
     display: flex;
-    justify-content: space-evenly;
-}
-
-.validation__paiement-form {
-    display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .form__validation-paiementCard {
@@ -2158,7 +2201,7 @@ td {
 
 .validation__recap {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-top: 2rem;
 }
 

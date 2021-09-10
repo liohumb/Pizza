@@ -14,6 +14,8 @@
 
         <section class="validation section">
 
+            <h1 class="validation__title">C'est bientôt l'heure de manger !</h1>
+
             <?php
             if(isset($_SESSION["Panier_item"])){
                 $quantityTotal = 0;
@@ -49,67 +51,68 @@
                     }
                 }
                 ?>
+                    
+                    <div class="validation__adresse-information">
+                        
+                        <div class="validation__address-container">
 
-                <div class="validation__address">
-                    <div class="validation__address-title">
-                        <h2 class="section__title">Adresse de livraison</h2>
-                    </div>
-
-                    <div class="validation__address-total">
-                        <h2 class="section__title"><b>31 rue de la pizza</b></h2>
-                        <h2 class="section__title">59960, Neuville en Ferrain</h2>
-                        <h2 class="section__title">0606060606</h2>
-                    </div>
-
-                </div>
-
-                <div class="validation__button">
-                    <div class="button">
-                        <a href="#" class="button__title button__slide-effect">Modifier mon adresse</a>
-                    </div>
-                </div>
-
-                <div class="validation__paiement">
-                    <div class="validation__paiement-title">
-                        <h2 class="section__title">Paiement</h2>
-                    </div>
-
-                    <div class="validation__address-form">
-
-                        <form action="#" method="POST">
-
-                            <div class="form__validation-paiementCard">
-                                <label for="card">
-                                    <select name="card" id="card_input">
-                                        <option disabled hidden selected>Type de carte</option>
-                                        <option>Visa</option>
-                                        <option>Mastercard</option>
-                                        <option>American Express</option>
-                                    </select>
-                                </label>
+                            <div class="validation__address-title">
+                                <h2 class="section__title">Adresse de livraison & paiement</h2>
                             </div>
 
-                            <div class="form__validation-paiementCardNumber">
-                                <label for="card_number">
-                                    <input type="text" placeholder="Numéro de carte bleue" name="card_number" required>
-                                </label>
+                            <div class="validation__address">
+
+                                <div class="validation__address-content">
+                                    <h2 class="validation__address-street"><b>31 rue de la pizza</b></h2>
+                                    <span class="validation__address-city">59960, Neuville en Ferrain</span>
+                                    <span class="validation__address-phone">0606060606</span>
+                                </div>
+
+                                <div class="validation__paiement-form">
+
+                                    <form action="#" method="POST" class="validation__form">
+
+                                        <div class="form__validation-paiementCard">
+                                            <label for="card">
+                                                <select name="card" id="card_input">
+                                                    <option disabled hidden selected>Type de carte</option>
+                                                    <option>Visa</option>
+                                                    <option>Mastercard</option>
+                                                    <option>American Express</option>
+                                                </select>
+                                            </label>
+                                        </div>
+
+                                        <div class="form__validation-paiementCardNumber">
+                                            <label for="card_number">
+                                                <input type="text" placeholder="Numéro de carte bleue" name="card_number" required>
+                                            </label>
+                                        </div>
+
+                                        <div class="form__validation-paiementDate">
+                                            <label for="card_date">
+                                                <input type="text" placeholder="Date d'expiration" name="card_date" required>
+                                            </label>
+                                        </div>
+
+                                        <div class="form__validation-paiementExp">
+                                            <label for="card_exp">
+                                                <input type="text" placeholder="Cryptogramme" name="card_exp" required>
+                                            </label>
+                                        </div>
+
+                                </div>
+
                             </div>
 
-                            <div class="form__validation-paiementDate">
-                                <label for="card_date">
-                                    <input type="text" placeholder="Date d'expiration" name="card_date" required>
-                                </label>
+                            <div class="validation__button">
+                                <div class="button">
+                                    <a href="#" class="button__title button__slide-effect">Modifier mon adresse</a>
+                                </div>
                             </div>
-
-                            <div class="form__validation-paiementExp">
-                                <label for="card_exp">
-                                    <input type="text" placeholder="Cryptogramme" name="card_exp" required>
-                                </label>
-                            </div>
-
+                        </div>
+                        
                     </div>
-
-                </div>
 
                 <div class="validation__recap">
                     <div class="validation__recap-title">
