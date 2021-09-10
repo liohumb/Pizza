@@ -7,6 +7,7 @@ require_once "models/category.model.php";
     $categories = $db_handle->runQuery("SELECT * FROM category"); //va rechercher tout ce que contient category présente dans la base de donnée
     $products= $db_handle->runQuery("SELECT * FROM produit");//va chercher tout ce que contient présente dans la base de donnée
     $suggestion = $db_handle->runQuery("SELECT * FROM suggestion");
+   
     
 ?>
 
@@ -29,6 +30,39 @@ require_once "models/category.model.php";
         <p class="menu__data-subtitle">Faites votre choix</p>
 
         <h2 class="section__title menu__category">Nos Suggestions</h2>
+        <div class="menu__container container swiper__container swiper-container">
+
+            <div class="swiper-wrapper">
+               
+
+<?php 
+        foreach($suggestion as $suggest){
+            $filtered_SuggestProducts = array_filter($products, static function($suggestProduit) use ($suggest){
+                if($suggestProduit['id'] === $suggest['produit_id']){
+                    return $suggestProduit;
+                }
+            });
+        
+            foreach($filtered_SuggestProducts as $suggest){
+    ?>          <div class="menu__card swiper-slide">
+                    <div onclick = "window.location='produits.php?id=<?= $suggest['id'] ?>'">
+
+                        <img src="<?= $suggest['img_path'] ?>" alt="" class="menu__img"> <!-- récupère la colone ,img_path, dans la table produit present dans la BA qui contient la source de l'image ,le chemin -->
+
+                            <div class="menu__data">
+                                <h2 class="menu__data-titleProduct"><?= $suggest['name'] ?></h2><!-- récupère la colone ,name, de la table produit -->
+                            </div>
+
+                    </div>
+
+                </div>
+                <?php
+    }
+}?>
+            </div>
+
+        </div>
+
             <?php
                 foreach($categories as $category){ // parcour chaque element dans category pour exécuter ce qui suit pour chacune d'elle
                         $filteredProducts = array_filter($products, static function($item) use($category){
