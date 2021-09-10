@@ -3,7 +3,7 @@ class DBController {
     private $host = "localhost";
     private $user = "root";
     private $password = "";
-   // private $password = "root";
+    //private $password = "root";
     //private $port = "8889";
     //private $port = "3308";
     private $database = "lorenzzobd_dieug";

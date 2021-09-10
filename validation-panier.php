@@ -107,7 +107,7 @@
 
                             <div class="validation__button">
                                 <div class="button">
-                                    <a href="#" class="button__title button__slide-effect">Modifier mon adresse</a>
+                                    <a href="modifier-mon-compte.php" class="button__title button__slide-effect">Modifier mon adresse</a>
                                 </div>
                             </div>
                         </div>

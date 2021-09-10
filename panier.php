@@ -88,7 +88,7 @@
 
             <div class="cart__button">
                 <div class="button">
-                    <a href="#" class="button__title button__slide-effect">Valider mon panier</a>
+                    <a href="validation-panier.php" class="button__title button__slide-effect">Valider mon panier</a>
                 </div>
                 <div class="button">
                     <a href="panier.php?action=vider" class="button__title cart__button-slideEffect">Vider le panier</a>

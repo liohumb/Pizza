@@ -124,10 +124,7 @@ require_once "models/category.model.php";
 
             <div class="recap__products">
                 <div class="recap__products-title">
-                    <h1 class="recap__products-title"><?php echo $item["name"]." ".$item['optionSelect']?></h1>
-                </div>
-                <div class="recap__products-quantity">
-                    <span class="recap__products-quantity">Quantité : <?php echo $item["quantity"]; ?></span>
+                    <h1 class="recap__products-title"><?php echo $item["name"]." ".$item['optionSelect']?> (x <?php echo $item["quantity"]; ?>)</h1>
                 </div>
                 <div class="recap__products-price">
                     <h2 class="recap__products-price"><?php echo $item_prix . " €"; ?></h2>
